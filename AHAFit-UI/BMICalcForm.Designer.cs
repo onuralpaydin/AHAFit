@@ -40,7 +40,6 @@ namespace AHAFit_UI
             this.btnCalculate = new System.Windows.Forms.Button();
             this.tbBmi = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -278,7 +277,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.Button btnCalculate;
         protected System.Windows.Forms.TrackBar tbBmi;
         private System.Windows.Forms.Label label4;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
