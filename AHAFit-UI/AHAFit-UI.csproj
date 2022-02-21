@@ -100,6 +100,9 @@
     <Compile Include="ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BMICalcForm.resx">
+      <DependentUpon>BMICalcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +136,14 @@
     <ProjectReference Include="..\AHAFit-BLL\AHAFit-BLL.csproj">
       <Project>{5668e607-871b-41f7-97e2-71edc46efcca}</Project>
       <Name>AHAFit-BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AHAFit-Data\AHAFit-Data.csproj">
+      <Project>{0B43514B-4C08-490F-B5D9-224895864ACC}</Project>
+      <Name>AHAFit-Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AHAFit-Model\AHAFit-Model.csproj">
+      <Project>{920978F2-132C-4906-91A4-F24B8B22FD5B}</Project>
+      <Name>AHAFit-Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
