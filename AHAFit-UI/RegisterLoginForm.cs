@@ -17,6 +17,7 @@ namespace AHAFit_UI
         {
             Huseyin.MealAndGoalDataLoad();
             Huseyin.AutoAdminMember();
+            Huseyin.AddWaterToFoods();
             InitializeComponent();
         }
 

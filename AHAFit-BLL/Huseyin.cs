@@ -99,6 +99,42 @@ namespace AHAFit_BLL
             return totalCal;
         }
 
+        public static void AddWaterToFoods()
+        {
+            Context db = new Context();
 
+            if(!db.Foods.Any(x=>x.Name == "Water"))
+            {
+                Food water = new Food();
+                water.Name = "Water";
+                water.Calorie = 0;
+                water.Carbohydrate = 0;
+                water.Protein = 0;
+                water.Fat = 0;
+                water.PhotoURL = "asda";
+                db.Foods.Add(water);
+                db.SaveChanges();
+            }
+
+        }
+
+        public static int DailyRemainWater(int memberId, DateTime selectedDay)
+        {
+            Context db = new Context();
+
+            int totalGlass = 13;
+
+            int waterId = db.Foods.FirstOrDefault(x => x.Name == "Water").FoodId;
+
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if(item.MemberId == memberId && item.CreateDateTime == selectedDay && item.FoodId == waterId)
+                {
+                    totalGlass--;
+                }
+            }
+
+            return totalGlass;
+        }
     }
 }
