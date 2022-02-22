@@ -10,6 +10,7 @@ namespace AHAFit_BLL
 {
     public class Huseyin
     {
+
         public static void MealAndGoalDataLoad()
         {
             Context db = new Context();
@@ -80,5 +81,24 @@ namespace AHAFit_BLL
             return db.Members.FirstOrDefault(x => x.Email == email).MemberId;
 
         }
+
+        public static decimal DailyCalorieCalculater(int memberId, DateTime selectedDay)
+        {
+            Context db = new Context();
+
+            decimal totalCal = 0;
+
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if(item.MemberId == memberId && item.CreateDateTime == selectedDay)
+                {
+                    totalCal += db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId).Calorie;
+                }
+            }
+
+            return totalCal;
+        }
+
+
     }
 }

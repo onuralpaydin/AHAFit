@@ -50,5 +50,12 @@ namespace AHAFit_UI
             BMICalcForm bMICalcForm = new BMICalcForm(memberId);
             bMICalcForm.Show();
         }
+
+        private void dtpHomeDate_ValueChanged(object sender, EventArgs e)
+        {
+            lblSumCalorie.Text = (Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString();
+        }
+
+
     }
 }
