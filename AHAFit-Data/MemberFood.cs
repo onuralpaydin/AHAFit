@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,6 @@ namespace AHAFit_Data
         {
             this.CreateDateTime = CreateTime;
         }
-
         public int MemberFoodId { get; set; }
         public DateTime CreateDateTime { get; set; }
         public int MemberId { get; set; }
