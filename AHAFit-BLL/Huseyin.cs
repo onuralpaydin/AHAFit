@@ -27,10 +27,24 @@ namespace AHAFit_BLL
 
             if (!db.Goals.Any())
             {
+                db.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Goals', RESEED, 0)");
                 db.Goals.AddRange(new List<Goal> {
-                    new Goal() { Name = "Lose Weight"},
-                    new Goal() { Name = "Gain Weight"},
-                    new Goal() { Name = "Build Muscle"},
+                    new Goal() { Name = "Lose Weight", GoalId = 1},
+                    new Goal() { Name = "Gain Weight", GoalId = 2},
+                    new Goal() { Name = "Maintain Your Weight", GoalId = 3},
+                });
+                db.SaveChanges();
+            }else
+            {
+                foreach (var item in db.Goals)
+                {
+                    db.Goals.Remove(item);
+                }
+                db.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Goals', RESEED, 0)");
+                db.Goals.AddRange(new List<Goal> {
+                    new Goal() { Name = "Lose Weight", GoalId = 1},
+                    new Goal() { Name = "Gain Weight", GoalId = 2},
+                    new Goal() { Name = "Maintain Your Weight", GoalId = 3},
                 });
                 db.SaveChanges();
             }
