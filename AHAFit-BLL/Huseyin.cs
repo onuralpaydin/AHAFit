@@ -136,5 +136,12 @@ namespace AHAFit_BLL
 
             return totalGlass;
         }
+
+        public static string GetMemberName(int memberId)
+        {
+            Context db = new Context();
+
+           return db.Members.FirstOrDefault(x => x.MemberId == memberId).Name;
+        }
     }
 }

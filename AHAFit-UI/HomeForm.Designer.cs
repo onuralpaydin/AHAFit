@@ -54,6 +54,7 @@ namespace AHAFit_UI
             this.cmbMealSumCalorie = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMealSumCalorie = new System.Windows.Forms.Label();
+            this.lblMotivation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +111,7 @@ namespace AHAFit_UI
             // dtpHomeDate
             // 
             this.dtpHomeDate.Checked = false;
-            this.dtpHomeDate.Location = new System.Drawing.Point(45, 203);
+            this.dtpHomeDate.Location = new System.Drawing.Point(45, 268);
             this.dtpHomeDate.Name = "dtpHomeDate";
             this.dtpHomeDate.Size = new System.Drawing.Size(382, 31);
             this.dtpHomeDate.TabIndex = 1;
@@ -137,7 +138,7 @@ namespace AHAFit_UI
             // 
             this.lblRemainWater.Location = new System.Drawing.Point(494, 360);
             this.lblRemainWater.Name = "lblRemainWater";
-            this.lblRemainWater.Size = new System.Drawing.Size(132, 121);
+            this.lblRemainWater.Size = new System.Drawing.Size(204, 177);
             this.lblRemainWater.TabIndex = 2;
             this.lblRemainWater.Text = "You should drink 4 more glasses of water today.";
             // 
@@ -284,11 +285,20 @@ namespace AHAFit_UI
             this.lblMealSumCalorie.TabIndex = 2;
             this.lblMealSumCalorie.Text = "2500";
             // 
+            // lblMotivation
+            // 
+            this.lblMotivation.Location = new System.Drawing.Point(55, 188);
+            this.lblMotivation.Name = "lblMotivation";
+            this.lblMotivation.Size = new System.Drawing.Size(612, 58);
+            this.lblMotivation.TabIndex = 7;
+            this.lblMotivation.Text = "Welcome";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 1037);
+            this.Controls.Add(this.lblMotivation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbMealSumCalorie);
             this.Controls.Add(this.cmbMeal);
@@ -316,6 +326,7 @@ namespace AHAFit_UI
             this.Controls.Add(this.btnReports);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -349,5 +360,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.ComboBox cmbMealSumCalorie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMealSumCalorie;
+        private System.Windows.Forms.Label lblMotivation;
     }
 }
