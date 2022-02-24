@@ -22,6 +22,7 @@ namespace AHAFit_Model
             Property(x => x.Gender).IsRequired();
             Property(x => x.Height).IsRequired();
             Property(x => x.BirthDate).IsRequired();
+            Property(x => x.ActivityLevel).IsRequired();
             HasRequired<Goal>(x => x.Goal).WithMany(x => x.Members);
         }
     }

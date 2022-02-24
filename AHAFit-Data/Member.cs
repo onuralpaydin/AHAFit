@@ -20,6 +20,14 @@ namespace AHAFit_Data
         public int GoalId { get; set; }
         public Goal Goal { get; set; }
         public List<MemberFood> MemberFoods { get; set; }
+        public string ActivityLevel { get; set; }
+    }
 
+    public enum ActivityLevel
+    {
+        Sedentary,
+        LightlyActive,
+        ModeratelyActive,
+        VeryActive
     }
 }
