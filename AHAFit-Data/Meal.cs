@@ -11,5 +11,6 @@ namespace AHAFit_Data
         public int MealId { get; set; }
         public string Name { get; set; }
         public List<MealFood> MealFoods { get; set; }
+        public List<MemberFood> MemberFoods { get; set; }
     }
 }
