@@ -55,6 +55,7 @@ namespace AHAFit_UI
             this.label1 = new System.Windows.Forms.Label();
             this.lblMealSumCalorie = new System.Windows.Forms.Label();
             this.lblMotivation = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,14 +139,14 @@ namespace AHAFit_UI
             // 
             this.lblRemainWater.Location = new System.Drawing.Point(494, 360);
             this.lblRemainWater.Name = "lblRemainWater";
-            this.lblRemainWater.Size = new System.Drawing.Size(204, 177);
+            this.lblRemainWater.Size = new System.Drawing.Size(204, 136);
             this.lblRemainWater.TabIndex = 2;
             this.lblRemainWater.Text = "You should drink 4 more glasses of water today.";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(106, 624);
+            this.label4.Location = new System.Drawing.Point(105, 600);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 2;
@@ -154,7 +155,7 @@ namespace AHAFit_UI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(315, 624);
+            this.label5.Location = new System.Drawing.Point(314, 600);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 25);
             this.label5.TabIndex = 2;
@@ -163,7 +164,7 @@ namespace AHAFit_UI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(472, 624);
+            this.label6.Location = new System.Drawing.Point(471, 600);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 25);
             this.label6.TabIndex = 2;
@@ -172,29 +173,29 @@ namespace AHAFit_UI
             // lblCarbo
             // 
             this.lblCarbo.AutoSize = true;
-            this.lblCarbo.Location = new System.Drawing.Point(130, 668);
+            this.lblCarbo.Location = new System.Drawing.Point(129, 644);
             this.lblCarbo.Name = "lblCarbo";
-            this.lblCarbo.Size = new System.Drawing.Size(90, 25);
+            this.lblCarbo.Size = new System.Drawing.Size(48, 25);
             this.lblCarbo.TabIndex = 2;
-            this.lblCarbo.Text = "245/500";
+            this.lblCarbo.Text = "200";
             // 
             // lblPro
             // 
             this.lblPro.AutoSize = true;
-            this.lblPro.Location = new System.Drawing.Point(315, 660);
+            this.lblPro.Location = new System.Drawing.Point(314, 636);
             this.lblPro.Name = "lblPro";
-            this.lblPro.Size = new System.Drawing.Size(66, 25);
+            this.lblPro.Size = new System.Drawing.Size(48, 25);
             this.lblPro.TabIndex = 2;
-            this.lblPro.Text = "44/85";
+            this.lblPro.Text = "200";
             // 
             // lblFat
             // 
             this.lblFat.AutoSize = true;
-            this.lblFat.Location = new System.Drawing.Point(459, 663);
+            this.lblFat.Location = new System.Drawing.Point(458, 639);
             this.lblFat.Name = "lblFat";
-            this.lblFat.Size = new System.Drawing.Size(66, 25);
+            this.lblFat.Size = new System.Drawing.Size(48, 25);
             this.lblFat.TabIndex = 2;
-            this.lblFat.Text = "55/60";
+            this.lblFat.Text = "200";
             // 
             // btnWater
             // 
@@ -281,9 +282,9 @@ namespace AHAFit_UI
             this.lblMealSumCalorie.AutoSize = true;
             this.lblMealSumCalorie.Location = new System.Drawing.Point(237, 864);
             this.lblMealSumCalorie.Name = "lblMealSumCalorie";
-            this.lblMealSumCalorie.Size = new System.Drawing.Size(60, 25);
+            this.lblMealSumCalorie.Size = new System.Drawing.Size(141, 25);
             this.lblMealSumCalorie.TabIndex = 2;
-            this.lblMealSumCalorie.Text = "2500";
+            this.lblMealSumCalorie.Text = "2500 calories";
             // 
             // lblMotivation
             // 
@@ -293,11 +294,21 @@ namespace AHAFit_UI
             this.lblMotivation.TabIndex = 7;
             this.lblMotivation.Text = "Welcome";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(248, 540);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Received today:";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 1037);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMotivation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbMealSumCalorie);
@@ -361,5 +372,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMealSumCalorie;
         private System.Windows.Forms.Label lblMotivation;
+        private System.Windows.Forms.Label label2;
     }
 }

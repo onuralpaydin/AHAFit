@@ -36,7 +36,6 @@ namespace AHAFit_BLL
                 db.SaveChanges();
             }
         }
-
         public static void AutoAdminMember()
         {
             Context db = new Context();
@@ -59,7 +58,24 @@ namespace AHAFit_BLL
             }
            
         }
+        public static void AddWaterToFoods()
+        {
+            Context db = new Context();
 
+            if (!db.Foods.Any(x => x.Name == "Water"))
+            {
+                Food water = new Food();
+                water.Name = "Water";
+                water.Calorie = 0;
+                water.Carbohydrate = 0;
+                water.Protein = 0;
+                water.Fat = 0;
+                water.PhotoURL = "asda";
+                db.Foods.Add(water);
+                db.SaveChanges();
+            }
+
+        }
         public static bool MemberLoginControl(string email, string password)
         {
             Context db = new Context();
@@ -75,20 +91,16 @@ namespace AHAFit_BLL
                 return true;
             }
         }
-
         public static int MemberIdFounder(string email)
         {
             Context db = new Context();
             return db.Members.FirstOrDefault(x => x.Email == email).MemberId;
 
         }
-
         public static double DailyCalorieCalculater(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
-
             double totalCal = 0;
-
             foreach (var item in db.MembersFoods.ToList())
             {
                 if(item.MemberId == memberId && item.CreateDateTime == selectedDay)
@@ -100,23 +112,46 @@ namespace AHAFit_BLL
             return totalCal;
         }
 
-        public static void AddWaterToFoods()
+        public static double DailyCarbohydrate(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
-
-            if(!db.Foods.Any(x=>x.Name == "Water"))
+            double totalCarbohydrate = 0;
+            foreach (var item in db.MembersFoods.ToList())
             {
-                Food water = new Food();
-                water.Name = "Water";
-                water.Calorie = 0;
-                water.Carbohydrate = 0;
-                water.Protein = 0;
-                water.Fat = 0;
-                water.PhotoURL = "asda";
-                db.Foods.Add(water);
-                db.SaveChanges();
+                if (item.MemberId == memberId && item.CreateDateTime == selectedDay)
+                {
+                    totalCarbohydrate += db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId).Carbohydrate;
+                }
             }
+            return totalCarbohydrate;
+        }
 
+        public static double DailyProtein(int memberId, DateTime selectedDay)
+        {
+            Context db = new Context();
+            double totalProtein = 0;
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if (item.MemberId == memberId && item.CreateDateTime == selectedDay)
+                {
+                    totalProtein += db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId).Protein;
+                }
+            }
+            return totalProtein;
+        }
+
+        public static double DailyFat(int memberId, DateTime selectedDay)
+        {
+            Context db = new Context();
+            double totalFat = 0;
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if (item.MemberId == memberId && item.CreateDateTime == selectedDay)
+                {
+                    totalFat += db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId).Fat;
+                }
+            }
+            return totalFat;
         }
 
         public static int DailyRemainWater(int memberId, DateTime selectedDay)
