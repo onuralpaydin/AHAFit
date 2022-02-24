@@ -48,6 +48,7 @@ namespace AHAFit_BLL
             newMember.Weight = 91.50m;
             newMember.Gender = "Male";
             newMember.Height = 185;
+            newMember.ActivityLevel = ActivityLevel.ModeratelyActive.ToString();
             newMember.BirthDate = new DateTime(2002, 5, 1);
             newMember.GoalId = 1;
 
