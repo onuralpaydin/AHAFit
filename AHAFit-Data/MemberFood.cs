@@ -22,8 +22,10 @@ namespace AHAFit_Data
         public DateTime CreateDateTime { get; set; }
         public int MemberId { get; set; }
         public int FoodId { get; set; }
+        public int MealId { get; set; }
         public Member Member { get; set; }
         public Food Food { get; set; }
+        public Meal Meal { get; set; }
 
     }
 }

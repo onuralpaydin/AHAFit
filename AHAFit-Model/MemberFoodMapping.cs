@@ -17,6 +17,7 @@ namespace AHAFit_Model
             Property(x => x.CreateDateTime).IsRequired();
             HasRequired(x => x.Member).WithMany(x => x.MemberFoods).HasForeignKey(x => x.MemberId);
             HasRequired(x => x.Food).WithMany(x => x.MemberFoods).HasForeignKey(x => x.FoodId);
+            HasRequired(x => x.Meal).WithMany(x => x.MemberFoods).HasForeignKey(x => x.MealId);
         }
 
     }
