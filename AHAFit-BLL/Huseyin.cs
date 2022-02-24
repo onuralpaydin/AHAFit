@@ -143,5 +143,35 @@ namespace AHAFit_BLL
 
            return db.Members.FirstOrDefault(x => x.MemberId == memberId).Name;
         }
+
+        public static int CalculateDailyCalorieNeed(int memberId)
+        {
+            Context db = new Context();
+            var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+            int calorie = 0;
+
+
+            if (member.Gender == "Female")
+            {
+                calorie = 655.1 + (9.563 * member.Weight)
+            }
+            else if (member.Gender == "Male")
+            {
+
+            }
+
+
+            if (member.Goal.Name == "Lose Weight")
+            {
+
+            }else if(member.Goal.Name == "Gain Weight")
+            {
+
+            }else if(member.Goal.Name == "Maintain Your Weight")
+            {
+                
+            }
+
+        }
     }
 }
