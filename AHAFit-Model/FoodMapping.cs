@@ -15,10 +15,10 @@ namespace AHAFit_Model
             ToTable("Foods");
             HasKey(x => x.FoodId);
             Property(x => x.Name).IsRequired().HasMaxLength(100);
-            Property(x => x.Calorie).IsRequired().HasPrecision(18, 2);
-            Property(x => x.Carbohydrate).IsRequired().HasPrecision(18, 2);
-            Property(x => x.Protein).IsRequired().HasPrecision(18, 2);
-            Property(x => x.Fat).IsRequired().HasPrecision(18, 2);
+            Property(x => x.Calorie).IsRequired();
+            Property(x => x.Carbohydrate).IsRequired();
+            Property(x => x.Protein).IsRequired();
+            Property(x => x.Fat).IsRequired();
             Property(x => x.PhotoURL).IsRequired().HasMaxLength(300);
         }
       
