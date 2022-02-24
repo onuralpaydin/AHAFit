@@ -45,7 +45,7 @@ namespace AHAFit_BLL
             newMember.Name = "admin";
             newMember.Surname = "admin";
             newMember.Password = "admin";
-            newMember.Weight = 91.50m;
+            newMember.Weight = 91.50;
             newMember.Gender = "Male";
             newMember.Height = 185;
             newMember.ActivityLevel = ActivityLevel.ModeratelyActive.ToString();
