@@ -59,12 +59,16 @@ namespace AHAFit_UI
             lblCarbo.Text = Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
+            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             lblMotivation.Text = "Welcome " + Huseyin.GetMemberName(memberId) + ". " + getMotivation();
             dtpHomeDate.Value = DateTime.Now;
+            cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
+            cmbMealSumCalorie.SelectedIndex = 0;
+
         }
 
         private string getMotivation()
@@ -95,6 +99,11 @@ namespace AHAFit_UI
 
             return motivationWords[selectedMotivation];
 
+        }
+
+        private void cmbMealSumCalorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
         }
     }
 }

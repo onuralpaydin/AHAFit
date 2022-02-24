@@ -267,6 +267,7 @@ namespace AHAFit_UI
             this.cmbMealSumCalorie.Name = "cmbMealSumCalorie";
             this.cmbMealSumCalorie.Size = new System.Drawing.Size(164, 33);
             this.cmbMealSumCalorie.TabIndex = 5;
+            this.cmbMealSumCalorie.SelectedIndexChanged += new System.EventHandler(this.cmbMealSumCalorie_SelectedIndexChanged);
             // 
             // label1
             // 

@@ -36,6 +36,18 @@ namespace AHAFit_BLL
                 db.SaveChanges();
             }
         }
+
+        public static List<string> GetMeals()
+        {
+            Context db = new Context();
+            List<string> meals = new List<string>();
+            foreach (var item in db.Meals.ToList())
+            {
+                meals.Add(item.Name);
+            }
+
+            return meals;
+        }
         public static void AutoAdminMember()
         {
             Context db = new Context();
@@ -109,6 +121,25 @@ namespace AHAFit_BLL
                 }
             }
 
+            return totalCal;
+        }
+
+        public static double DailyCalorieCalculaterAccordingToMeal(int memberId, DateTime selectedDay, string mealName)
+        {
+            Context db = new Context();
+            double totalCal = 0;
+
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if (item.MemberId == memberId && item.CreateDateTime == selectedDay && item.MealId == db.Meals.FirstOrDefault(x => x.Name == mealName).MealId)
+                {
+                    totalCal += db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId).Calorie;
+                }
+            }
+
+            if (totalCal <= 0)
+                return 0.0;
+            else
             return totalCal;
         }
 
