@@ -55,6 +55,7 @@ namespace AHAFit_UI
         {
             lblSumCalorie.Text = (Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories Eaten Today";
             lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
+            lblRemainCalorie.Text = (Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories left for today.";
         }
 
         private void HomeForm_Load(object sender, EventArgs e)

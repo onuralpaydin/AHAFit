@@ -83,11 +83,11 @@ namespace AHAFit_BLL
 
         }
 
-        public static decimal DailyCalorieCalculater(int memberId, DateTime selectedDay)
+        public static double DailyCalorieCalculater(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
 
-            decimal totalCal = 0;
+            double totalCal = 0;
 
             foreach (var item in db.MembersFoods.ToList())
             {
@@ -145,34 +145,37 @@ namespace AHAFit_BLL
            return db.Members.FirstOrDefault(x => x.MemberId == memberId).Name;
         }
 
-        public static int CalculateDailyCalorieNeed(int memberId)
+        public static double CalculateDailyCalorieNeed(int memberId)
         {
             Context db = new Context();
             var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
-            int calorie = 0;
-
+            double genderCalorie = 0;
+            double activityCalorie = 0;
 
             if (member.Gender == "Female")
-            {
-                calorie = 655.1 + (9.563 * member.Weight)
-            }
+                genderCalorie = 655.1 + (9.563 * member.Weight) + (1.850 * member.Height) - (4.676 * (DateTime.Now.Year - member.BirthDate.Year));
             else if (member.Gender == "Male")
-            {
+                genderCalorie = 66.47 + (13.75 * member.Weight) + (5.003 * member.Height) - (6.7555 * (DateTime.Now.Year - member.BirthDate.Year));
 
-            }
+            if(member.ActivityLevel == ActivityLevel.Sedentary.ToString())
+                activityCalorie = genderCalorie * 1.2;
+            else if(member.ActivityLevel == ActivityLevel.LightlyActive.ToString())
+                activityCalorie = genderCalorie * 1.375;
+            else if(member.ActivityLevel == ActivityLevel.ModeratelyActive.ToString())
+                activityCalorie = genderCalorie * 1.725;
+            else if(member.ActivityLevel == ActivityLevel.VeryActive.ToString())
+                activityCalorie = genderCalorie * 1.9;
 
+            var goalName = db.Goals.FirstOrDefault(x => x.GoalId == member.GoalId).Name;
 
-            if (member.Goal.Name == "Lose Weight")
-            {
-
-            }else if(member.Goal.Name == "Gain Weight")
-            {
-
-            }else if(member.Goal.Name == "Maintain Your Weight")
-            {
-                
-            }
-
+            if (goalName == "Lose Weight")
+                return activityCalorie - 513;
+            else if (goalName == "Gain Weight")
+                return activityCalorie + 513;
+            else if(goalName == "Maintain Your Weight")
+                return activityCalorie;
+            else
+                return activityCalorie;
         }
     }
 }
