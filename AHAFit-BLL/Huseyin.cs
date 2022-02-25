@@ -123,7 +123,6 @@ namespace AHAFit_BLL
 
             return totalCal;
         }
-
         public static double DailyCalorieCalculaterAccordingToMeal(int memberId, DateTime selectedDay, string mealName)
         {
             Context db = new Context();
@@ -138,11 +137,10 @@ namespace AHAFit_BLL
             }
 
             if (totalCal <= 0)
-                return 0.0;
+                return 0;
             else
             return totalCal;
         }
-
         public static double DailyCarbohydrate(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
@@ -156,7 +154,6 @@ namespace AHAFit_BLL
             }
             return totalCarbohydrate;
         }
-
         public static double DailyProtein(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
@@ -170,7 +167,6 @@ namespace AHAFit_BLL
             }
             return totalProtein;
         }
-
         public static double DailyFat(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
@@ -184,7 +180,22 @@ namespace AHAFit_BLL
             }
             return totalFat;
         }
+        public static List<Food> DailyFoods(int memberId, DateTime selectedDay)
+        {
+            Context db = new Context();
 
+            List<Food> dailyFoodList = new List<Food>();
+
+            foreach (var item in db.MembersFoods.ToList())
+            {
+                if (item.MemberId == memberId && item.CreateDateTime == selectedDay)
+                {
+                    dailyFoodList.Add(db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId));
+                }
+            }
+
+            return dailyFoodList;
+        }
         public static int DailyRemainWater(int memberId, DateTime selectedDay)
         {
             Context db = new Context();
@@ -203,14 +214,12 @@ namespace AHAFit_BLL
 
             return totalGlass;
         }
-
         public static string GetMemberName(int memberId)
         {
             Context db = new Context();
 
            return db.Members.FirstOrDefault(x => x.MemberId == memberId).Name;
         }
-
         public static double CalculateDailyCalorieNeed(int memberId)
         {
             Context db = new Context();
@@ -242,6 +251,26 @@ namespace AHAFit_BLL
                 return activityCalorie;
             else
                 return activityCalorie;
+        }
+
+        public static void plusOneGlassOfWater(int memberId, DateTime selectedDay, string mealName)
+        {
+            Context db = new Context();
+
+            MemberFood newMemberFood = new MemberFood();
+            MealFood newMealFood = new MealFood();
+
+            newMemberFood.CreateDateTime = selectedDay;
+            newMemberFood.FoodId = db.Foods.FirstOrDefault(x => x.Name == "Water").FoodId;
+            newMemberFood.MealId = db.Meals.FirstOrDefault(x => x.Name == mealName).MealId;
+            newMemberFood.MemberId = memberId;
+
+            newMealFood.MealId = newMemberFood.MealId;
+            newMealFood.FoodId = newMemberFood.FoodId;
+
+            db.MealsFoods.Add(newMealFood);
+            db.MembersFoods.Add(newMemberFood);
+            db.SaveChanges();
         }
     }
 }

@@ -134,6 +134,10 @@
       <Project>{5668e607-871b-41f7-97e2-71edc46efcca}</Project>
       <Name>AHAFit-BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AHAFit-Data\AHAFit-Data.csproj">
+      <Project>{0B43514B-4C08-490F-B5D9-224895864ACC}</Project>
+      <Name>AHAFit-Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

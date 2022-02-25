@@ -1,4 +1,5 @@
 ﻿using AHAFit_BLL;
+using AHAFit_Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,12 @@ namespace AHAFit_UI
     public partial class HomeForm : Form
     {
         private readonly int memberId;
-
         public HomeForm(int memberId)
         {
             InitializeComponent();
             this.memberId = memberId;
+            cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
+            cmbMealSumCalorie.SelectedIndex = 0;
         }
 
         private void btnReports_Click(object sender, EventArgs e)
@@ -60,15 +62,14 @@ namespace AHAFit_UI
             lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
+            FoodListFill();
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             lblMotivation.Text = "Welcome " + Huseyin.GetMemberName(memberId) + ". " + getMotivation();
-            dtpHomeDate.Value = DateTime.Now;
-            cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
-            cmbMealSumCalorie.SelectedIndex = 0;
-
+            dtpHomeDate.Value = DateTime.Now;            
+            FoodListFill();
         }
 
         private string getMotivation()
@@ -104,6 +105,62 @@ namespace AHAFit_UI
         private void cmbMealSumCalorie_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
+        }
+
+        private void FoodListFill()
+        {
+            dgvDailyFoodList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDailyFoodList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDailyFoodList.MultiSelect = false;
+
+            dgvDailyFoodList.Rows.Clear();
+            dgvDailyFoodList.Refresh();
+
+            List<Food> foodList = Huseyin.DailyFoods(memberId, dtpHomeDate.Value.Date);
+
+            foreach (var food in foodList)
+            {
+                dgvDailyFoodList.Columns[0].Name = "Food Name";
+                dgvDailyFoodList.Columns[1].Name = "Calorie";
+                dgvDailyFoodList.Columns[2].Name = "Carbohydrate";
+                dgvDailyFoodList.Columns[3].Name = "Protein";
+                dgvDailyFoodList.Columns[4].Name = "Fat";
+                string[] row = new string[] { food.Name, food.Calorie.ToString(), food.Carbohydrate.ToString(), food.Protein.ToString(), food.Fat.ToString()};
+
+                dgvDailyFoodList.Rows.Add(row);
+
+            }
+
+           
+        }
+
+        private void dgvDailyFoodList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgvDailyFoodList.HitTest(e.X, e.Y);
+                dgvDailyFoodList.ClearSelection();
+                if(hti.RowIndex != -1)
+                {
+                    dgvDailyFoodList.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Int32 rowToDelete = dgvDailyFoodList.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+
+            MessageBox.Show(rowToDelete.ToString());
+            //dgvDailyFoodList.Rows.RemoveAt(rowToDelete);
+            //dgvDailyFoodList.ClearSelection();
+        }
+
+        private void btnWater_Click(object sender, EventArgs e)
+        {
+            Huseyin.plusOneGlassOfWater(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text);
+            FoodListFill();
+            lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
         }
     }
 }

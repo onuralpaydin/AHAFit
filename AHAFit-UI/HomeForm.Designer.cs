@@ -29,6 +29,7 @@ namespace AHAFit_UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnMemberComp = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace AHAFit_UI
             this.btnAteSomething = new System.Windows.Forms.Button();
             this.btnProgramChanger = new System.Windows.Forms.Button();
             this.btnProfileUpdate = new System.Windows.Forms.Button();
-            this.dgvDailyFoodList = new System.Windows.Forms.DataGridView();
             this.cmbMeal = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbMealSumCalorie = new System.Windows.Forms.ComboBox();
@@ -56,7 +56,17 @@ namespace AHAFit_UI
             this.lblMealSumCalorie = new System.Windows.Forms.Label();
             this.lblMotivation = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvDailyFoodList = new System.Windows.Forms.DataGridView();
+            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carbohydrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReports
@@ -137,7 +147,7 @@ namespace AHAFit_UI
             // 
             // lblRemainWater
             // 
-            this.lblRemainWater.Location = new System.Drawing.Point(494, 360);
+            this.lblRemainWater.Location = new System.Drawing.Point(463, 360);
             this.lblRemainWater.Name = "lblRemainWater";
             this.lblRemainWater.Size = new System.Drawing.Size(204, 136);
             this.lblRemainWater.TabIndex = 2;
@@ -191,7 +201,7 @@ namespace AHAFit_UI
             // lblFat
             // 
             this.lblFat.AutoSize = true;
-            this.lblFat.Location = new System.Drawing.Point(458, 639);
+            this.lblFat.Location = new System.Drawing.Point(471, 636);
             this.lblFat.Name = "lblFat";
             this.lblFat.Size = new System.Drawing.Size(48, 25);
             this.lblFat.TabIndex = 2;
@@ -205,6 +215,7 @@ namespace AHAFit_UI
             this.btnWater.TabIndex = 3;
             this.btnWater.Text = "+1 Glass of Water";
             this.btnWater.UseVisualStyleBackColor = true;
+            this.btnWater.Click += new System.EventHandler(this.btnWater_Click);
             // 
             // btnAteSomething
             // 
@@ -233,20 +244,10 @@ namespace AHAFit_UI
             this.btnProfileUpdate.Text = "Profile Update";
             this.btnProfileUpdate.UseVisualStyleBackColor = true;
             // 
-            // dgvDailyFoodList
-            // 
-            this.dgvDailyFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDailyFoodList.Location = new System.Drawing.Point(711, 322);
-            this.dgvDailyFoodList.Name = "dgvDailyFoodList";
-            this.dgvDailyFoodList.RowHeadersWidth = 92;
-            this.dgvDailyFoodList.RowTemplate.Height = 37;
-            this.dgvDailyFoodList.Size = new System.Drawing.Size(634, 704);
-            this.dgvDailyFoodList.TabIndex = 4;
-            // 
             // cmbMeal
             // 
             this.cmbMeal.FormattingEnabled = true;
-            this.cmbMeal.Location = new System.Drawing.Point(1181, 272);
+            this.cmbMeal.Location = new System.Drawing.Point(1536, 272);
             this.cmbMeal.Name = "cmbMeal";
             this.cmbMeal.Size = new System.Drawing.Size(164, 33);
             this.cmbMeal.TabIndex = 5;
@@ -254,7 +255,7 @@ namespace AHAFit_UI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1091, 274);
+            this.label11.Location = new System.Drawing.Point(1446, 274);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 25);
             this.label11.TabIndex = 2;
@@ -304,17 +305,108 @@ namespace AHAFit_UI
             this.label2.TabIndex = 8;
             this.label2.Text = "Received today:";
             // 
+            // dgvDailyFoodList
+            // 
+            this.dgvDailyFoodList.AllowUserToAddRows = false;
+            this.dgvDailyFoodList.AllowUserToDeleteRows = false;
+            this.dgvDailyFoodList.AllowUserToResizeColumns = false;
+            this.dgvDailyFoodList.AllowUserToResizeRows = false;
+            this.dgvDailyFoodList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDailyFoodList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FoodName,
+            this.Calorie,
+            this.Carbohydrate,
+            this.Protein,
+            this.Fat});
+            this.dgvDailyFoodList.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvDailyFoodList.Location = new System.Drawing.Point(692, 311);
+            this.dgvDailyFoodList.Name = "dgvDailyFoodList";
+            this.dgvDailyFoodList.ReadOnly = true;
+            this.dgvDailyFoodList.RowHeadersVisible = false;
+            this.dgvDailyFoodList.RowHeadersWidth = 82;
+            this.dgvDailyFoodList.RowTemplate.Height = 33;
+            this.dgvDailyFoodList.Size = new System.Drawing.Size(1008, 714);
+            this.dgvDailyFoodList.TabIndex = 9;
+            this.dgvDailyFoodList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvDailyFoodList_MouseDown);
+            // 
+            // FoodName
+            // 
+            this.FoodName.FillWeight = 83.58209F;
+            this.FoodName.HeaderText = "Food Name";
+            this.FoodName.MinimumWidth = 10;
+            this.FoodName.Name = "FoodName";
+            this.FoodName.ReadOnly = true;
+            this.FoodName.Width = 168;
+            // 
+            // Calorie
+            // 
+            this.Calorie.FillWeight = 79.38345F;
+            this.Calorie.HeaderText = "Calorie";
+            this.Calorie.MinimumWidth = 10;
+            this.Calorie.Name = "Calorie";
+            this.Calorie.ReadOnly = true;
+            this.Calorie.Width = 160;
+            // 
+            // Carbohydrate
+            // 
+            this.Carbohydrate.FillWeight = 145.2617F;
+            this.Carbohydrate.HeaderText = "Carbohydrate";
+            this.Carbohydrate.MinimumWidth = 10;
+            this.Carbohydrate.Name = "Carbohydrate";
+            this.Carbohydrate.ReadOnly = true;
+            this.Carbohydrate.Width = 292;
+            // 
+            // Protein
+            // 
+            this.Protein.FillWeight = 106.6229F;
+            this.Protein.HeaderText = "Protein";
+            this.Protein.MinimumWidth = 10;
+            this.Protein.Name = "Protein";
+            this.Protein.ReadOnly = true;
+            this.Protein.Width = 214;
+            // 
+            // Fat
+            // 
+            this.Fat.FillWeight = 85.14986F;
+            this.Fat.HeaderText = "Fat";
+            this.Fat.MinimumWidth = 10;
+            this.Fat.Name = "Fat";
+            this.Fat.ReadOnly = true;
+            this.Fat.Width = 171;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 80);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 1037);
+            this.ClientSize = new System.Drawing.Size(1717, 1037);
+            this.Controls.Add(this.dgvDailyFoodList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMotivation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbMealSumCalorie);
             this.Controls.Add(this.cmbMeal);
-            this.Controls.Add(this.dgvDailyFoodList);
             this.Controls.Add(this.btnProfileUpdate);
             this.Controls.Add(this.btnProgramChanger);
             this.Controls.Add(this.btnAteSomething);
@@ -335,11 +427,11 @@ namespace AHAFit_UI
             this.Controls.Add(this.btnFoodSt);
             this.Controls.Add(this.btnMemberComp);
             this.Controls.Add(this.btnHistory);
-            this.Controls.Add(this.btnReports);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +458,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.Button btnAteSomething;
         private System.Windows.Forms.Button btnProgramChanger;
         private System.Windows.Forms.Button btnProfileUpdate;
-        private System.Windows.Forms.DataGridView dgvDailyFoodList;
         private System.Windows.Forms.ComboBox cmbMeal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbMealSumCalorie;
@@ -374,5 +465,14 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label lblMealSumCalorie;
         private System.Windows.Forms.Label lblMotivation;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvDailyFoodList;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calorie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Carbohydrate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Protein;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fat;
     }
 }
