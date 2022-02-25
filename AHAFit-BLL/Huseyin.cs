@@ -265,11 +265,26 @@ namespace AHAFit_BLL
             newMemberFood.MealId = db.Meals.FirstOrDefault(x => x.Name == mealName).MealId;
             newMemberFood.MemberId = memberId;
 
+            newMealFood.CreateDateTime = selectedDay;
             newMealFood.MealId = newMemberFood.MealId;
             newMealFood.FoodId = newMemberFood.FoodId;
 
             db.MealsFoods.Add(newMealFood);
             db.MembersFoods.Add(newMemberFood);
+            db.SaveChanges();
+        }
+
+        public static void MemberFoodRemevoFromDB(DateTime createDate, int memberId, int foodId)
+        {
+            Context db = new Context();
+
+            var mealId = db.MembersFoods.FirstOrDefault(x=>x.MemberId == memberId && x.FoodId == foodId && x.CreateDateTime == createDate).MealId;
+
+            var memberFoodGonnaDeleted = db.MembersFoods.FirstOrDefault(x => x.CreateDateTime == createDate && x.MemberId == memberId && x.MealId == mealId);
+            var mealFoodGonnaDeleted = db.MealsFoods.FirstOrDefault(x => x.CreateDateTime == createDate && x.FoodId == foodId && x.MealId == mealId);
+
+            db.MembersFoods.Remove(memberFoodGonnaDeleted);
+            db.MealsFoods.Remove(mealFoodGonnaDeleted);
             db.SaveChanges();
         }
     }

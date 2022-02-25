@@ -21,6 +21,7 @@ namespace AHAFit_UI
             this.memberId = memberId;
             cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
             cmbMealSumCalorie.SelectedIndex = 0;
+            FoodListFill();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace AHAFit_UI
         {
             lblMotivation.Text = "Welcome " + Huseyin.GetMemberName(memberId) + ". " + getMotivation();
             dtpHomeDate.Value = DateTime.Now;            
-            FoodListFill();
+           
         }
 
         private string getMotivation()
@@ -125,8 +126,10 @@ namespace AHAFit_UI
                 dgvDailyFoodList.Columns[2].Name = "Carbohydrate";
                 dgvDailyFoodList.Columns[3].Name = "Protein";
                 dgvDailyFoodList.Columns[4].Name = "Fat";
-                string[] row = new string[] { food.Name, food.Calorie.ToString(), food.Carbohydrate.ToString(), food.Protein.ToString(), food.Fat.ToString()};
-
+                dgvDailyFoodList.Columns[5].Name = "FoodId";
+               
+                string[] row = new string[] { food.Name, food.Calorie.ToString(), food.Carbohydrate.ToString(), food.Protein.ToString(), food.Fat.ToString(), food.FoodId.ToString()};
+              
                 dgvDailyFoodList.Rows.Add(row);
 
             }
@@ -150,10 +153,11 @@ namespace AHAFit_UI
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Int32 rowToDelete = dgvDailyFoodList.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+            int foodIdToDelete = Convert.ToInt32(dgvDailyFoodList.Rows[rowToDelete].Cells[5].Value);
 
-            MessageBox.Show(rowToDelete.ToString());
-            //dgvDailyFoodList.Rows.RemoveAt(rowToDelete);
-            //dgvDailyFoodList.ClearSelection();
+            Huseyin.MemberFoodRemevoFromDB(dtpHomeDate.Value.Date, memberId, foodIdToDelete);
+            FoodListFill();
+
         }
 
         private void btnWater_Click(object sender, EventArgs e)
