@@ -22,6 +22,8 @@ namespace AHAFit_UI
             cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
             cmbMealSumCalorie.SelectedIndex = 0;
             FoodListFill();
+            dtpHomeDate.MinDate = new DateTime(2020, 1, 1);
+            dtpHomeDate.MaxDate = DateTime.Today;
         }
 
         private void btnReports_Click(object sender, EventArgs e)
@@ -63,13 +65,14 @@ namespace AHAFit_UI
             lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
             lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
+            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " Calorie List";
             FoodListFill();
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
             lblMotivation.Text = "Welcome " + Huseyin.GetMemberName(memberId) + ". " + getMotivation();
-            dtpHomeDate.Value = DateTime.Now;            
+            dtpHomeDate.Value = DateTime.Today;            
            
         }
 
@@ -153,10 +156,15 @@ namespace AHAFit_UI
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Int32 rowToDelete = dgvDailyFoodList.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-            int foodIdToDelete = Convert.ToInt32(dgvDailyFoodList.Rows[rowToDelete].Cells[5].Value);
 
-            Huseyin.MemberFoodRemevoFromDB(dtpHomeDate.Value.Date, memberId, foodIdToDelete);
-            FoodListFill();
+            if(rowToDelete>=0)
+            {
+                int foodIdToDelete = Convert.ToInt32(dgvDailyFoodList.Rows[rowToDelete].Cells[5].Value);
+
+                Huseyin.MemberFoodRemevoFromDB(dtpHomeDate.Value.Date, memberId, foodIdToDelete);
+                FoodListFill();
+            }
+            
 
         }
 
@@ -165,6 +173,11 @@ namespace AHAFit_UI
             Huseyin.plusOneGlassOfWater(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text);
             FoodListFill();
             lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
+        }
+
+        private void btnProgramChanger_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip2.Show(Cursor.Position);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace AHAFit_BLL
                 db.SaveChanges();
             }
         }
-
         public static List<string> GetMeals()
         {
             Context db = new Context();
@@ -252,7 +251,6 @@ namespace AHAFit_BLL
             else
                 return activityCalorie;
         }
-
         public static void plusOneGlassOfWater(int memberId, DateTime selectedDay, string mealName)
         {
             Context db = new Context();
@@ -273,7 +271,6 @@ namespace AHAFit_BLL
             db.MembersFoods.Add(newMemberFood);
             db.SaveChanges();
         }
-
         public static void MemberFoodRemevoFromDB(DateTime createDate, int memberId, int foodId)
         {
             Context db = new Context();

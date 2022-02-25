@@ -49,25 +49,29 @@ namespace AHAFit_UI
             this.btnAteSomething = new System.Windows.Forms.Button();
             this.btnProgramChanger = new System.Windows.Forms.Button();
             this.btnProfileUpdate = new System.Windows.Forms.Button();
-            this.cmbMeal = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.cmbMealSumCalorie = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMealSumCalorie = new System.Windows.Forms.Label();
             this.lblMotivation = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDailyFoodList = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Carbohydrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblDateText = new System.Windows.Forms.Label();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.loseWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gainWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maintainYourWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReports
@@ -82,7 +86,7 @@ namespace AHAFit_UI
             // 
             // btnHistory
             // 
-            this.btnHistory.Location = new System.Drawing.Point(320, 78);
+            this.btnHistory.Location = new System.Drawing.Point(177, 61);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(158, 69);
             this.btnHistory.TabIndex = 0;
@@ -92,7 +96,7 @@ namespace AHAFit_UI
             // 
             // btnMemberComp
             // 
-            this.btnMemberComp.Location = new System.Drawing.Point(547, 78);
+            this.btnMemberComp.Location = new System.Drawing.Point(401, 61);
             this.btnMemberComp.Name = "btnMemberComp";
             this.btnMemberComp.Size = new System.Drawing.Size(158, 69);
             this.btnMemberComp.TabIndex = 0;
@@ -102,7 +106,7 @@ namespace AHAFit_UI
             // 
             // btnFoodSt
             // 
-            this.btnFoodSt.Location = new System.Drawing.Point(774, 78);
+            this.btnFoodSt.Location = new System.Drawing.Point(639, 61);
             this.btnFoodSt.Name = "btnFoodSt";
             this.btnFoodSt.Size = new System.Drawing.Size(158, 69);
             this.btnFoodSt.TabIndex = 0;
@@ -112,7 +116,7 @@ namespace AHAFit_UI
             // 
             // btnBMI
             // 
-            this.btnBMI.Location = new System.Drawing.Point(1001, 78);
+            this.btnBMI.Location = new System.Drawing.Point(899, 61);
             this.btnBMI.Name = "btnBMI";
             this.btnBMI.Size = new System.Drawing.Size(158, 69);
             this.btnBMI.TabIndex = 0;
@@ -210,7 +214,7 @@ namespace AHAFit_UI
             // 
             // btnWater
             // 
-            this.btnWater.Location = new System.Drawing.Point(713, 171);
+            this.btnWater.Location = new System.Drawing.Point(899, 188);
             this.btnWater.Name = "btnWater";
             this.btnWater.Size = new System.Drawing.Size(137, 75);
             this.btnWater.TabIndex = 3;
@@ -220,7 +224,7 @@ namespace AHAFit_UI
             // 
             // btnAteSomething
             // 
-            this.btnAteSomething.Location = new System.Drawing.Point(876, 171);
+            this.btnAteSomething.Location = new System.Drawing.Point(1062, 188);
             this.btnAteSomething.Name = "btnAteSomething";
             this.btnAteSomething.Size = new System.Drawing.Size(137, 75);
             this.btnAteSomething.TabIndex = 3;
@@ -229,38 +233,22 @@ namespace AHAFit_UI
             // 
             // btnProgramChanger
             // 
-            this.btnProgramChanger.Location = new System.Drawing.Point(1041, 171);
+            this.btnProgramChanger.Location = new System.Drawing.Point(1227, 188);
             this.btnProgramChanger.Name = "btnProgramChanger";
             this.btnProgramChanger.Size = new System.Drawing.Size(137, 75);
             this.btnProgramChanger.TabIndex = 3;
             this.btnProgramChanger.Text = "Change My Program";
             this.btnProgramChanger.UseVisualStyleBackColor = true;
+            this.btnProgramChanger.Click += new System.EventHandler(this.btnProgramChanger_Click);
             // 
             // btnProfileUpdate
             // 
-            this.btnProfileUpdate.Location = new System.Drawing.Point(1208, 171);
+            this.btnProfileUpdate.Location = new System.Drawing.Point(1394, 188);
             this.btnProfileUpdate.Name = "btnProfileUpdate";
             this.btnProfileUpdate.Size = new System.Drawing.Size(137, 75);
             this.btnProfileUpdate.TabIndex = 3;
             this.btnProfileUpdate.Text = "Profile Update";
             this.btnProfileUpdate.UseVisualStyleBackColor = true;
-            // 
-            // cmbMeal
-            // 
-            this.cmbMeal.FormattingEnabled = true;
-            this.cmbMeal.Location = new System.Drawing.Point(1536, 272);
-            this.cmbMeal.Name = "cmbMeal";
-            this.cmbMeal.Size = new System.Drawing.Size(164, 33);
-            this.cmbMeal.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1446, 274);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 25);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Filter";
             // 
             // cmbMealSumCalorie
             // 
@@ -331,28 +319,6 @@ namespace AHAFit_UI
             this.dgvDailyFoodList.TabIndex = 9;
             this.dgvDailyFoodList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvDailyFoodList_MouseDown);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem,
-            this.editToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 80);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
             // FoodName
             // 
             this.FoodName.FillWeight = 83.58209F;
@@ -407,22 +373,80 @@ namespace AHAFit_UI
             this.FoodId.Visible = false;
             this.FoodId.Width = 200;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 80);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // lblDateText
+            // 
+            this.lblDateText.AutoSize = true;
+            this.lblDateText.Location = new System.Drawing.Point(692, 273);
+            this.lblDateText.Name = "lblDateText";
+            this.lblDateText.Size = new System.Drawing.Size(57, 25);
+            this.lblDateText.TabIndex = 10;
+            this.lblDateText.Text = "Date";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loseWeightToolStripMenuItem,
+            this.gainWeightToolStripMenuItem,
+            this.maintainYourWeightToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(322, 118);
+            // 
+            // loseWeightToolStripMenuItem
+            // 
+            this.loseWeightToolStripMenuItem.Name = "loseWeightToolStripMenuItem";
+            this.loseWeightToolStripMenuItem.Size = new System.Drawing.Size(221, 38);
+            this.loseWeightToolStripMenuItem.Text = "Lose Weight";
+            // 
+            // gainWeightToolStripMenuItem
+            // 
+            this.gainWeightToolStripMenuItem.Name = "gainWeightToolStripMenuItem";
+            this.gainWeightToolStripMenuItem.Size = new System.Drawing.Size(221, 38);
+            this.gainWeightToolStripMenuItem.Text = "Gain Weight";
+            // 
+            // maintainYourWeightToolStripMenuItem
+            // 
+            this.maintainYourWeightToolStripMenuItem.Name = "maintainYourWeightToolStripMenuItem";
+            this.maintainYourWeightToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
+            this.maintainYourWeightToolStripMenuItem.Text = "Maintain Your Weight";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1717, 1037);
+            this.Controls.Add(this.lblDateText);
             this.Controls.Add(this.dgvDailyFoodList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMotivation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbMealSumCalorie);
-            this.Controls.Add(this.cmbMeal);
             this.Controls.Add(this.btnProfileUpdate);
             this.Controls.Add(this.btnProgramChanger);
             this.Controls.Add(this.btnAteSomething);
             this.Controls.Add(this.btnWater);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.lblFat);
             this.Controls.Add(this.lblPro);
             this.Controls.Add(this.label6);
@@ -443,6 +467,7 @@ namespace AHAFit_UI
             this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,8 +494,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.Button btnAteSomething;
         private System.Windows.Forms.Button btnProgramChanger;
         private System.Windows.Forms.Button btnProfileUpdate;
-        private System.Windows.Forms.ComboBox cmbMeal;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbMealSumCalorie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMealSumCalorie;
@@ -486,5 +509,10 @@ namespace AHAFit_UI
         private System.Windows.Forms.DataGridViewTextBoxColumn Protein;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fat;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodId;
+        private System.Windows.Forms.Label lblDateText;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem loseWeightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gainWeightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maintainYourWeightToolStripMenuItem;
     }
 }
