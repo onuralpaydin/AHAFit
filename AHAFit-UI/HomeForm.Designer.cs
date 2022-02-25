@@ -214,9 +214,9 @@ namespace AHAFit_UI
             // 
             // btnWater
             // 
-            this.btnWater.Location = new System.Drawing.Point(899, 188);
+            this.btnWater.Location = new System.Drawing.Point(877, 171);
             this.btnWater.Name = "btnWater";
-            this.btnWater.Size = new System.Drawing.Size(137, 75);
+            this.btnWater.Size = new System.Drawing.Size(137, 82);
             this.btnWater.TabIndex = 3;
             this.btnWater.Text = "+1 Glass of Water";
             this.btnWater.UseVisualStyleBackColor = true;
@@ -224,18 +224,18 @@ namespace AHAFit_UI
             // 
             // btnAteSomething
             // 
-            this.btnAteSomething.Location = new System.Drawing.Point(1062, 188);
+            this.btnAteSomething.Location = new System.Drawing.Point(1040, 171);
             this.btnAteSomething.Name = "btnAteSomething";
-            this.btnAteSomething.Size = new System.Drawing.Size(137, 75);
+            this.btnAteSomething.Size = new System.Drawing.Size(137, 128);
             this.btnAteSomething.TabIndex = 3;
             this.btnAteSomething.Text = "I ate something";
             this.btnAteSomething.UseVisualStyleBackColor = true;
             // 
             // btnProgramChanger
             // 
-            this.btnProgramChanger.Location = new System.Drawing.Point(1227, 188);
+            this.btnProgramChanger.Location = new System.Drawing.Point(1205, 171);
             this.btnProgramChanger.Name = "btnProgramChanger";
-            this.btnProgramChanger.Size = new System.Drawing.Size(137, 75);
+            this.btnProgramChanger.Size = new System.Drawing.Size(137, 127);
             this.btnProgramChanger.TabIndex = 3;
             this.btnProgramChanger.Text = "Change My Program";
             this.btnProgramChanger.UseVisualStyleBackColor = true;
@@ -243,9 +243,9 @@ namespace AHAFit_UI
             // 
             // btnProfileUpdate
             // 
-            this.btnProfileUpdate.Location = new System.Drawing.Point(1394, 188);
+            this.btnProfileUpdate.Location = new System.Drawing.Point(1372, 171);
             this.btnProfileUpdate.Name = "btnProfileUpdate";
-            this.btnProfileUpdate.Size = new System.Drawing.Size(137, 75);
+            this.btnProfileUpdate.Size = new System.Drawing.Size(137, 127);
             this.btnProfileUpdate.TabIndex = 3;
             this.btnProfileUpdate.Text = "Profile Update";
             this.btnProfileUpdate.UseVisualStyleBackColor = true;
@@ -417,20 +417,23 @@ namespace AHAFit_UI
             // loseWeightToolStripMenuItem
             // 
             this.loseWeightToolStripMenuItem.Name = "loseWeightToolStripMenuItem";
-            this.loseWeightToolStripMenuItem.Size = new System.Drawing.Size(221, 38);
+            this.loseWeightToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
             this.loseWeightToolStripMenuItem.Text = "Lose Weight";
+            this.loseWeightToolStripMenuItem.Click += new System.EventHandler(this.loseWeightToolStripMenuItem_Click);
             // 
             // gainWeightToolStripMenuItem
             // 
             this.gainWeightToolStripMenuItem.Name = "gainWeightToolStripMenuItem";
-            this.gainWeightToolStripMenuItem.Size = new System.Drawing.Size(221, 38);
+            this.gainWeightToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
             this.gainWeightToolStripMenuItem.Text = "Gain Weight";
+            this.gainWeightToolStripMenuItem.Click += new System.EventHandler(this.loseWeightToolStripMenuItem_Click);
             // 
             // maintainYourWeightToolStripMenuItem
             // 
             this.maintainYourWeightToolStripMenuItem.Name = "maintainYourWeightToolStripMenuItem";
             this.maintainYourWeightToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
             this.maintainYourWeightToolStripMenuItem.Text = "Maintain Your Weight";
+            this.maintainYourWeightToolStripMenuItem.Click += new System.EventHandler(this.loseWeightToolStripMenuItem_Click);
             // 
             // HomeForm
             // 

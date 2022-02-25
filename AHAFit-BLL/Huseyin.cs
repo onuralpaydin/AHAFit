@@ -284,5 +284,16 @@ namespace AHAFit_BLL
             db.MealsFoods.Remove(mealFoodGonnaDeleted);
             db.SaveChanges();
         }
+        public static void ChangeMembersGoal(int memberId, string newGoal)
+        {
+            Context db = new Context();
+
+            int newGoalId = db.Goals.FirstOrDefault(x => x.Name == newGoal).GoalId;
+
+            db.Members.FirstOrDefault(x => x.MemberId == memberId).GoalId = newGoalId;
+
+            db.SaveChanges();
+
+        }
     }
 }

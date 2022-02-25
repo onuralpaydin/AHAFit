@@ -58,15 +58,7 @@ namespace AHAFit_UI
 
         private void dtpHomeDate_ValueChanged(object sender, EventArgs e)
         {
-            lblSumCalorie.Text = (Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories Eaten Today";
-            lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
-            lblRemainCalorie.Text = (Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories left for today.";
-            lblCarbo.Text = Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
-            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " Calorie List";
-            FoodListFill();
+            RefreshHomeData();
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
@@ -178,6 +170,25 @@ namespace AHAFit_UI
         private void btnProgramChanger_Click(object sender, EventArgs e)
         {
             contextMenuStrip2.Show(Cursor.Position);
+        }
+
+        private void loseWeightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Huseyin.ChangeMembersGoal(memberId, sender.ToString());
+            RefreshHomeData();
+        }
+
+        private void RefreshHomeData()
+        {
+            lblSumCalorie.Text = (Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories Eaten Today";
+            lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
+            lblRemainCalorie.Text = (Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Calories left for today.";
+            lblCarbo.Text = Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
+            lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
+            lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
+            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
+            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " Calorie List";
+            FoodListFill();
         }
     }
 }
