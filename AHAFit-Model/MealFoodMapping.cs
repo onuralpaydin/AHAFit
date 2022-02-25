@@ -14,6 +14,7 @@ namespace AHAFit_Model
         {
             ToTable("MealsFoods");
             HasKey(x => x.MealFoodId);
+            Property(x => x.CreateDateTime).IsRequired();
             HasRequired(x => x.Meal).WithMany(x => x.MealFoods).HasForeignKey(x => x.MealId);
             HasRequired(x => x.Food).WithMany(x => x.MealFoods).HasForeignKey(x => x.FoodId);
         }
