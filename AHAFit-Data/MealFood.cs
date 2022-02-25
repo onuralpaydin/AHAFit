@@ -8,6 +8,15 @@ namespace AHAFit_Data
 {
     public class MealFood
     {
+        public MealFood()
+        {
+            this.CreateDateTime = DateTime.Now;
+        }
+        public MealFood(DateTime CreateTime)
+        {
+            this.CreateDateTime = CreateTime;
+        }
+        public DateTime CreateDateTime { get; set; }
         public int MealFoodId { get; set; }
         public int MealId { get; set; }
         public int FoodId { get; set; }
