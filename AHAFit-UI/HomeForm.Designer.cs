@@ -249,6 +249,7 @@ namespace AHAFit_UI
             this.btnProfileUpdate.TabIndex = 3;
             this.btnProfileUpdate.Text = "Profile Update";
             this.btnProfileUpdate.UseVisualStyleBackColor = true;
+            this.btnProfileUpdate.Click += new System.EventHandler(this.btnProfileUpdate_Click);
             // 
             // cmbMealSumCalorie
             // 

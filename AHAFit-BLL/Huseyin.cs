@@ -295,5 +295,27 @@ namespace AHAFit_BLL
             db.SaveChanges();
 
         }
+        public static Member getMemberInformations(int memberId)
+        {
+            Context db = new Context();
+            return db.Members.FirstOrDefault(x => x.MemberId == memberId);
+        }
+        public static void ChangeMemberInformation(int memberId, string email, string name, string surname, string password, double weight, string gender, int height, DateTime birthDate, string activityLevel)
+        {
+            Context db = new Context();
+            var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+
+            member.Email = email;
+            member.Name = name;
+            member.Surname = surname;
+            member.Password = password;
+            member.Weight = weight;
+            member.Gender = gender;
+            member.Height = height;
+            member.BirthDate = birthDate;
+            member.ActivityLevel = activityLevel;
+
+            db.SaveChanges();
+        }
     }
 }

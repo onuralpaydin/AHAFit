@@ -190,5 +190,11 @@ namespace AHAFit_UI
             lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " Calorie List";
             FoodListFill();
         }
+
+        private void btnProfileUpdate_Click(object sender, EventArgs e)
+        {
+            ProfileUpdateForm newProfileUpdateForm = new ProfileUpdateForm(memberId);
+            newProfileUpdateForm.Show();
+        }
     }
 }
