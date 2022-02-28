@@ -39,5 +39,12 @@ namespace AHAFit_UI
             txtEmail.Text = "admin@admin.com";
             txtPassword.Text = "admin";
         }
+
+        private void OnurLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            loginForm.Show();
+        }
     }
 }

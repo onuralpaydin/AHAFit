@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AHAFit_UI
 {
-    public partial class LoginForm : Form
+    public partial class SignUpForm : Form
     {
-        public LoginForm()
+        public SignUpForm()
         {
             InitializeComponent();
-        }
-
-        private void lblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
     }
 }
