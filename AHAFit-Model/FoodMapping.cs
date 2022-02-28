@@ -19,9 +19,9 @@ namespace AHAFit_Model
             Property(x => x.Carbohydrate).IsRequired();
             Property(x => x.Protein).IsRequired();
             Property(x => x.Fat).IsRequired();
+            Property(x => x.FoodType).IsRequired();
             Property(x => x.PhotoURL).IsRequired().HasMaxLength(300);
         }
       
-
     }
 }
