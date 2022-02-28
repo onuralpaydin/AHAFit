@@ -317,5 +317,20 @@ namespace AHAFit_BLL
 
             db.SaveChanges();
         }
+
+        public static void AddNewFood(string name, double calorie, double carbohydrate, double protein, double fat, string photoUrl)
+        {
+            Context db = new Context();
+            Food newFood = new Food();
+            newFood.Name = name;
+            newFood.Calorie = calorie;
+            newFood.Carbohydrate = carbohydrate;
+            newFood.Protein = protein;
+            newFood.Fat = fat;
+            newFood.PhotoURL = photoUrl;
+
+            db.Foods.Add(newFood);
+            db.SaveChanges();
+        }
     }
 }

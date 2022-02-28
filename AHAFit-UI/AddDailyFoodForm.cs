@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AHAFit_BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,11 +19,20 @@ namespace AHAFit_UI
         {
             InitializeComponent();
             this.memberId = memberId;
+            cmbEatMeal.DataSource = Huseyin.GetMeals();
+            cmbMealNewFood.DataSource = Huseyin.GetMeals();
+            cmbEatMeal.SelectedIndex = 0;
+            cmbMealNewFood.SelectedIndex = 0;
         }
 
         private void AddDailyFoodForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNewFoodSave_Click(object sender, EventArgs e)
+        {
+            Huseyin.AddNewFood(txtNewFoodName.Text, Convert.ToDouble(nudCalorie.Value), Convert.ToDouble(nudCarbohydrate), Convert.ToDouble(nudProtein), Convert.ToDouble(nudFat), txtPhotoUrl.Text);
         }
     }
 }
