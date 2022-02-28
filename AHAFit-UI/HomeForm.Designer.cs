@@ -34,13 +34,14 @@ namespace AHAFit_UI
             this.btnMemberComp = new System.Windows.Forms.Button();
             this.btnFoodSt = new System.Windows.Forms.Button();
             this.btnBMI = new System.Windows.Forms.Button();
+            this.Merhaba = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnReports
             // 
-            this.btnReports.Location = new System.Drawing.Point(108, 90);
+            this.btnReports.Location = new System.Drawing.Point(93, 78);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(184, 80);
+            this.btnReports.Size = new System.Drawing.Size(158, 69);
             this.btnReports.TabIndex = 0;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = true;
@@ -48,9 +49,9 @@ namespace AHAFit_UI
             // 
             // btnHistory
             // 
-            this.btnHistory.Location = new System.Drawing.Point(373, 90);
+            this.btnHistory.Location = new System.Drawing.Point(320, 78);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(184, 80);
+            this.btnHistory.Size = new System.Drawing.Size(158, 69);
             this.btnHistory.TabIndex = 0;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@ namespace AHAFit_UI
             // 
             // btnMemberComp
             // 
-            this.btnMemberComp.Location = new System.Drawing.Point(638, 90);
+            this.btnMemberComp.Location = new System.Drawing.Point(547, 78);
             this.btnMemberComp.Name = "btnMemberComp";
-            this.btnMemberComp.Size = new System.Drawing.Size(184, 80);
+            this.btnMemberComp.Size = new System.Drawing.Size(158, 69);
             this.btnMemberComp.TabIndex = 0;
             this.btnMemberComp.Text = "Member Comparisons";
             this.btnMemberComp.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@ namespace AHAFit_UI
             // 
             // btnFoodSt
             // 
-            this.btnFoodSt.Location = new System.Drawing.Point(903, 90);
+            this.btnFoodSt.Location = new System.Drawing.Point(774, 78);
             this.btnFoodSt.Name = "btnFoodSt";
-            this.btnFoodSt.Size = new System.Drawing.Size(184, 80);
+            this.btnFoodSt.Size = new System.Drawing.Size(158, 69);
             this.btnFoodSt.TabIndex = 0;
             this.btnFoodSt.Text = "Food Statistics";
             this.btnFoodSt.UseVisualStyleBackColor = true;
@@ -78,19 +79,29 @@ namespace AHAFit_UI
             // 
             // btnBMI
             // 
-            this.btnBMI.Location = new System.Drawing.Point(1168, 90);
+            this.btnBMI.Location = new System.Drawing.Point(1001, 78);
             this.btnBMI.Name = "btnBMI";
-            this.btnBMI.Size = new System.Drawing.Size(184, 80);
+            this.btnBMI.Size = new System.Drawing.Size(158, 69);
             this.btnBMI.TabIndex = 0;
             this.btnBMI.Text = "BMI Calculator";
             this.btnBMI.UseVisualStyleBackColor = true;
             this.btnBMI.Click += new System.EventHandler(this.btnBMI_Click);
             // 
+            // Merhaba
+            // 
+            this.Merhaba.Location = new System.Drawing.Point(524, 322);
+            this.Merhaba.Name = "Merhaba";
+            this.Merhaba.Size = new System.Drawing.Size(289, 125);
+            this.Merhaba.TabIndex = 1;
+            this.Merhaba.Text = "button1";
+            this.Merhaba.UseVisualStyleBackColor = true;
+            // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1581, 1203);
+            this.ClientSize = new System.Drawing.Size(1355, 1037);
+            this.Controls.Add(this.Merhaba);
             this.Controls.Add(this.btnBMI);
             this.Controls.Add(this.btnFoodSt);
             this.Controls.Add(this.btnMemberComp);
@@ -109,5 +120,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.Button btnMemberComp;
         private System.Windows.Forms.Button btnFoodSt;
         private System.Windows.Forms.Button btnBMI;
+        private System.Windows.Forms.Button Merhaba;
     }
 }
