@@ -47,25 +47,30 @@ namespace AHAFit_UI
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbBmi)).BeginInit();
             this.SuspendLayout();
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(204, 46);
+            this.txtHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtHeight.Location = new System.Drawing.Point(204, 65);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(175, 20);
             this.txtHeight.TabIndex = 0;
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(204, 96);
+            this.txtWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtWeight.Location = new System.Drawing.Point(204, 107);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(175, 20);
             this.txtWeight.TabIndex = 0;
             // 
             // txtBMI
             // 
+            this.txtBMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtBMI.Location = new System.Drawing.Point(204, 149);
             this.txtBMI.Name = "txtBMI";
             this.txtBMI.ReadOnly = true;
@@ -76,7 +81,7 @@ namespace AHAFit_UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(69, 50);
+            this.label1.Location = new System.Drawing.Point(69, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 16);
             this.label1.TabIndex = 1;
@@ -86,7 +91,7 @@ namespace AHAFit_UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(69, 100);
+            this.label2.Location = new System.Drawing.Point(69, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 16);
             this.label2.TabIndex = 1;
@@ -96,7 +101,7 @@ namespace AHAFit_UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(69, 150);
+            this.label3.Location = new System.Drawing.Point(69, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 1;
@@ -231,11 +236,31 @@ namespace AHAFit_UI
             this.label9.TabIndex = 6;
             this.label9.Text = "25";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(70, 23);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "User Name :";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUserName.Location = new System.Drawing.Point(204, 23);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(175, 20);
+            this.txtUserName.TabIndex = 7;
+            // 
             // BMICalcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 393);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -250,6 +275,7 @@ namespace AHAFit_UI
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBMI);
             this.Controls.Add(this.txtWeight);
@@ -284,5 +310,7 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtUserName;
     }
 }

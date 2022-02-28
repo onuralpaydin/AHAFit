@@ -19,6 +19,7 @@ namespace AHAFit_UI
         {
             InitializeComponent();
             this.memberId = memberId;
+            
         }
 
         private void btnReports_Click(object sender, EventArgs e)
