@@ -17,6 +17,15 @@ namespace AHAFit_Data
         public string PhotoURL { get; set; }
         public List<MemberFood> MemberFoods { get; set; }
         public List<MealFood> MealFoods { get; set; }
+        public string FoodType { get; set; }
+    }
 
+    public enum FoodType
+    {
+        Fruit,
+        Vegetable,
+        Grain,
+        ProteinFood,
+        Dairy
     }
 }
