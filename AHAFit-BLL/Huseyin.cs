@@ -317,20 +317,40 @@ namespace AHAFit_BLL
 
             db.SaveChanges();
         }
-
-        public static void AddNewFood(string name, double calorie, double carbohydrate, double protein, double fat, string photoUrl)
+        public static void AddNewFood(string name, double calorie, double carbohydrate, double protein, double fat, string photoUrl, string foodType)
         {
             Context db = new Context();
+
             Food newFood = new Food();
+
             newFood.Name = name;
             newFood.Calorie = calorie;
             newFood.Carbohydrate = carbohydrate;
             newFood.Protein = protein;
             newFood.Fat = fat;
             newFood.PhotoURL = photoUrl;
+            newFood.FoodType = foodType;
 
             db.Foods.Add(newFood);
             db.SaveChanges();
+        }
+
+        public static List<Food> FindTheFood(string foodName)
+        {
+            Context db = new Context();
+
+            List<Food> foodList = new List<Food>();
+
+            foreach (var food in db.Foods.ToList())
+            {
+                if (food.Name.Contains(foodName))
+                {
+                    foodList.Add(food);
+                }
+                    
+            }
+
+            return foodList;
         }
     }
 }

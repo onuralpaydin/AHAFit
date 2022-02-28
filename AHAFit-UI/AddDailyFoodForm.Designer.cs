@@ -37,12 +37,10 @@ namespace AHAFit_UI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.nudCalorie = new System.Windows.Forms.NumericUpDown();
             this.nudCarbohydrate = new System.Windows.Forms.NumericUpDown();
             this.nudProtein = new System.Windows.Forms.NumericUpDown();
             this.nudFat = new System.Windows.Forms.NumericUpDown();
-            this.cmbMealNewFood = new System.Windows.Forms.ComboBox();
             this.btnNewFoodSave = new System.Windows.Forms.Button();
             this.txtFoodSearchBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,12 +51,17 @@ namespace AHAFit_UI
             this.label10 = new System.Windows.Forms.Label();
             this.btnSaveEat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbFoodType = new System.Windows.Forms.ComboBox();
+            this.pbFood = new System.Windows.Forms.PictureBox();
+            this.btnCheckImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCalorie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarbohydrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFood)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNewFoodName
@@ -129,18 +132,9 @@ namespace AHAFit_UI
             this.label6.TabIndex = 1;
             this.label6.Text = "Photo URL";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(360, 166);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Meal";
-            // 
             // nudCalorie
             // 
-            this.nudCalorie.DecimalPlaces = 1;
+            this.nudCalorie.DecimalPlaces = 2;
             this.nudCalorie.Location = new System.Drawing.Point(190, 111);
             this.nudCalorie.Maximum = new decimal(new int[] {
             10000,
@@ -153,7 +147,7 @@ namespace AHAFit_UI
             // 
             // nudCarbohydrate
             // 
-            this.nudCarbohydrate.DecimalPlaces = 1;
+            this.nudCarbohydrate.DecimalPlaces = 2;
             this.nudCarbohydrate.Location = new System.Drawing.Point(190, 165);
             this.nudCarbohydrate.Maximum = new decimal(new int[] {
             10000,
@@ -166,7 +160,7 @@ namespace AHAFit_UI
             // 
             // nudProtein
             // 
-            this.nudProtein.DecimalPlaces = 1;
+            this.nudProtein.DecimalPlaces = 2;
             this.nudProtein.Location = new System.Drawing.Point(190, 219);
             this.nudProtein.Maximum = new decimal(new int[] {
             10000,
@@ -179,7 +173,7 @@ namespace AHAFit_UI
             // 
             // nudFat
             // 
-            this.nudFat.DecimalPlaces = 1;
+            this.nudFat.DecimalPlaces = 2;
             this.nudFat.Location = new System.Drawing.Point(508, 54);
             this.nudFat.Maximum = new decimal(new int[] {
             10000,
@@ -190,19 +184,11 @@ namespace AHAFit_UI
             this.nudFat.Size = new System.Drawing.Size(148, 31);
             this.nudFat.TabIndex = 2;
             // 
-            // cmbMealNewFood
-            // 
-            this.cmbMealNewFood.FormattingEnabled = true;
-            this.cmbMealNewFood.Location = new System.Drawing.Point(508, 165);
-            this.cmbMealNewFood.Name = "cmbMealNewFood";
-            this.cmbMealNewFood.Size = new System.Drawing.Size(148, 33);
-            this.cmbMealNewFood.TabIndex = 3;
-            // 
             // btnNewFoodSave
             // 
-            this.btnNewFoodSave.Location = new System.Drawing.Point(721, 82);
+            this.btnNewFoodSave.Location = new System.Drawing.Point(418, 203);
             this.btnNewFoodSave.Name = "btnNewFoodSave";
-            this.btnNewFoodSave.Size = new System.Drawing.Size(201, 86);
+            this.btnNewFoodSave.Size = new System.Drawing.Size(180, 61);
             this.btnNewFoodSave.TabIndex = 4;
             this.btnNewFoodSave.Text = "Save New Food";
             this.btnNewFoodSave.UseVisualStyleBackColor = true;
@@ -214,6 +200,7 @@ namespace AHAFit_UI
             this.txtFoodSearchBox.Name = "txtFoodSearchBox";
             this.txtFoodSearchBox.Size = new System.Drawing.Size(298, 31);
             this.txtFoodSearchBox.TabIndex = 5;
+            this.txtFoodSearchBox.TextChanged += new System.EventHandler(this.txtFoodSearchBox_TextChanged);
             // 
             // label8
             // 
@@ -231,7 +218,7 @@ namespace AHAFit_UI
             this.dgvFoods.Name = "dgvFoods";
             this.dgvFoods.RowHeadersWidth = 82;
             this.dgvFoods.RowTemplate.Height = 33;
-            this.dgvFoods.Size = new System.Drawing.Size(1028, 187);
+            this.dgvFoods.Size = new System.Drawing.Size(1688, 187);
             this.dgvFoods.TabIndex = 7;
             // 
             // dtpEatDate
@@ -278,6 +265,8 @@ namespace AHAFit_UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCheckImage);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNewFoodName);
             this.groupBox1.Controls.Add(this.txtPhotoUrl);
@@ -286,25 +275,61 @@ namespace AHAFit_UI
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnNewFoodSave);
             this.groupBox1.Controls.Add(this.nudCalorie);
-            this.groupBox1.Controls.Add(this.cmbMealNewFood);
+            this.groupBox1.Controls.Add(this.cmbFoodType);
             this.groupBox1.Controls.Add(this.nudCarbohydrate);
             this.groupBox1.Controls.Add(this.nudFat);
             this.groupBox1.Controls.Add(this.nudProtein);
-            this.groupBox1.Location = new System.Drawing.Point(32, 521);
+            this.groupBox1.Location = new System.Drawing.Point(32, 453);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1013, 269);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Food";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(365, 156);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 25);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Food Type";
+            // 
+            // cmbFoodType
+            // 
+            this.cmbFoodType.FormattingEnabled = true;
+            this.cmbFoodType.Location = new System.Drawing.Point(508, 157);
+            this.cmbFoodType.Name = "cmbFoodType";
+            this.cmbFoodType.Size = new System.Drawing.Size(148, 33);
+            this.cmbFoodType.TabIndex = 3;
+            // 
+            // pbFood
+            // 
+            this.pbFood.Location = new System.Drawing.Point(1088, 328);
+            this.pbFood.Name = "pbFood";
+            this.pbFood.Size = new System.Drawing.Size(632, 394);
+            this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFood.TabIndex = 13;
+            this.pbFood.TabStop = false;
+            // 
+            // btnCheckImage
+            // 
+            this.btnCheckImage.Location = new System.Drawing.Point(662, 101);
+            this.btnCheckImage.Name = "btnCheckImage";
+            this.btnCheckImage.Size = new System.Drawing.Size(213, 48);
+            this.btnCheckImage.TabIndex = 6;
+            this.btnCheckImage.Text = "Check The Image";
+            this.btnCheckImage.UseVisualStyleBackColor = true;
+            this.btnCheckImage.Click += new System.EventHandler(this.btnCheckImage_Click);
+            // 
             // AddDailyFoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 839);
+            this.ClientSize = new System.Drawing.Size(1765, 776);
+            this.Controls.Add(this.pbFood);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSaveEat);
             this.Controls.Add(this.label10);
@@ -324,6 +349,7 @@ namespace AHAFit_UI
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,12 +365,10 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudCalorie;
         private System.Windows.Forms.NumericUpDown nudCarbohydrate;
         private System.Windows.Forms.NumericUpDown nudProtein;
         private System.Windows.Forms.NumericUpDown nudFat;
-        private System.Windows.Forms.ComboBox cmbMealNewFood;
         private System.Windows.Forms.Button btnNewFoodSave;
         private System.Windows.Forms.TextBox txtFoodSearchBox;
         private System.Windows.Forms.Label label8;
@@ -355,5 +379,9 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSaveEat;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbFoodType;
+        private System.Windows.Forms.Button btnCheckImage;
+        private System.Windows.Forms.PictureBox pbFood;
     }
 }
