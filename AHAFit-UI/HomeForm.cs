@@ -195,6 +195,14 @@ namespace AHAFit_UI
         {
             ProfileUpdateForm newProfileUpdateForm = new ProfileUpdateForm(memberId);
             newProfileUpdateForm.Show();
+            RefreshHomeData();
+        }
+
+        private void btnAteSomething_Click(object sender, EventArgs e)
+        {
+            AddDailyFoodForm newAddDailyFoodForm = new AddDailyFoodForm(memberId);
+            newAddDailyFoodForm.Show();
+            RefreshHomeData();
         }
     }
 }

@@ -230,6 +230,7 @@ namespace AHAFit_UI
             this.btnAteSomething.TabIndex = 3;
             this.btnAteSomething.Text = "I ate something";
             this.btnAteSomething.UseVisualStyleBackColor = true;
+            this.btnAteSomething.Click += new System.EventHandler(this.btnAteSomething_Click);
             // 
             // btnProgramChanger
             // 

@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDailyFoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDailyFoodForm.Designer.cs">
+      <DependentUpon>AddDailyFoodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BMICalcForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDailyFoodForm.resx">
+      <DependentUpon>AddDailyFoodForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
