@@ -50,6 +50,7 @@ namespace AHAFit_BLL
         public double BMIValue(double weight,double height)
         {
             double bmi = Math.Round((weight / Math.Pow(height, 2) * 10000), 2);
+
             return bmi;
         }
     }
