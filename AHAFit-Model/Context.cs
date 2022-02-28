@@ -13,7 +13,7 @@ namespace AHAFit_Model
     {
         public Context()
         {
-            Database.Connection.ConnectionString = "server=IMAC; database=AHAFit; uid=sa; pwd=1234";
+            Database.Connection.ConnectionString = "server=.; database=AHAFit; uid=sa; pwd=123";
         }
 
         public DbSet<Food> Foods { get; set; }
