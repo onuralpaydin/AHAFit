@@ -170,7 +170,6 @@ namespace AHAFit_UI
             // 
             this.txtSignUpPassword.Location = new System.Drawing.Point(152, 126);
             this.txtSignUpPassword.Name = "txtSignUpPassword";
-            this.txtSignUpPassword.PasswordChar = '*';
             this.txtSignUpPassword.Size = new System.Drawing.Size(121, 20);
             this.txtSignUpPassword.TabIndex = 13;
             this.txtSignUpPassword.TextChanged += new System.EventHandler(this.txtSignUpPassword_TextChanged);

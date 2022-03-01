@@ -54,21 +54,21 @@ namespace AHAFit_UI
                 weight = Convert.ToDouble(nudSignUpWeight.Value);
                 int goalID = onur.GoalFinder(cmbSignUpGoal.Text);
 
-
-
                 if (cmbSignUpGender.SelectedIndex == 0)
-                {
                     gender = "Male";
 
-                }
                 if (cmbSignUpGender.SelectedIndex == 1)
-                {
                     gender = "Female";
+                
+                bool MemberControlTrueFalse = onur.MemberControl(txtSignUpEmail.Text);
+                bool EmailControlTrueFalse = onur.SignUpEmailCheck(txtSignUpEmail.Text);
+
+                if (EmailControlTrueFalse==false)
+                {
+                    MessageBox.Show("Invalid email address");
                 }
 
-                bool MemberControlTrueFalse = onur.MemberControl(txtSignUpEmail.Text);
-
-                if (MemberControlTrueFalse == true)
+                else if (MemberControlTrueFalse == true)
                 {
                     onur.CreateNewMember(txtSignUpEmail.Text, txtSignUpPassword.Text, txtSignUpName.Text, txtSignUpSurname.Text, weight, height, gender, dateTimePicker1.Value.Date, goalID, cmbSignUpActivityLevel.SelectedItem.ToString());
                     MessageBox.Show("Account has been created succesfully");
@@ -91,16 +91,17 @@ namespace AHAFit_UI
             lblSignUpPasswordInfo.Text = " ";
            
             
-             if (onur.SignUpDataControl(txtSignUpPassword.Text, txtSignUpEmail.Text) == true)
-            {
-                lblSignUpPasswordInfo.Text = "Weak Password";
-                lblSignUpPasswordInfo.ForeColor = Color.Red;
-            }
-
-             else if (onur.SignUpDataControl(txtSignUpPassword.Text, txtSignUpEmail.Text) == false)
+             if (onur.SignUpDataControl(txtSignUpPassword.Text) ==true)
             {
                 lblSignUpPasswordInfo.Text = "Strong Password";
                 lblSignUpPasswordInfo.ForeColor = Color.Green;
+            }
+
+             else 
+            {
+               
+                lblSignUpPasswordInfo.Text = "Weak Password";
+                lblSignUpPasswordInfo.ForeColor = Color.Red;
             }
         }
 
