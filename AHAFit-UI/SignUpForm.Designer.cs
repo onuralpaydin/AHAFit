@@ -29,134 +29,262 @@ namespace AHAFit_UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSignUpEmail = new System.Windows.Forms.Label();
+            this.lblSignUpName = new System.Windows.Forms.Label();
+            this.lblSignUpSurname = new System.Windows.Forms.Label();
+            this.lblSignUpPassword = new System.Windows.Forms.Label();
+            this.lblSignUpWeight = new System.Windows.Forms.Label();
+            this.lblSignUpGender = new System.Windows.Forms.Label();
+            this.lblSignUpActivityLevel = new System.Windows.Forms.Label();
+            this.lblSignUpBirthDate = new System.Windows.Forms.Label();
+            this.lblSignUpGoal = new System.Windows.Forms.Label();
+            this.lblSignUpHeight = new System.Windows.Forms.Label();
+            this.txtSignUpEmail = new System.Windows.Forms.TextBox();
+            this.txtSignUpSurname = new System.Windows.Forms.TextBox();
+            this.txtSignUpName = new System.Windows.Forms.TextBox();
+            this.txtSignUpPassword = new System.Windows.Forms.TextBox();
+            this.cmbSignUpGender = new System.Windows.Forms.ComboBox();
+            this.cmbSignUpActivityLevel = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbSignUpGoal = new System.Windows.Forms.ComboBox();
+            this.btnSignUpSignUp = new System.Windows.Forms.Button();
+            this.nudSignUpWeight = new System.Windows.Forms.NumericUpDown();
+            this.nudSignUpHeight = new System.Windows.Forms.NumericUpDown();
+            this.lblSignUpPasswordInfo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSignUpWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSignUpHeight)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblSignUpEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lblSignUpEmail.AutoSize = true;
+            this.lblSignUpEmail.Location = new System.Drawing.Point(12, 42);
+            this.lblSignUpEmail.Name = "lblSignUpEmail";
+            this.lblSignUpEmail.Size = new System.Drawing.Size(42, 13);
+            this.lblSignUpEmail.TabIndex = 0;
+            this.lblSignUpEmail.Text = "E-Mail :";
             // 
-            // label2
+            // lblSignUpName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.lblSignUpName.AutoSize = true;
+            this.lblSignUpName.Location = new System.Drawing.Point(12, 68);
+            this.lblSignUpName.Name = "lblSignUpName";
+            this.lblSignUpName.Size = new System.Drawing.Size(41, 13);
+            this.lblSignUpName.TabIndex = 1;
+            this.lblSignUpName.Text = "Name :";
             // 
-            // label3
+            // lblSignUpSurname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 98);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.lblSignUpSurname.AutoSize = true;
+            this.lblSignUpSurname.Location = new System.Drawing.Point(12, 96);
+            this.lblSignUpSurname.Name = "lblSignUpSurname";
+            this.lblSignUpSurname.Size = new System.Drawing.Size(55, 13);
+            this.lblSignUpSurname.TabIndex = 2;
+            this.lblSignUpSurname.Text = "Surname :";
             // 
-            // label4
+            // lblSignUpPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.lblSignUpPassword.AutoSize = true;
+            this.lblSignUpPassword.Location = new System.Drawing.Point(12, 129);
+            this.lblSignUpPassword.Name = "lblSignUpPassword";
+            this.lblSignUpPassword.Size = new System.Drawing.Size(59, 13);
+            this.lblSignUpPassword.TabIndex = 3;
+            this.lblSignUpPassword.Text = "Password :";
             // 
-            // label5
+            // lblSignUpWeight
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.lblSignUpWeight.AutoSize = true;
+            this.lblSignUpWeight.Location = new System.Drawing.Point(12, 163);
+            this.lblSignUpWeight.Name = "lblSignUpWeight";
+            this.lblSignUpWeight.Size = new System.Drawing.Size(68, 13);
+            this.lblSignUpWeight.TabIndex = 4;
+            this.lblSignUpWeight.Text = "Weight (kg) :";
             // 
-            // label6
+            // lblSignUpGender
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(64, 207);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
+            this.lblSignUpGender.AutoSize = true;
+            this.lblSignUpGender.Location = new System.Drawing.Point(12, 344);
+            this.lblSignUpGender.Name = "lblSignUpGender";
+            this.lblSignUpGender.Size = new System.Drawing.Size(48, 13);
+            this.lblSignUpGender.TabIndex = 5;
+            this.lblSignUpGender.Text = "Gender :";
             // 
-            // label7
+            // lblSignUpActivityLevel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(64, 222);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.lblSignUpActivityLevel.AutoSize = true;
+            this.lblSignUpActivityLevel.Location = new System.Drawing.Point(12, 232);
+            this.lblSignUpActivityLevel.Name = "lblSignUpActivityLevel";
+            this.lblSignUpActivityLevel.Size = new System.Drawing.Size(76, 13);
+            this.lblSignUpActivityLevel.TabIndex = 6;
+            this.lblSignUpActivityLevel.Text = "Activity Level :";
             // 
-            // label8
+            // lblSignUpBirthDate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(64, 250);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
+            this.lblSignUpBirthDate.AutoSize = true;
+            this.lblSignUpBirthDate.Location = new System.Drawing.Point(12, 271);
+            this.lblSignUpBirthDate.Name = "lblSignUpBirthDate";
+            this.lblSignUpBirthDate.Size = new System.Drawing.Size(60, 13);
+            this.lblSignUpBirthDate.TabIndex = 7;
+            this.lblSignUpBirthDate.Text = "Birth Date :";
             // 
-            // label9
+            // lblSignUpGoal
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(64, 281);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 15);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
+            this.lblSignUpGoal.AutoSize = true;
+            this.lblSignUpGoal.Location = new System.Drawing.Point(12, 309);
+            this.lblSignUpGoal.Name = "lblSignUpGoal";
+            this.lblSignUpGoal.Size = new System.Drawing.Size(29, 13);
+            this.lblSignUpGoal.TabIndex = 8;
+            this.lblSignUpGoal.Text = "Goal";
             // 
-            // label10
+            // lblSignUpHeight
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(64, 317);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "label10";
+            this.lblSignUpHeight.AutoSize = true;
+            this.lblSignUpHeight.Location = new System.Drawing.Point(12, 200);
+            this.lblSignUpHeight.Name = "lblSignUpHeight";
+            this.lblSignUpHeight.Size = new System.Drawing.Size(67, 13);
+            this.lblSignUpHeight.TabIndex = 9;
+            this.lblSignUpHeight.Text = "Height (cm) :";
             // 
-            // textBox1
+            // txtSignUpEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtSignUpEmail.Location = new System.Drawing.Point(152, 42);
+            this.txtSignUpEmail.Name = "txtSignUpEmail";
+            this.txtSignUpEmail.Size = new System.Drawing.Size(121, 20);
+            this.txtSignUpEmail.TabIndex = 10;
+            // 
+            // txtSignUpSurname
+            // 
+            this.txtSignUpSurname.Location = new System.Drawing.Point(152, 93);
+            this.txtSignUpSurname.Name = "txtSignUpSurname";
+            this.txtSignUpSurname.Size = new System.Drawing.Size(121, 20);
+            this.txtSignUpSurname.TabIndex = 11;
+            // 
+            // txtSignUpName
+            // 
+            this.txtSignUpName.Location = new System.Drawing.Point(152, 65);
+            this.txtSignUpName.Name = "txtSignUpName";
+            this.txtSignUpName.Size = new System.Drawing.Size(121, 20);
+            this.txtSignUpName.TabIndex = 12;
+            // 
+            // txtSignUpPassword
+            // 
+            this.txtSignUpPassword.Location = new System.Drawing.Point(152, 126);
+            this.txtSignUpPassword.Name = "txtSignUpPassword";
+            this.txtSignUpPassword.PasswordChar = '*';
+            this.txtSignUpPassword.Size = new System.Drawing.Size(121, 20);
+            this.txtSignUpPassword.TabIndex = 13;
+            this.txtSignUpPassword.TextChanged += new System.EventHandler(this.txtSignUpPassword_TextChanged);
+            // 
+            // cmbSignUpGender
+            // 
+            this.cmbSignUpGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSignUpGender.FormattingEnabled = true;
+            this.cmbSignUpGender.Location = new System.Drawing.Point(152, 353);
+            this.cmbSignUpGender.Name = "cmbSignUpGender";
+            this.cmbSignUpGender.Size = new System.Drawing.Size(121, 21);
+            this.cmbSignUpGender.TabIndex = 15;
+            // 
+            // cmbSignUpActivityLevel
+            // 
+            this.cmbSignUpActivityLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSignUpActivityLevel.FormattingEnabled = true;
+            this.cmbSignUpActivityLevel.Location = new System.Drawing.Point(152, 229);
+            this.cmbSignUpActivityLevel.Name = "cmbSignUpActivityLevel";
+            this.cmbSignUpActivityLevel.Size = new System.Drawing.Size(121, 21);
+            this.cmbSignUpActivityLevel.TabIndex = 16;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(152, 271);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // cmbSignUpGoal
+            // 
+            this.cmbSignUpGoal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSignUpGoal.FormattingEnabled = true;
+            this.cmbSignUpGoal.Location = new System.Drawing.Point(152, 309);
+            this.cmbSignUpGoal.Name = "cmbSignUpGoal";
+            this.cmbSignUpGoal.Size = new System.Drawing.Size(121, 21);
+            this.cmbSignUpGoal.TabIndex = 20;
+            // 
+            // btnSignUpSignUp
+            // 
+            this.btnSignUpSignUp.Location = new System.Drawing.Point(277, 398);
+            this.btnSignUpSignUp.Name = "btnSignUpSignUp";
+            this.btnSignUpSignUp.Size = new System.Drawing.Size(113, 23);
+            this.btnSignUpSignUp.TabIndex = 23;
+            this.btnSignUpSignUp.Text = "Sign Up";
+            this.btnSignUpSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUpSignUp.Click += new System.EventHandler(this.btnSignUpSignUp_Click);
+            // 
+            // nudSignUpWeight
+            // 
+            this.nudSignUpWeight.DecimalPlaces = 2;
+            this.nudSignUpWeight.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nudSignUpWeight.Location = new System.Drawing.Point(152, 163);
+            this.nudSignUpWeight.MaximumSize = new System.Drawing.Size(250, 0);
+            this.nudSignUpWeight.Name = "nudSignUpWeight";
+            this.nudSignUpWeight.Size = new System.Drawing.Size(120, 20);
+            this.nudSignUpWeight.TabIndex = 24;
+            // 
+            // nudSignUpHeight
+            // 
+            this.nudSignUpHeight.Location = new System.Drawing.Point(152, 192);
+            this.nudSignUpHeight.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.nudSignUpHeight.Name = "nudSignUpHeight";
+            this.nudSignUpHeight.Size = new System.Drawing.Size(120, 20);
+            this.nudSignUpHeight.TabIndex = 25;
+            // 
+            // lblSignUpPasswordInfo
+            // 
+            this.lblSignUpPasswordInfo.ForeColor = System.Drawing.Color.Black;
+            this.lblSignUpPasswordInfo.Location = new System.Drawing.Point(323, 100);
+            this.lblSignUpPasswordInfo.Name = "lblSignUpPasswordInfo";
+            this.lblSignUpPasswordInfo.Size = new System.Drawing.Size(100, 121);
+            this.lblSignUpPasswordInfo.TabIndex = 26;
             // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(473, 450);
+            this.Controls.Add(this.lblSignUpPasswordInfo);
+            this.Controls.Add(this.nudSignUpHeight);
+            this.Controls.Add(this.nudSignUpWeight);
+            this.Controls.Add(this.btnSignUpSignUp);
+            this.Controls.Add(this.cmbSignUpGoal);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cmbSignUpActivityLevel);
+            this.Controls.Add(this.cmbSignUpGender);
+            this.Controls.Add(this.txtSignUpPassword);
+            this.Controls.Add(this.txtSignUpName);
+            this.Controls.Add(this.txtSignUpSurname);
+            this.Controls.Add(this.txtSignUpEmail);
+            this.Controls.Add(this.lblSignUpHeight);
+            this.Controls.Add(this.lblSignUpGoal);
+            this.Controls.Add(this.lblSignUpBirthDate);
+            this.Controls.Add(this.lblSignUpActivityLevel);
+            this.Controls.Add(this.lblSignUpGender);
+            this.Controls.Add(this.lblSignUpWeight);
+            this.Controls.Add(this.lblSignUpPassword);
+            this.Controls.Add(this.lblSignUpSurname);
+            this.Controls.Add(this.lblSignUpName);
+            this.Controls.Add(this.lblSignUpEmail);
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
+            this.Load += new System.EventHandler(this.SignUpForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudSignUpWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSignUpHeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,16 +292,27 @@ namespace AHAFit_UI
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblSignUpEmail;
+        private System.Windows.Forms.Label lblSignUpName;
+        private System.Windows.Forms.Label lblSignUpSurname;
+        private System.Windows.Forms.Label lblSignUpPassword;
+        private System.Windows.Forms.Label lblSignUpWeight;
+        private System.Windows.Forms.Label lblSignUpGender;
+        private System.Windows.Forms.Label lblSignUpActivityLevel;
+        private System.Windows.Forms.Label lblSignUpBirthDate;
+        private System.Windows.Forms.Label lblSignUpGoal;
+        private System.Windows.Forms.Label lblSignUpHeight;
+        private System.Windows.Forms.TextBox txtSignUpEmail;
+        private System.Windows.Forms.TextBox txtSignUpSurname;
+        private System.Windows.Forms.TextBox txtSignUpName;
+        private System.Windows.Forms.TextBox txtSignUpPassword;
+        private System.Windows.Forms.ComboBox cmbSignUpGender;
+        private System.Windows.Forms.ComboBox cmbSignUpActivityLevel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbSignUpGoal;
+        private System.Windows.Forms.Button btnSignUpSignUp;
+        private System.Windows.Forms.NumericUpDown nudSignUpWeight;
+        private System.Windows.Forms.NumericUpDown nudSignUpHeight;
+        private System.Windows.Forms.Label lblSignUpPasswordInfo;
     }
 }

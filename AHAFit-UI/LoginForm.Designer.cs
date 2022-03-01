@@ -32,9 +32,10 @@ namespace AHAFit_UI
             this.lblLoginEmail = new System.Windows.Forms.Label();
             this.lblLoginPassword = new System.Windows.Forms.Label();
             this.lblSignUp = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLoginFormEmail = new System.Windows.Forms.TextBox();
+            this.txtLoginFormPassword = new System.Windows.Forms.TextBox();
             this.btnLoginFormLogIn = new System.Windows.Forms.Button();
+            this.chkLoginFormShowPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblLoginEmail
@@ -58,7 +59,7 @@ namespace AHAFit_UI
             // lblSignUp
             // 
             this.lblSignUp.AutoSize = true;
-            this.lblSignUp.Location = new System.Drawing.Point(37, 178);
+            this.lblSignUp.Location = new System.Drawing.Point(37, 186);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(51, 15);
             this.lblSignUp.TabIndex = 2;
@@ -66,37 +67,50 @@ namespace AHAFit_UI
             this.lblSignUp.Text = "Sign Up";
             this.lblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignUp_LinkClicked);
             // 
-            // textBox1
+            // txtLoginFormEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtLoginFormEmail.Location = new System.Drawing.Point(142, 72);
+            this.txtLoginFormEmail.Name = "txtLoginFormEmail";
+            this.txtLoginFormEmail.Size = new System.Drawing.Size(133, 20);
+            this.txtLoginFormEmail.TabIndex = 3;
             // 
-            // textBox2
+            // txtLoginFormPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtLoginFormPassword.Location = new System.Drawing.Point(142, 119);
+            this.txtLoginFormPassword.Name = "txtLoginFormPassword";
+            this.txtLoginFormPassword.PasswordChar = '*';
+            this.txtLoginFormPassword.Size = new System.Drawing.Size(133, 20);
+            this.txtLoginFormPassword.TabIndex = 4;
             // 
             // btnLoginFormLogIn
             // 
-            this.btnLoginFormLogIn.Location = new System.Drawing.Point(200, 173);
+            this.btnLoginFormLogIn.Location = new System.Drawing.Point(200, 181);
             this.btnLoginFormLogIn.Name = "btnLoginFormLogIn";
             this.btnLoginFormLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLoginFormLogIn.TabIndex = 5;
             this.btnLoginFormLogIn.Text = "Log In";
             this.btnLoginFormLogIn.UseVisualStyleBackColor = true;
+            this.btnLoginFormLogIn.Click += new System.EventHandler(this.btnLoginFormLogIn_Click);
+            // 
+            // chkLoginFormShowPassword
+            // 
+            this.chkLoginFormShowPassword.AutoSize = true;
+            this.chkLoginFormShowPassword.Location = new System.Drawing.Point(142, 148);
+            this.chkLoginFormShowPassword.Name = "chkLoginFormShowPassword";
+            this.chkLoginFormShowPassword.Size = new System.Drawing.Size(114, 19);
+            this.chkLoginFormShowPassword.TabIndex = 6;
+            this.chkLoginFormShowPassword.Text = "Show Password";
+            this.chkLoginFormShowPassword.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 298);
+            this.Controls.Add(this.chkLoginFormShowPassword);
             this.Controls.Add(this.btnLoginFormLogIn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLoginFormPassword);
+            this.Controls.Add(this.txtLoginFormEmail);
             this.Controls.Add(this.lblSignUp);
             this.Controls.Add(this.lblLoginPassword);
             this.Controls.Add(this.lblLoginEmail);
@@ -112,8 +126,9 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label lblLoginEmail;
         private System.Windows.Forms.Label lblLoginPassword;
         private System.Windows.Forms.LinkLabel lblSignUp;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLoginFormEmail;
+        private System.Windows.Forms.TextBox txtLoginFormPassword;
         private System.Windows.Forms.Button btnLoginFormLogIn;
+        private System.Windows.Forms.CheckBox chkLoginFormShowPassword;
     }
 }
