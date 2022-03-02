@@ -21,6 +21,9 @@ namespace AHAFit_UI
             InitializeComponent();
             this.memberId = memberId;
             fillComboBoxes();
+            dgvFoods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvFoods.MultiSelect = false;
+            dgvFoods.AllowUserToAddRows = false;
         }
 
         private void AddDailyFoodForm_Load(object sender, EventArgs e)
@@ -46,12 +49,53 @@ namespace AHAFit_UI
 
         private void txtFoodSearchBox_TextChanged(object sender, EventArgs e)
         {
-           dgvFoods.DataSource = Huseyin.FindTheFood(txtFoodSearchBox.Text.ToLower());
+            List<Food> foodList = new List<Food>();
+
+            dgvFoods.Rows.Clear();
+            dgvFoods.Refresh();
+
+            foodList = Huseyin.FindTheFood(txtFoodSearchBox.Text.ToLower());
+
+            foreach (var food in foodList)
+            {
+                dgvFoods.Columns[0].Name = "FoodId";
+                dgvFoods.Columns[1].Name = "FoodName";
+                dgvFoods.Columns[2].Name = "Calorie";
+                dgvFoods.Columns[3].Name = "Carbohydrate";
+                dgvFoods.Columns[4].Name = "Protein";
+                dgvFoods.Columns[5].Name = "Fat";
+                dgvFoods.Columns[6].Name = "FoodType";
+
+                string[] row = new string[] { food.FoodId.ToString(),food.Name, food.Calorie.ToString(), food.Carbohydrate.ToString(), food.Protein.ToString(), food.Fat.ToString(), food.FoodType  };
+
+                dgvFoods.Rows.Add(row);
+
+                int selectedRow = dgvFoods.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+
+                pbFood.ImageLocation = Huseyin.FindFoodImageUrl(FindSelectedFoodId());
+            }
         }
 
         private void btnCheckImage_Click(object sender, EventArgs e)
         {
             pbFood.ImageLocation = txtPhotoUrl.Text;
+        }
+
+        private void btnSaveEat_Click(object sender, EventArgs e)
+        {
+            Huseyin.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, Huseyin.FindMealId(cmbEatMeal.Text));
+        }
+
+        private int FindSelectedFoodId()
+        {
+            int selectedFoodId = 0;
+            int selectedRow = dgvFoods.Rows.GetFirstRow(DataGridViewElementStates.Selected);
+
+            if (selectedRow >= 0)
+            {
+                selectedFoodId = Convert.ToInt32(dgvFoods.Rows[selectedRow].Cells[0].Value);
+            }
+            return selectedFoodId;
         }
     }
 }

@@ -129,6 +129,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegisterLoginForm.resx">
       <DependentUpon>RegisterLoginForm.cs</DependentUpon>
@@ -156,6 +157,15 @@
       <Project>{0B43514B-4C08-490F-B5D9-224895864ACC}</Project>
       <Name>AHAFit-Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\clock.png" />
+    <None Include="Resources\waterGif.gif" />
+    <None Include="Resources\44425-glass-water.gif" />
+    <None Include="Resources\calculator %281%29.png" />
+    <None Include="Resources\calculator.png" />
+    <None Include="Resources\history.png" />
+    <None Include="Resources\clock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

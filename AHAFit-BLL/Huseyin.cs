@@ -73,15 +73,16 @@ namespace AHAFit_BLL
         {
             Context db = new Context();
 
-            if (!db.Foods.Any(x => x.Name == "Water"))
+            if (!db.Foods.Any(x => x.Name == "water"))
             {
                 Food water = new Food();
-                water.Name = "Water";
+                water.Name = "water";
                 water.Calorie = 0;
                 water.Carbohydrate = 0;
                 water.Protein = 0;
                 water.Fat = 0;
                 water.PhotoURL = "asda";
+                water.FoodType = "Grain";
                 db.Foods.Add(water);
                 db.SaveChanges();
             }
@@ -334,7 +335,6 @@ namespace AHAFit_BLL
             db.Foods.Add(newFood);
             db.SaveChanges();
         }
-
         public static List<Food> FindTheFood(string foodName)
         {
             Context db = new Context();
@@ -352,5 +352,36 @@ namespace AHAFit_BLL
 
             return foodList;
         }
+        public static string FindFoodImageUrl(int foodId)
+        {
+            Context db = new Context();
+            return db.Foods.FirstOrDefault(x => x.FoodId == foodId).PhotoURL;
+        }
+        public static void AddNewFoodToMember(int foodId, DateTime selectedDay,int memberId, int mealId)
+        {
+            Context db = new Context();
+
+            MemberFood newMemberFood = new MemberFood(selectedDay);
+            MealFood newMealFood = new MealFood(selectedDay);
+
+            newMemberFood.MemberId = memberId;
+            newMemberFood.FoodId = foodId;
+            newMemberFood.MealId = mealId;
+
+            newMealFood.MealId = mealId;
+            newMealFood.FoodId = foodId;
+
+            db.MembersFoods.Add(newMemberFood);
+            db.MealsFoods.Add(newMealFood);
+
+            db.SaveChanges();
+        }
+
+        public static int FindMealId(string mealName)
+        {
+            Context db = new Context();
+            return db.Meals.FirstOrDefault(x => x.Name == mealName).MealId;
+        }
+
     }
 }
