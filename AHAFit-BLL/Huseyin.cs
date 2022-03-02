@@ -10,7 +10,6 @@ namespace AHAFit_BLL
 {
     public class Huseyin
     {
-
         public static void MealAndGoalDataLoad()
         {
             Context db = new Context();
@@ -278,7 +277,7 @@ namespace AHAFit_BLL
 
             var mealId = db.MembersFoods.FirstOrDefault(x=>x.MemberId == memberId && x.FoodId == foodId && x.CreateDateTime == createDate).MealId;
 
-            var memberFoodGonnaDeleted = db.MembersFoods.FirstOrDefault(x => x.CreateDateTime == createDate && x.MemberId == memberId && x.MealId == mealId);
+            var memberFoodGonnaDeleted = db.MembersFoods.FirstOrDefault(x => x.CreateDateTime == createDate && x.MemberId == memberId && x.MealId == mealId && x.FoodId == foodId);
             var mealFoodGonnaDeleted = db.MealsFoods.FirstOrDefault(x => x.CreateDateTime == createDate && x.FoodId == foodId && x.MealId == mealId);
 
             db.MembersFoods.Remove(memberFoodGonnaDeleted);
@@ -376,12 +375,17 @@ namespace AHAFit_BLL
 
             db.SaveChanges();
         }
-
         public static int FindMealId(string mealName)
         {
             Context db = new Context();
             return db.Meals.FirstOrDefault(x => x.Name == mealName).MealId;
         }
 
+        public static void FoodDelete(int foodId)
+        {
+            Context db = new Context();
+            db.Foods.Remove(db.Foods.FirstOrDefault(x => x.FoodId == foodId));
+            db.SaveChanges();
+        }
     }
 }

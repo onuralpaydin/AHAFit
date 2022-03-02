@@ -51,6 +51,13 @@ namespace AHAFit_UI
             this.lblMotivation = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDailyFoodList = new System.Windows.Forms.DataGridView();
+            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carbohydrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoodType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDateText = new System.Windows.Forms.Label();
@@ -59,41 +66,41 @@ namespace AHAFit_UI
             this.gainWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintainYourWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flwPnlLeftSide = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlResizeBottom = new System.Windows.Forms.Panel();
-            this.pnlResizeRight = new System.Windows.Forms.Panel();
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnBMI = new System.Windows.Forms.Button();
             this.btnFoodSt = new System.Windows.Forms.Button();
             this.btnMemberComp = new System.Windows.Forms.Button();
-            this.pnlDailyCalorie = new System.Windows.Forms.Panel();
-            this.pnlEatenToday = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlResizeBottom = new System.Windows.Forms.Panel();
+            this.pnlResizeRight = new System.Windows.Forms.Panel();
+            this.pnlHome = new System.Windows.Forms.Panel();
             this.pnlBasedOnMeals = new System.Windows.Forms.Panel();
-            this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carbohydrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlEatenToday = new System.Windows.Forms.Panel();
+            this.pnlDailyCalorie = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.flwPnlLeftSide.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlDailyCalorie.SuspendLayout();
-            this.pnlEatenToday.SuspendLayout();
             this.pnlBasedOnMeals.SuspendLayout();
+            this.pnlEatenToday.SuspendLayout();
+            this.pnlDailyCalorie.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReports
@@ -111,7 +118,7 @@ namespace AHAFit_UI
             this.dtpHomeDate.Checked = false;
             this.dtpHomeDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHomeDate.Location = new System.Drawing.Point(41, 214);
-            this.dtpHomeDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpHomeDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpHomeDate.Name = "dtpHomeDate";
             this.dtpHomeDate.Size = new System.Drawing.Size(634, 46);
             this.dtpHomeDate.TabIndex = 1;
@@ -233,7 +240,7 @@ namespace AHAFit_UI
             this.btnWater.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWater.ForeColor = System.Drawing.Color.White;
             this.btnWater.Location = new System.Drawing.Point(1104, 42);
-            this.btnWater.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnWater.Margin = new System.Windows.Forms.Padding(2);
             this.btnWater.Name = "btnWater";
             this.btnWater.Size = new System.Drawing.Size(190, 100);
             this.btnWater.TabIndex = 3;
@@ -248,7 +255,7 @@ namespace AHAFit_UI
             this.btnAteSomething.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAteSomething.ForeColor = System.Drawing.Color.White;
             this.btnAteSomething.Location = new System.Drawing.Point(1380, 42);
-            this.btnAteSomething.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAteSomething.Margin = new System.Windows.Forms.Padding(2);
             this.btnAteSomething.Name = "btnAteSomething";
             this.btnAteSomething.Size = new System.Drawing.Size(190, 100);
             this.btnAteSomething.TabIndex = 3;
@@ -263,7 +270,7 @@ namespace AHAFit_UI
             this.btnProgramChanger.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProgramChanger.ForeColor = System.Drawing.Color.White;
             this.btnProgramChanger.Location = new System.Drawing.Point(1656, 42);
-            this.btnProgramChanger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProgramChanger.Margin = new System.Windows.Forms.Padding(2);
             this.btnProgramChanger.Name = "btnProgramChanger";
             this.btnProgramChanger.Size = new System.Drawing.Size(190, 100);
             this.btnProgramChanger.TabIndex = 3;
@@ -278,7 +285,7 @@ namespace AHAFit_UI
             this.btnProfileUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfileUpdate.ForeColor = System.Drawing.Color.White;
             this.btnProfileUpdate.Location = new System.Drawing.Point(1932, 42);
-            this.btnProfileUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProfileUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnProfileUpdate.Name = "btnProfileUpdate";
             this.btnProfileUpdate.Size = new System.Drawing.Size(190, 100);
             this.btnProfileUpdate.TabIndex = 3;
@@ -291,7 +298,7 @@ namespace AHAFit_UI
             this.cmbMealSumCalorie.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMealSumCalorie.FormattingEnabled = true;
             this.cmbMealSumCalorie.Location = new System.Drawing.Point(47, 120);
-            this.cmbMealSumCalorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMealSumCalorie.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMealSumCalorie.Name = "cmbMealSumCalorie";
             this.cmbMealSumCalorie.Size = new System.Drawing.Size(322, 53);
             this.cmbMealSumCalorie.TabIndex = 5;
@@ -363,7 +370,7 @@ namespace AHAFit_UI
             this.FoodType});
             this.dgvDailyFoodList.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvDailyFoodList.Location = new System.Drawing.Point(1103, 163);
-            this.dgvDailyFoodList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDailyFoodList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDailyFoodList.Name = "dgvDailyFoodList";
             this.dgvDailyFoodList.ReadOnly = true;
             this.dgvDailyFoodList.RowHeadersVisible = false;
@@ -373,13 +380,73 @@ namespace AHAFit_UI
             this.dgvDailyFoodList.TabIndex = 9;
             this.dgvDailyFoodList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvDailyFoodList_MouseDown);
             // 
+            // FoodName
+            // 
+            this.FoodName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FoodName.FillWeight = 130F;
+            this.FoodName.HeaderText = "Food Name";
+            this.FoodName.MinimumWidth = 10;
+            this.FoodName.Name = "FoodName";
+            this.FoodName.ReadOnly = true;
+            // 
+            // Calorie
+            // 
+            this.Calorie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Calorie.FillWeight = 80F;
+            this.Calorie.HeaderText = "Calorie";
+            this.Calorie.MinimumWidth = 10;
+            this.Calorie.Name = "Calorie";
+            this.Calorie.ReadOnly = true;
+            // 
+            // Carbohydrate
+            // 
+            this.Carbohydrate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Carbohydrate.FillWeight = 144F;
+            this.Carbohydrate.HeaderText = "Carbohydrate";
+            this.Carbohydrate.MinimumWidth = 10;
+            this.Carbohydrate.Name = "Carbohydrate";
+            this.Carbohydrate.ReadOnly = true;
+            // 
+            // Protein
+            // 
+            this.Protein.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Protein.HeaderText = "Protein";
+            this.Protein.MinimumWidth = 10;
+            this.Protein.Name = "Protein";
+            this.Protein.ReadOnly = true;
+            // 
+            // Fat
+            // 
+            this.Fat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fat.FillWeight = 80F;
+            this.Fat.HeaderText = "Fat";
+            this.Fat.MinimumWidth = 10;
+            this.Fat.Name = "Fat";
+            this.Fat.ReadOnly = true;
+            // 
+            // FoodId
+            // 
+            this.FoodId.HeaderText = "FoodId";
+            this.FoodId.MinimumWidth = 10;
+            this.FoodId.Name = "FoodId";
+            this.FoodId.ReadOnly = true;
+            this.FoodId.Visible = false;
+            // 
+            // FoodType
+            // 
+            this.FoodType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FoodType.HeaderText = "FoodType";
+            this.FoodType.MinimumWidth = 10;
+            this.FoodType.Name = "FoodType";
+            this.FoodType.ReadOnly = true;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(331, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 48);
             // 
             // deleteToolStripMenuItem
             // 
@@ -439,121 +506,18 @@ namespace AHAFit_UI
             this.flwPnlLeftSide.Controls.Add(this.btnBMI);
             this.flwPnlLeftSide.Controls.Add(this.btnFoodSt);
             this.flwPnlLeftSide.Controls.Add(this.btnMemberComp);
+            this.flwPnlLeftSide.Controls.Add(this.label9);
+            this.flwPnlLeftSide.Controls.Add(this.label11);
+            this.flwPnlLeftSide.Controls.Add(this.label10);
+            this.flwPnlLeftSide.Controls.Add(this.label12);
+            this.flwPnlLeftSide.Controls.Add(this.label13);
+            this.flwPnlLeftSide.Controls.Add(this.label14);
             this.flwPnlLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.flwPnlLeftSide.Location = new System.Drawing.Point(0, 56);
-            this.flwPnlLeftSide.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.flwPnlLeftSide.Margin = new System.Windows.Forms.Padding(7);
             this.flwPnlLeftSide.Name = "flwPnlLeftSide";
             this.flwPnlLeftSide.Size = new System.Drawing.Size(467, 1144);
             this.flwPnlLeftSide.TabIndex = 1;
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.Controls.Add(this.btnExit);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(2621, 56);
-            this.pnlTop.TabIndex = 2;
-            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.Location = new System.Drawing.Point(2563, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(58, 56);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlMain.Controls.Add(this.pnlResizeBottom);
-            this.pnlMain.Controls.Add(this.pnlResizeRight);
-            this.pnlMain.Controls.Add(this.pnlHome);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(467, 56);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(2154, 1144);
-            this.pnlMain.TabIndex = 11;
-            // 
-            // pnlResizeBottom
-            // 
-            this.pnlResizeBottom.BackColor = System.Drawing.Color.Transparent;
-            this.pnlResizeBottom.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.pnlResizeBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlResizeBottom.Location = new System.Drawing.Point(0, 1122);
-            this.pnlResizeBottom.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.pnlResizeBottom.Name = "pnlResizeBottom";
-            this.pnlResizeBottom.Size = new System.Drawing.Size(2131, 22);
-            this.pnlResizeBottom.TabIndex = 13;
-            this.pnlResizeBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
-            this.pnlResizeBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
-            this.pnlResizeBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseUp);
-            // 
-            // pnlResizeRight
-            // 
-            this.pnlResizeRight.BackColor = System.Drawing.Color.Transparent;
-            this.pnlResizeRight.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.pnlResizeRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlResizeRight.Location = new System.Drawing.Point(2131, 0);
-            this.pnlResizeRight.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.pnlResizeRight.Name = "pnlResizeRight";
-            this.pnlResizeRight.Size = new System.Drawing.Size(23, 1144);
-            this.pnlResizeRight.TabIndex = 12;
-            this.pnlResizeRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
-            this.pnlResizeRight.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
-            this.pnlResizeRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseUp);
-            // 
-            // pnlHome
-            // 
-            this.pnlHome.BackColor = System.Drawing.Color.Transparent;
-            this.pnlHome.Controls.Add(this.pnlBasedOnMeals);
-            this.pnlHome.Controls.Add(this.pnlEatenToday);
-            this.pnlHome.Controls.Add(this.pnlDailyCalorie);
-            this.pnlHome.Controls.Add(this.btnAteSomething);
-            this.pnlHome.Controls.Add(this.btnWater);
-            this.pnlHome.Controls.Add(this.btnProgramChanger);
-            this.pnlHome.Controls.Add(this.btnProfileUpdate);
-            this.pnlHome.Controls.Add(this.dgvDailyFoodList);
-            this.pnlHome.Controls.Add(this.lblDateText);
-            this.pnlHome.Controls.Add(this.lblMotivation);
-            this.pnlHome.Controls.Add(this.dtpHomeDate);
-            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHome.Location = new System.Drawing.Point(0, 0);
-            this.pnlHome.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(2154, 1144);
-            this.pnlHome.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(374, 127);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(290, 50);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Left";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 127);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(290, 50);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Eaten";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -655,17 +619,101 @@ namespace AHAFit_UI
             this.btnMemberComp.UseVisualStyleBackColor = true;
             this.btnMemberComp.Click += new System.EventHandler(this.btnMemberComp_Click);
             // 
-            // pnlDailyCalorie
+            // pnlTop
             // 
-            this.pnlDailyCalorie.Controls.Add(this.label7);
-            this.pnlDailyCalorie.Controls.Add(this.label3);
-            this.pnlDailyCalorie.Controls.Add(this.lblRemainCalorie);
-            this.pnlDailyCalorie.Controls.Add(this.lblSumCalorie);
-            this.pnlDailyCalorie.Controls.Add(this.lblRemainWater);
-            this.pnlDailyCalorie.Location = new System.Drawing.Point(39, 299);
-            this.pnlDailyCalorie.Name = "pnlDailyCalorie";
-            this.pnlDailyCalorie.Size = new System.Drawing.Size(1044, 221);
-            this.pnlDailyCalorie.TabIndex = 12;
+            this.pnlTop.Controls.Add(this.label8);
+            this.pnlTop.Controls.Add(this.btnExit);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(7);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(2621, 56);
+            this.pnlTop.TabIndex = 2;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.Location = new System.Drawing.Point(2563, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(7);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(58, 56);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlMain.Controls.Add(this.pnlResizeBottom);
+            this.pnlMain.Controls.Add(this.pnlResizeRight);
+            this.pnlMain.Controls.Add(this.pnlHome);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(467, 56);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(7);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(2154, 1144);
+            this.pnlMain.TabIndex = 11;
+            // 
+            // pnlResizeBottom
+            // 
+            this.pnlResizeBottom.BackColor = System.Drawing.Color.Transparent;
+            this.pnlResizeBottom.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.pnlResizeBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlResizeBottom.Location = new System.Drawing.Point(0, 1122);
+            this.pnlResizeBottom.Margin = new System.Windows.Forms.Padding(7);
+            this.pnlResizeBottom.Name = "pnlResizeBottom";
+            this.pnlResizeBottom.Size = new System.Drawing.Size(2131, 22);
+            this.pnlResizeBottom.TabIndex = 13;
+            this.pnlResizeBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
+            this.pnlResizeBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
+            this.pnlResizeBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseUp);
+            // 
+            // pnlResizeRight
+            // 
+            this.pnlResizeRight.BackColor = System.Drawing.Color.Transparent;
+            this.pnlResizeRight.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.pnlResizeRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlResizeRight.Location = new System.Drawing.Point(2131, 0);
+            this.pnlResizeRight.Margin = new System.Windows.Forms.Padding(7);
+            this.pnlResizeRight.Name = "pnlResizeRight";
+            this.pnlResizeRight.Size = new System.Drawing.Size(23, 1144);
+            this.pnlResizeRight.TabIndex = 12;
+            this.pnlResizeRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
+            this.pnlResizeRight.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
+            this.pnlResizeRight.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseUp);
+            // 
+            // pnlHome
+            // 
+            this.pnlHome.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHome.Controls.Add(this.pnlBasedOnMeals);
+            this.pnlHome.Controls.Add(this.pnlEatenToday);
+            this.pnlHome.Controls.Add(this.pnlDailyCalorie);
+            this.pnlHome.Controls.Add(this.btnAteSomething);
+            this.pnlHome.Controls.Add(this.btnWater);
+            this.pnlHome.Controls.Add(this.btnProgramChanger);
+            this.pnlHome.Controls.Add(this.btnProfileUpdate);
+            this.pnlHome.Controls.Add(this.dgvDailyFoodList);
+            this.pnlHome.Controls.Add(this.lblDateText);
+            this.pnlHome.Controls.Add(this.lblMotivation);
+            this.pnlHome.Controls.Add(this.dtpHomeDate);
+            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHome.Location = new System.Drawing.Point(0, 0);
+            this.pnlHome.Margin = new System.Windows.Forms.Padding(7);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(2154, 1144);
+            this.pnlHome.TabIndex = 11;
+            // 
+            // pnlBasedOnMeals
+            // 
+            this.pnlBasedOnMeals.Controls.Add(this.label1);
+            this.pnlBasedOnMeals.Controls.Add(this.lblMealSumCalorie);
+            this.pnlBasedOnMeals.Controls.Add(this.cmbMealSumCalorie);
+            this.pnlBasedOnMeals.Location = new System.Drawing.Point(41, 871);
+            this.pnlBasedOnMeals.Name = "pnlBasedOnMeals";
+            this.pnlBasedOnMeals.Size = new System.Drawing.Size(1044, 221);
+            this.pnlBasedOnMeals.TabIndex = 14;
             // 
             // pnlEatenToday
             // 
@@ -681,75 +729,122 @@ namespace AHAFit_UI
             this.pnlEatenToday.Size = new System.Drawing.Size(1044, 221);
             this.pnlEatenToday.TabIndex = 13;
             // 
-            // pnlBasedOnMeals
+            // pnlDailyCalorie
             // 
-            this.pnlBasedOnMeals.Controls.Add(this.label1);
-            this.pnlBasedOnMeals.Controls.Add(this.lblMealSumCalorie);
-            this.pnlBasedOnMeals.Controls.Add(this.cmbMealSumCalorie);
-            this.pnlBasedOnMeals.Location = new System.Drawing.Point(41, 871);
-            this.pnlBasedOnMeals.Name = "pnlBasedOnMeals";
-            this.pnlBasedOnMeals.Size = new System.Drawing.Size(1044, 221);
-            this.pnlBasedOnMeals.TabIndex = 14;
+            this.pnlDailyCalorie.Controls.Add(this.label7);
+            this.pnlDailyCalorie.Controls.Add(this.label3);
+            this.pnlDailyCalorie.Controls.Add(this.lblRemainCalorie);
+            this.pnlDailyCalorie.Controls.Add(this.lblSumCalorie);
+            this.pnlDailyCalorie.Controls.Add(this.lblRemainWater);
+            this.pnlDailyCalorie.Location = new System.Drawing.Point(39, 299);
+            this.pnlDailyCalorie.Name = "pnlDailyCalorie";
+            this.pnlDailyCalorie.Size = new System.Drawing.Size(1044, 221);
+            this.pnlDailyCalorie.TabIndex = 12;
             // 
-            // FoodName
+            // label7
             // 
-            this.FoodName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FoodName.FillWeight = 130F;
-            this.FoodName.HeaderText = "Food Name";
-            this.FoodName.MinimumWidth = 10;
-            this.FoodName.Name = "FoodName";
-            this.FoodName.ReadOnly = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(374, 127);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(290, 50);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Left";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Calorie
+            // label3
             // 
-            this.Calorie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Calorie.FillWeight = 80F;
-            this.Calorie.HeaderText = "Calorie";
-            this.Calorie.MinimumWidth = 10;
-            this.Calorie.Name = "Calorie";
-            this.Calorie.ReadOnly = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 127);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(290, 50);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Eaten";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Carbohydrate
+            // label8
             // 
-            this.Carbohydrate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Carbohydrate.FillWeight = 144F;
-            this.Carbohydrate.HeaderText = "Carbohydrate";
-            this.Carbohydrate.MinimumWidth = 10;
-            this.Carbohydrate.Name = "Carbohydrate";
-            this.Carbohydrate.ReadOnly = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(11, 9);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 41);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "AHAFit";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Protein
+            // label9
             // 
-            this.Protein.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Protein.HeaderText = "Protein";
-            this.Protein.MinimumWidth = 10;
-            this.Protein.Name = "Protein";
-            this.Protein.ReadOnly = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(2, 835);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(465, 45);
+            this.label9.TabIndex = 9;
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Fat
+            // label11
             // 
-            this.Fat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fat.FillWeight = 80F;
-            this.Fat.HeaderText = "Fat";
-            this.Fat.MinimumWidth = 10;
-            this.Fat.Name = "Fat";
-            this.Fat.ReadOnly = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(2, 880);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(465, 45);
+            this.label11.TabIndex = 11;
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FoodId
+            // label10
             // 
-            this.FoodId.HeaderText = "FoodId";
-            this.FoodId.MinimumWidth = 10;
-            this.FoodId.Name = "FoodId";
-            this.FoodId.ReadOnly = true;
-            this.FoodId.Visible = false;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(2, 925);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(465, 45);
+            this.label10.TabIndex = 12;
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FoodType
+            // label12
             // 
-            this.FoodType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FoodType.HeaderText = "FoodType";
-            this.FoodType.MinimumWidth = 10;
-            this.FoodType.Name = "FoodType";
-            this.FoodType.ReadOnly = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(2, 970);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(465, 45);
+            this.label12.TabIndex = 13;
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(2, 1015);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(465, 45);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "AHAFit V1.0";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(2, 1060);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(465, 45);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "@alperakdemir  @yilmazhuseyin  @onuralpaydin";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HomeForm
             // 
@@ -761,7 +856,7 @@ namespace AHAFit_UI
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
@@ -769,16 +864,17 @@ namespace AHAFit_UI
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.flwPnlLeftSide.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.pnlMain.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlDailyCalorie.ResumeLayout(false);
-            this.pnlEatenToday.ResumeLayout(false);
-            this.pnlEatenToday.PerformLayout();
             this.pnlBasedOnMeals.ResumeLayout(false);
             this.pnlBasedOnMeals.PerformLayout();
+            this.pnlEatenToday.ResumeLayout(false);
+            this.pnlEatenToday.PerformLayout();
+            this.pnlDailyCalorie.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -838,5 +934,12 @@ namespace AHAFit_UI
         private System.Windows.Forms.DataGridViewTextBoxColumn Fat;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodType;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

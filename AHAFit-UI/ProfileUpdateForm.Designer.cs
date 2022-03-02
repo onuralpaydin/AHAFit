@@ -54,117 +54,140 @@ namespace AHAFit_UI
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(206, 12);
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(290, 92);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(305, 31);
+            this.txtEmail.Size = new System.Drawing.Size(387, 47);
             this.txtEmail.TabIndex = 0;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(206, 63);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(290, 169);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(305, 31);
+            this.txtName.Size = new System.Drawing.Size(387, 47);
             this.txtName.TabIndex = 0;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(206, 109);
+            this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.Location = new System.Drawing.Point(290, 246);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(305, 31);
+            this.txtSurname.Size = new System.Drawing.Size(387, 47);
             this.txtSurname.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(206, 158);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(290, 323);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(305, 31);
+            this.txtPassword.Size = new System.Drawing.Size(387, 47);
             this.txtPassword.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 13);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(52, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 25);
+            this.label1.Size = new System.Drawing.Size(95, 41);
             this.label1.TabIndex = 1;
             this.label1.Text = "Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 66);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(52, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(101, 41);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(95, 109);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(52, 248);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 25);
+            this.label3.Size = new System.Drawing.Size(142, 41);
             this.label3.TabIndex = 1;
             this.label3.Text = "Surname";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 164);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(52, 326);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
+            this.label4.Size = new System.Drawing.Size(150, 41);
             this.label4.TabIndex = 1;
             this.label4.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(123, 207);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(52, 404);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
+            this.label5.Size = new System.Drawing.Size(121, 41);
             this.label5.TabIndex = 1;
             this.label5.Text = "Weight";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 264);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(52, 482);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 25);
+            this.label6.Size = new System.Drawing.Size(120, 41);
             this.label6.TabIndex = 1;
             this.label6.Text = "Gender";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(123, 311);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(52, 560);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 25);
+            this.label7.Size = new System.Drawing.Size(115, 41);
             this.label7.TabIndex = 1;
             this.label7.Text = "Height";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(90, 361);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(52, 638);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 25);
+            this.label8.Size = new System.Drawing.Size(163, 41);
             this.label8.TabIndex = 1;
             this.label8.Text = "Birth Date";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 413);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(52, 716);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 25);
+            this.label9.Size = new System.Drawing.Size(207, 41);
             this.label9.TabIndex = 1;
             this.label9.Text = "Activity Level";
             // 
             // numWeight
             // 
             this.numWeight.DecimalPlaces = 1;
-            this.numWeight.Location = new System.Drawing.Point(208, 207);
+            this.numWeight.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numWeight.Location = new System.Drawing.Point(290, 400);
             this.numWeight.Maximum = new decimal(new int[] {
             250,
             0,
@@ -176,7 +199,7 @@ namespace AHAFit_UI
             0,
             0});
             this.numWeight.Name = "numWeight";
-            this.numWeight.Size = new System.Drawing.Size(325, 31);
+            this.numWeight.Size = new System.Drawing.Size(387, 47);
             this.numWeight.TabIndex = 2;
             this.numWeight.Value = new decimal(new int[] {
             30,
@@ -186,15 +209,17 @@ namespace AHAFit_UI
             // 
             // cmbGender
             // 
+            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(208, 264);
+            this.cmbGender.Location = new System.Drawing.Point(290, 477);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(326, 33);
+            this.cmbGender.Size = new System.Drawing.Size(387, 49);
             this.cmbGender.TabIndex = 3;
             // 
             // numHeight
             // 
-            this.numHeight.Location = new System.Drawing.Point(208, 311);
+            this.numHeight.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numHeight.Location = new System.Drawing.Point(290, 556);
             this.numHeight.Maximum = new decimal(new int[] {
             300,
             0,
@@ -206,7 +231,7 @@ namespace AHAFit_UI
             0,
             0});
             this.numHeight.Name = "numHeight";
-            this.numHeight.Size = new System.Drawing.Size(325, 31);
+            this.numHeight.Size = new System.Drawing.Size(387, 47);
             this.numHeight.TabIndex = 2;
             this.numHeight.Value = new decimal(new int[] {
             30,
@@ -216,24 +241,27 @@ namespace AHAFit_UI
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Location = new System.Drawing.Point(208, 361);
+            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthDate.Location = new System.Drawing.Point(290, 633);
             this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(405, 31);
+            this.dtpBirthDate.Size = new System.Drawing.Size(387, 47);
             this.dtpBirthDate.TabIndex = 4;
             // 
             // cmbActivity
             // 
+            this.cmbActivity.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbActivity.FormattingEnabled = true;
-            this.cmbActivity.Location = new System.Drawing.Point(207, 407);
+            this.cmbActivity.Location = new System.Drawing.Point(290, 710);
             this.cmbActivity.Name = "cmbActivity";
-            this.cmbActivity.Size = new System.Drawing.Size(326, 33);
+            this.cmbActivity.Size = new System.Drawing.Size(387, 49);
             this.cmbActivity.TabIndex = 3;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(681, 375);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(529, 797);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(93, 48);
+            this.btnSave.Size = new System.Drawing.Size(148, 82);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -241,9 +269,9 @@ namespace AHAFit_UI
             // 
             // ProfileUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(730, 937);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.cmbActivity);
@@ -263,6 +291,7 @@ namespace AHAFit_UI
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProfileUpdateForm";
             this.Text = "ProfileUpdateForm";
             this.Load += new System.EventHandler(this.ProfileUpdateForm_Load);

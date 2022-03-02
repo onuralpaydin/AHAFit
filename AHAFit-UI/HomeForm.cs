@@ -37,6 +37,7 @@ namespace AHAFit_UI
             FoodListFill();
             dtpHomeDate.MinDate = new DateTime(2020, 1, 1);
             dtpHomeDate.MaxDate = DateTime.Today;
+            this.Width = 1150;
         }
 
         private void btnReports_Click(object sender, EventArgs e)
@@ -217,7 +218,17 @@ namespace AHAFit_UI
 
         private void btnProfileUpdate_Click(object sender, EventArgs e)
         {
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
+            pnlHome.Visible = false;
             ProfileUpdateForm newProfileUpdateForm = new ProfileUpdateForm(memberId);
+            newProfileUpdateForm.MdiParent = this;
+            newProfileUpdateForm.Dock = DockStyle.Fill;
+            newProfileUpdateForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(newProfileUpdateForm);
             newProfileUpdateForm.Show();
             RefreshHomeData();
         }
@@ -226,6 +237,11 @@ namespace AHAFit_UI
         {
             pnlHome.Visible = false;
 
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
             AddDailyFoodForm newAddDailyFoodForm = new AddDailyFoodForm(memberId);
             newAddDailyFoodForm.MdiParent = this;
             newAddDailyFoodForm.Dock = DockStyle.Fill;
@@ -256,6 +272,7 @@ namespace AHAFit_UI
             btnProfileUpdate.BackColor = Color.FromArgb(166, 83, 105);
 
             dgvDailyFoodList.BackgroundColor = Color.FromArgb(168, 181, 191);
+            
 
         }
 
@@ -298,6 +315,7 @@ namespace AHAFit_UI
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+           
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 

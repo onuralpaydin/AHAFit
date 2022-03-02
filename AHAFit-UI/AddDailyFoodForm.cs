@@ -24,6 +24,9 @@ namespace AHAFit_UI
             dgvFoods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvFoods.MultiSelect = false;
             dgvFoods.AllowUserToAddRows = false;
+            DesignSettings();
+            dtpEatDate.MinDate = new DateTime(2020, 1, 1);
+            dtpEatDate.MaxDate = DateTime.Today;
         }
 
         private void AddDailyFoodForm_Load(object sender, EventArgs e)
@@ -79,6 +82,7 @@ namespace AHAFit_UI
         private void btnCheckImage_Click(object sender, EventArgs e)
         {
             pbFood.ImageLocation = txtPhotoUrl.Text;
+          
         }
 
         private void btnSaveEat_Click(object sender, EventArgs e)
@@ -96,6 +100,35 @@ namespace AHAFit_UI
                 selectedFoodId = Convert.ToInt32(dgvFoods.Rows[selectedRow].Cells[0].Value);
             }
             return selectedFoodId;
+        }
+
+        private void DesignSettings()
+        {
+            btnCheckImage.BackColor = Color.FromArgb(166, 83, 105);
+            btnNewFoodSave.BackColor = Color.FromArgb(166, 83, 105);
+            btnSaveEat.BackColor = Color.FromArgb(166, 83, 105);
+        }
+
+        private void dgvFoods_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgvFoods.HitTest(e.X, e.Y);
+                dgvFoods.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgvFoods.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            Huseyin.FoodDelete(FindSelectedFoodId());
+            txtFoodSearchBox.Text += " ";
+            txtFoodSearchBox.Text = txtFoodSearchBox.Text.Remove(0, 1);
+
         }
     }
 }
