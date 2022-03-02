@@ -41,7 +41,7 @@ namespace AHAFit_UI
 
         private void btnSignUpSignUp_Click(object sender, EventArgs e)
         {
-            if (txtSignUpEmail.Text == null || txtSignUpName.Text == null || txtSignUpSurname.Text == null || txtSignUpPassword.Text == null || nudSignUpHeight.Value == 0 || nudSignUpWeight.Value == 0 || txtSignUpEmail.Text == "" || txtSignUpName.Text == "" || txtSignUpSurname.Text == "" || txtSignUpPassword.Text == ""||cmbSignUpActivityLevel.SelectedIndex==-1||cmbSignUpGender.SelectedIndex==-1||cmbSignUpGoal.SelectedIndex==-1)
+            if (txtSignUpEmail.Text == null || txtSignUpName.Text == null || txtSignUpSurname.Text == null ||txtSignUpPassword.Text==null||txtSignUpPassword.Text==""||  nudSignUpHeight.Value == 0 || nudSignUpWeight.Value == 0 || txtSignUpEmail.Text == "" || txtSignUpName.Text == "" || txtSignUpSurname.Text == "" ||cmbSignUpActivityLevel.SelectedIndex==-1||cmbSignUpGender.SelectedIndex==-1||cmbSignUpGoal.SelectedIndex==-1)
             {
                 MessageBox.Show("Required field cannot be left blank ");
             }
@@ -68,6 +68,15 @@ namespace AHAFit_UI
                     MessageBox.Show("Invalid email address");
                 }
 
+                else if (MemberControlTrueFalse == false)
+                {
+                    MessageBox.Show("The Email adress is already taken.Please choose another.");
+                }
+
+                else if (dateTimePicker1.Value.Date.Year-DateTime.Now.Year<=15)
+                {
+                    MessageBox.Show("Not suitable for who is younger than 16.");
+                }
                 else if (MemberControlTrueFalse == true)
                 {
                     onur.CreateNewMember(txtSignUpEmail.Text, txtSignUpPassword.Text, txtSignUpName.Text, txtSignUpSurname.Text, weight, height, gender, dateTimePicker1.Value.Date, goalID, cmbSignUpActivityLevel.SelectedItem.ToString());
@@ -76,35 +85,31 @@ namespace AHAFit_UI
                     LoginForm loginForm = new LoginForm();
                     loginForm.Show();
                 }
-                else if (MemberControlTrueFalse == false)
-                {
-                    MessageBox.Show("The Email adress is already taken.Please choose another.");
-                }
 
 
 
             }
         }
 
-        private void txtSignUpPassword_TextChanged(object sender, EventArgs e)
+
+
+        private void txtSignUpPassword_TextChanged_1(object sender, EventArgs e)
         {
             lblSignUpPasswordInfo.Text = " ";
-           
-            
-             if (onur.SignUpDataControl(txtSignUpPassword.Text) ==true)
+
+
+            if (onur.SignUpDataControl(txtSignUpPassword.Text) == true)
             {
                 lblSignUpPasswordInfo.Text = "Strong Password";
                 lblSignUpPasswordInfo.ForeColor = Color.Green;
             }
 
-             else 
+            else
             {
-               
+
                 lblSignUpPasswordInfo.Text = "Weak Password";
                 lblSignUpPasswordInfo.ForeColor = Color.Red;
             }
         }
-
-       
     }
 }

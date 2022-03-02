@@ -42,7 +42,6 @@ namespace AHAFit_UI
             this.txtSignUpEmail = new System.Windows.Forms.TextBox();
             this.txtSignUpSurname = new System.Windows.Forms.TextBox();
             this.txtSignUpName = new System.Windows.Forms.TextBox();
-            this.txtSignUpPassword = new System.Windows.Forms.TextBox();
             this.cmbSignUpGender = new System.Windows.Forms.ComboBox();
             this.cmbSignUpActivityLevel = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +50,7 @@ namespace AHAFit_UI
             this.nudSignUpWeight = new System.Windows.Forms.NumericUpDown();
             this.nudSignUpHeight = new System.Windows.Forms.NumericUpDown();
             this.lblSignUpPasswordInfo = new System.Windows.Forms.Label();
+            this.txtSignUpPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudSignUpWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSignUpHeight)).BeginInit();
             this.SuspendLayout();
@@ -166,14 +166,6 @@ namespace AHAFit_UI
             this.txtSignUpName.Size = new System.Drawing.Size(121, 20);
             this.txtSignUpName.TabIndex = 12;
             // 
-            // txtSignUpPassword
-            // 
-            this.txtSignUpPassword.Location = new System.Drawing.Point(152, 126);
-            this.txtSignUpPassword.Name = "txtSignUpPassword";
-            this.txtSignUpPassword.Size = new System.Drawing.Size(121, 20);
-            this.txtSignUpPassword.TabIndex = 13;
-            this.txtSignUpPassword.TextChanged += new System.EventHandler(this.txtSignUpPassword_TextChanged);
-            // 
             // cmbSignUpGender
             // 
             this.cmbSignUpGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -252,11 +244,20 @@ namespace AHAFit_UI
             this.lblSignUpPasswordInfo.Size = new System.Drawing.Size(100, 121);
             this.lblSignUpPasswordInfo.TabIndex = 26;
             // 
+            // txtSignUpPassword
+            // 
+            this.txtSignUpPassword.Location = new System.Drawing.Point(152, 129);
+            this.txtSignUpPassword.Name = "txtSignUpPassword";
+            this.txtSignUpPassword.Size = new System.Drawing.Size(121, 20);
+            this.txtSignUpPassword.TabIndex = 27;
+            this.txtSignUpPassword.TextChanged += new System.EventHandler(this.txtSignUpPassword_TextChanged_1);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 450);
+            this.Controls.Add(this.txtSignUpPassword);
             this.Controls.Add(this.lblSignUpPasswordInfo);
             this.Controls.Add(this.nudSignUpHeight);
             this.Controls.Add(this.nudSignUpWeight);
@@ -265,7 +266,6 @@ namespace AHAFit_UI
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.cmbSignUpActivityLevel);
             this.Controls.Add(this.cmbSignUpGender);
-            this.Controls.Add(this.txtSignUpPassword);
             this.Controls.Add(this.txtSignUpName);
             this.Controls.Add(this.txtSignUpSurname);
             this.Controls.Add(this.txtSignUpEmail);
@@ -304,7 +304,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.TextBox txtSignUpEmail;
         private System.Windows.Forms.TextBox txtSignUpSurname;
         private System.Windows.Forms.TextBox txtSignUpName;
-        private System.Windows.Forms.TextBox txtSignUpPassword;
         private System.Windows.Forms.ComboBox cmbSignUpGender;
         private System.Windows.Forms.ComboBox cmbSignUpActivityLevel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -313,5 +312,6 @@ namespace AHAFit_UI
         private System.Windows.Forms.NumericUpDown nudSignUpWeight;
         private System.Windows.Forms.NumericUpDown nudSignUpHeight;
         private System.Windows.Forms.Label lblSignUpPasswordInfo;
+        private System.Windows.Forms.TextBox txtSignUpPassword;
     }
 }
