@@ -36,7 +36,16 @@ namespace AHAFit_UI
 
         private void btnNewFoodSave_Click(object sender, EventArgs e)
         {
-            Huseyin.AddNewFood(txtNewFoodName.Text, Convert.ToDouble(nudCalorie.Value), Convert.ToDouble(nudCarbohydrate.Value), Convert.ToDouble(nudProtein.Value), Convert.ToDouble(nudFat.Value), txtPhotoUrl.Text, cmbFoodType.Text);
+            if(!string.IsNullOrEmpty(txtNewFoodName.Text) && !string.IsNullOrEmpty(txtPhotoUrl.Text))
+            {
+                Huseyin.AddNewFood(txtNewFoodName.Text, Convert.ToDouble(nudCalorie.Value), Convert.ToDouble(nudCarbohydrate.Value), Convert.ToDouble(nudProtein.Value), Convert.ToDouble(nudFat.Value), txtPhotoUrl.Text, cmbFoodType.Text);
+                MessageBox.Show("The food has been successfully saved.");
+                txtNewFoodName.Clear();
+                txtPhotoUrl.Clear();
+            }else
+            {
+                MessageBox.Show("Please fill in all the blanks.");
+            }
         }
 
         private void fillComboBoxes()
@@ -81,8 +90,17 @@ namespace AHAFit_UI
 
         private void btnCheckImage_Click(object sender, EventArgs e)
         {
-            pbFood.ImageLocation = txtPhotoUrl.Text;
-          
+            if(txtPhotoUrl.Text.Contains("http"))
+            {
+                pbFood.ImageLocation = txtPhotoUrl.Text;
+                
+            }else
+            {
+                MessageBox.Show("Image link not working.");
+                pbFood.ImageLocation = null;
+                txtPhotoUrl.Clear();
+                pbFood.Update();
+            }
         }
 
         private void btnSaveEat_Click(object sender, EventArgs e)
@@ -107,6 +125,7 @@ namespace AHAFit_UI
             btnCheckImage.BackColor = Color.FromArgb(166, 83, 105);
             btnNewFoodSave.BackColor = Color.FromArgb(166, 83, 105);
             btnSaveEat.BackColor = Color.FromArgb(166, 83, 105);
+            dgvFoods.BackgroundColor = Color.FromArgb(168, 181, 191);
         }
 
         private void dgvFoods_MouseDown(object sender, MouseEventArgs e)
@@ -124,11 +143,21 @@ namespace AHAFit_UI
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+   
             Huseyin.FoodDelete(FindSelectedFoodId());
             txtFoodSearchBox.Text += " ";
             txtFoodSearchBox.Text = txtFoodSearchBox.Text.Remove(0, 1);
+        }
 
+        private void pbFood_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show("Image link not working.");
+                txtPhotoUrl.Text = "";
+                pbFood.ImageLocation = null;
+                pbFood.Image = null;
+            }
         }
     }
 }

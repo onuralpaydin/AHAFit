@@ -380,12 +380,35 @@ namespace AHAFit_BLL
             Context db = new Context();
             return db.Meals.FirstOrDefault(x => x.Name == mealName).MealId;
         }
-
         public static void FoodDelete(int foodId)
         {
             Context db = new Context();
             db.Foods.Remove(db.Foods.FirstOrDefault(x => x.FoodId == foodId));
             db.SaveChanges();
         }
+        public static string GetMemberGoal(int memberId)
+        {
+            Context db = new Context();
+            return db.Goals.FirstOrDefault(x => x.GoalId == db.Members.FirstOrDefault(y=>y.MemberId == memberId).GoalId).Name;
+        }
+        public static ActivityLevel GetMemberActivityLevel(int memberId)
+        {
+            Context db = new Context();
+
+            return (ActivityLevel)Enum.Parse(typeof(ActivityLevel), (db.Members.FirstOrDefault(x => x.MemberId == memberId).ActivityLevel));
+        }
+        public static bool IsEmailAddressExist(string email, int memberId)
+        {
+            Context db = new Context();
+
+            return (db.Members.Any(x => x.Email == email) && db.Members.FirstOrDefault(x=>x.Email == email).MemberId != memberId);
+        }
+
+        public static string GetMemberPassword(int memberId)
+        {
+            Context db = new Context();
+            return db.Members.FirstOrDefault(x => x.MemberId == memberId).Password;
+        }
+
     }
 }

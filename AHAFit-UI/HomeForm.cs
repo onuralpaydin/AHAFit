@@ -198,7 +198,7 @@ namespace AHAFit_UI
 
         private void RefreshHomeData()
         {
-            lblSumCalorie.Text = (Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)).ToString() + " Cal";
+            lblSumCalorie.Text = String.Format("{0:n}", Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)) + " Cal";
 
             if(Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date) > 0)
             {
@@ -207,12 +207,12 @@ namespace AHAFit_UI
             {
                 lblRemainWater.Text = "You drank enough water today.";
             }
-            lblRemainCalorie.Text = Math.Round(((Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date))),2).ToString() + " Cal";
-            lblCarbo.Text = Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblPro.Text = Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblFat.Text = Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date).ToString() + " gr";
-            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
-            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy");
+            lblRemainCalorie.Text = String.Format("{0:n}", Math.Round(Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date), 2)) + " Cal";
+            lblCarbo.Text = String.Format("{0:n}",Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblPro.Text = String.Format("{0:n}",Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblFat.Text = String.Format("{0:n}",Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblMealSumCalorie.Text = String.Format("{0:n}",Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text)) + " Calories";
+            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " / Program: " + Huseyin.GetMemberGoal(memberId);
             FoodListFill();
         }
 

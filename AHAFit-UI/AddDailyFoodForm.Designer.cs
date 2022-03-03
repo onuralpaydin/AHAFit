@@ -53,6 +53,8 @@ namespace AHAFit_UI
             this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtpEatDate = new System.Windows.Forms.DateTimePicker();
             this.cmbEatMeal = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,16 +66,14 @@ namespace AHAFit_UI
             this.cmbFoodType = new System.Windows.Forms.ComboBox();
             this.pbFood = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudCalorie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarbohydrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFood)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNewFoodName
@@ -337,6 +337,21 @@ namespace AHAFit_UI
             this.FoodType.Name = "FoodType";
             this.FoodType.ReadOnly = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 48);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(171, 44);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // dtpEatDate
             // 
             this.dtpEatDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,6 +363,7 @@ namespace AHAFit_UI
             // 
             // cmbEatMeal
             // 
+            this.cmbEatMeal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEatMeal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEatMeal.FormattingEnabled = true;
             this.cmbEatMeal.Location = new System.Drawing.Point(848, 448);
@@ -429,12 +445,12 @@ namespace AHAFit_UI
             this.btnCheckImage.FlatAppearance.BorderSize = 0;
             this.btnCheckImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckImage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckImage.Location = new System.Drawing.Point(653, 332);
+            this.btnCheckImage.Location = new System.Drawing.Point(837, 332);
             this.btnCheckImage.Margin = new System.Windows.Forms.Padding(5);
             this.btnCheckImage.Name = "btnCheckImage";
-            this.btnCheckImage.Size = new System.Drawing.Size(434, 71);
+            this.btnCheckImage.Size = new System.Drawing.Size(250, 73);
             this.btnCheckImage.TabIndex = 6;
-            this.btnCheckImage.Text = "Check The Image";
+            this.btnCheckImage.Text = "Check Image";
             this.btnCheckImage.UseVisualStyleBackColor = true;
             this.btnCheckImage.Click += new System.EventHandler(this.btnCheckImage_Click);
             // 
@@ -452,6 +468,7 @@ namespace AHAFit_UI
             // 
             // cmbFoodType
             // 
+            this.cmbFoodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFoodType.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFoodType.FormattingEnabled = true;
             this.cmbFoodType.Location = new System.Drawing.Point(837, 152);
@@ -463,40 +480,26 @@ namespace AHAFit_UI
             // pbFood
             // 
             this.pbFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbFood.Location = new System.Drawing.Point(1355, 545);
+            this.pbFood.Location = new System.Drawing.Point(1355, 480);
             this.pbFood.Margin = new System.Windows.Forms.Padding(5);
             this.pbFood.Name = "pbFood";
-            this.pbFood.Size = new System.Drawing.Size(610, 456);
+            this.pbFood.Size = new System.Drawing.Size(610, 521);
             this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFood.TabIndex = 13;
             this.pbFood.TabStop = false;
+            this.pbFood.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbFood_LoadCompleted);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1568, 485);
+            this.label7.Location = new System.Drawing.Point(1568, 425);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(185, 41);
             this.label7.TabIndex = 14;
             this.label7.Text = "Food Image";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 48);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(330, 44);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // AddDailyFoodForm
             // 
@@ -524,10 +527,10 @@ namespace AHAFit_UI
             ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFoods)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFood)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
