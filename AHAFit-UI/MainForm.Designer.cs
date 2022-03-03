@@ -1,7 +1,7 @@
 ﻿
 namespace AHAFit_UI
 {
-    partial class HomeForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -847,7 +847,7 @@ namespace AHAFit_UI
             this.label3.Text = "Eaten";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // HomeForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -858,7 +858,7 @@ namespace AHAFit_UI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "HomeForm";
+            this.Name = "MainForm";
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).EndInit();

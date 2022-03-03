@@ -16,6 +16,7 @@ namespace AHAFit_UI
 {
     public partial class ProfileUpdateForm : Form
     {
+        MemberData MemberData = new MemberData();
         private readonly int memberId;
 
         public ProfileUpdateForm(int memberId)
@@ -28,15 +29,15 @@ namespace AHAFit_UI
             {
                 cmbActivity.Items.Add(activity);
             }
-            cmbActivity.SelectedItem = Huseyin.GetMemberActivityLevel(memberId);
+            cmbActivity.SelectedItem = MemberData.GetMemberActivityLevel(memberId);
 
-            txtPassword.Text = Huseyin.GetMemberPassword(memberId);
-            txtReEnter.Text = Huseyin.GetMemberPassword(memberId);
+            txtPassword.Text = MemberData.GetMemberPassword(memberId);
+            txtReEnter.Text = MemberData.GetMemberPassword(memberId);
         }
 
         private void ProfileUpdateForm_Load(object sender, EventArgs e)
         {
-            var member = Huseyin.getMemberInformations(memberId);
+            var member = MemberData.getMemberInformations(memberId);
             txtEmail.Text = member.Email;
             txtName.Text = member.Name;
             txtSurname.Text = member.Surname;
@@ -56,7 +57,7 @@ namespace AHAFit_UI
                 return;
             }
 
-            if (Huseyin.IsEmailAddressExist(txtEmail.Text.Trim(), memberId))
+            if (MemberData.IsEmailAddressExist(txtEmail.Text.Trim(), memberId))
             {
                 MessageBox.Show("This email address is already used.");
                 return;
@@ -68,7 +69,7 @@ namespace AHAFit_UI
                 return;
             }
 
-            if(lblPasswordLevel.Text != "Strong Password")
+            if(lblPasswordLevel.Text != "*Strong Password")
             {
                 MessageBox.Show("Please enter a strong password. A strong password consists of at least 6 characters. Must contain at least 1 Uppercase letter, 1 Lowercase letter, 1 Number and 1 Special character.");
                 return;
@@ -76,7 +77,7 @@ namespace AHAFit_UI
 
 
 
-            Huseyin.ChangeMemberInformation(memberId, txtEmail.Text.Trim(), txtName.Text.Trim(), txtSurname.Text.Trim(), txtPassword.Text.Trim(), Convert.ToDouble(numWeight.Value), cmbGender.Text, Convert.ToInt32(numHeight.Value), dtpBirthDate.Value.Date, cmbActivity.Text);
+            MemberData.ChangeMemberInformation(memberId, txtEmail.Text.Trim(), txtName.Text.Trim(), txtSurname.Text.Trim(), txtPassword.Text.Trim(), Convert.ToDouble(numWeight.Value), cmbGender.Text, Convert.ToInt32(numHeight.Value), dtpBirthDate.Value.Date, cmbActivity.Text);
             MessageBox.Show("Your profile has been successfully updated.");
         }
 
@@ -100,11 +101,11 @@ namespace AHAFit_UI
                     return match.Groups[1].Value + domainName;
                 }
             }
-            catch (RegexMatchTimeoutException e)
-            {
+            catch (RegexMatchTimeoutException)
+            {   
                 return false;
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
                 return false;
             }

@@ -12,8 +12,12 @@ using System.Windows.Forms;
 
 namespace AHAFit_UI
 {
-    public partial class HomeForm : Form
+    public partial class MainForm : Form
     {
+        MemberData MemberData = new MemberData();
+        FoodMemberData FoodMemberData = new FoodMemberData();
+        MealFoodData MealFoodData = new MealFoodData();
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -28,11 +32,11 @@ namespace AHAFit_UI
         bool mov;
 
         private readonly int memberId;
-        public HomeForm(int memberId)
+        public MainForm(int memberId)
         {
             InitializeComponent();
             this.memberId = memberId;
-            cmbMealSumCalorie.DataSource = Huseyin.GetMeals();
+            cmbMealSumCalorie.DataSource = MealFoodData.GetMeals();
             cmbMealSumCalorie.SelectedIndex = 0;
             FoodListFill();
             dtpHomeDate.MinDate = new DateTime(2020, 1, 1);
@@ -77,13 +81,10 @@ namespace AHAFit_UI
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            lblMotivation.Text = "Welcome " + Huseyin.GetMemberName(memberId) + ". " + getMotivation();
+            lblMotivation.Text = "Welcome " + MemberData.GetMemberName(memberId) + ". " + getMotivation();
             dtpHomeDate.Value = DateTime.Today;
-            DesignChanges();
-            
-
+            DesignChanges();           
         }
-
         private string getMotivation()
         {
             List<string> motivationWords = new List<string>()
@@ -113,10 +114,9 @@ namespace AHAFit_UI
             return motivationWords[selectedMotivation];
 
         }
-
         private void cmbMealSumCalorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblMealSumCalorie.Text = Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
+            lblMealSumCalorie.Text = FoodMemberData.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text).ToString() + " Calories";
         }
 
         private void FoodListFill()
@@ -128,7 +128,7 @@ namespace AHAFit_UI
             dgvDailyFoodList.Rows.Clear();
             dgvDailyFoodList.Refresh();
 
-            List<Food> foodList = Huseyin.DailyFoods(memberId, dtpHomeDate.Value.Date);
+            List<Food> foodList = FoodMemberData.DailyFoods(memberId, dtpHomeDate.Value.Date);
 
             foreach (var food in foodList)
             {
@@ -143,12 +143,8 @@ namespace AHAFit_UI
                 string[] row = new string[] { food.Name, food.Calorie.ToString(), food.Carbohydrate.ToString(), food.Protein.ToString(), food.Fat.ToString(), food.FoodId.ToString(), food.FoodType.ToString()};
               
                 dgvDailyFoodList.Rows.Add(row);
-
             }
-
-           
         }
-
         private void dgvDailyFoodList_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -170,17 +166,16 @@ namespace AHAFit_UI
             {
                 int foodIdToDelete = Convert.ToInt32(dgvDailyFoodList.Rows[rowToDelete].Cells[5].Value);
 
-                Huseyin.MemberFoodRemevoFromDB(dtpHomeDate.Value.Date, memberId, foodIdToDelete);
+                FoodMemberData.MemberFoodRemevoFromDB(dtpHomeDate.Value.Date, memberId, foodIdToDelete);
                 FoodListFill();
                 RefreshHomeData();
             }
             
-
         }
 
         private void btnWater_Click(object sender, EventArgs e)
         {
-            Huseyin.plusOneGlassOfWater(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text);
+            FoodMemberData.plusOneGlassOfWater(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text);
             FoodListFill();
             RefreshHomeData();
         }
@@ -192,27 +187,27 @@ namespace AHAFit_UI
 
         private void loseWeightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Huseyin.ChangeMembersGoal(memberId, sender.ToString());
+            MemberData.ChangeMembersGoal(memberId, sender.ToString());
             RefreshHomeData();
         }
 
         private void RefreshHomeData()
         {
-            lblSumCalorie.Text = String.Format("{0:n}", Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)) + " Cal";
+            lblSumCalorie.Text = String.Format("{0:n}", FoodMemberData.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date)) + " Cal";
 
-            if(Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date) > 0)
+            if(FoodMemberData.DailyRemainWater(memberId, dtpHomeDate.Value.Date) > 0)
             {
-                lblRemainWater.Text = "You should drink " + (Huseyin.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
+                lblRemainWater.Text = "You should drink " + (FoodMemberData.DailyRemainWater(memberId, dtpHomeDate.Value.Date)).ToString() + " more glasses of water today.";
             }else
             {
                 lblRemainWater.Text = "You drank enough water today.";
             }
-            lblRemainCalorie.Text = String.Format("{0:n}", Math.Round(Huseyin.CalculateDailyCalorieNeed(memberId) - Huseyin.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date), 2)) + " Cal";
-            lblCarbo.Text = String.Format("{0:n}",Huseyin.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date)) + " gr";
-            lblPro.Text = String.Format("{0:n}",Huseyin.DailyProtein(memberId, dtpHomeDate.Value.Date)) + " gr";
-            lblFat.Text = String.Format("{0:n}",Huseyin.DailyFat(memberId, dtpHomeDate.Value.Date)) + " gr";
-            lblMealSumCalorie.Text = String.Format("{0:n}",Huseyin.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text)) + " Calories";
-            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " / Program: " + Huseyin.GetMemberGoal(memberId);
+            lblRemainCalorie.Text = String.Format("{0:n}", Math.Round(FoodMemberData.CalculateDailyCalorieNeed(memberId) - FoodMemberData.DailyCalorieCalculater(memberId, dtpHomeDate.Value.Date), 2)) + " Cal";
+            lblCarbo.Text = String.Format("{0:n}", FoodMemberData.DailyCarbohydrate(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblPro.Text = String.Format("{0:n}", FoodMemberData.DailyProtein(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblFat.Text = String.Format("{0:n}", FoodMemberData.DailyFat(memberId, dtpHomeDate.Value.Date)) + " gr";
+            lblMealSumCalorie.Text = String.Format("{0:n}", FoodMemberData.DailyCalorieCalculaterAccordingToMeal(memberId, dtpHomeDate.Value.Date, cmbMealSumCalorie.Text)) + " Calories";
+            lblDateText.Text = dtpHomeDate.Value.Date.ToString("dd MMMM yyyy") + " / Program: " + MemberData.GetMemberGoal(memberId);
             FoodListFill();
         }
 
@@ -250,10 +245,8 @@ namespace AHAFit_UI
             newAddDailyFoodForm.Show();
             RefreshHomeData();
         }
-
         private void DesignChanges()
         {
-          
             flwPnlLeftSide.BackColor = Color.FromArgb(46, 65, 89);
             btnHome.BackColor = Color.FromArgb(168, 181, 191);
             btnHistory.BackColor = Color.FromArgb(168, 181, 191);
@@ -272,8 +265,6 @@ namespace AHAFit_UI
             btnProfileUpdate.BackColor = Color.FromArgb(166, 83, 105);
 
             dgvDailyFoodList.BackgroundColor = Color.FromArgb(168, 181, 191);
-            
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -289,7 +280,6 @@ namespace AHAFit_UI
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
         private void pnlResizeRight_MouseDown(object sender, MouseEventArgs e)
         {
             mov = true;
@@ -322,6 +312,11 @@ namespace AHAFit_UI
             pnlHome.Visible = true;
             FoodListFill();
             RefreshHomeData();
+        }
+
+        private void LoginRegister()
+        {
+            
         }
     }
 }

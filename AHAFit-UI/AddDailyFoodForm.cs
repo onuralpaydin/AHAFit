@@ -14,6 +14,8 @@ namespace AHAFit_UI
 {
     public partial class AddDailyFoodForm : Form
     {
+        FoodMemberData FoodMemberData = new FoodMemberData();
+        MealFoodData MealFoodData = new MealFoodData();
         private readonly int memberId;
 
         public AddDailyFoodForm(int memberId)
@@ -38,7 +40,7 @@ namespace AHAFit_UI
         {
             if(!string.IsNullOrEmpty(txtNewFoodName.Text) && !string.IsNullOrEmpty(txtPhotoUrl.Text))
             {
-                Huseyin.AddNewFood(txtNewFoodName.Text, Convert.ToDouble(nudCalorie.Value), Convert.ToDouble(nudCarbohydrate.Value), Convert.ToDouble(nudProtein.Value), Convert.ToDouble(nudFat.Value), txtPhotoUrl.Text, cmbFoodType.Text);
+                MealFoodData.AddNewFood(txtNewFoodName.Text, Convert.ToDouble(nudCalorie.Value), Convert.ToDouble(nudCarbohydrate.Value), Convert.ToDouble(nudProtein.Value), Convert.ToDouble(nudFat.Value), txtPhotoUrl.Text, cmbFoodType.Text);
                 MessageBox.Show("The food has been successfully saved.");
                 txtNewFoodName.Clear();
                 txtPhotoUrl.Clear();
@@ -50,7 +52,7 @@ namespace AHAFit_UI
 
         private void fillComboBoxes()
         {
-            cmbEatMeal.DataSource = Huseyin.GetMeals();
+            cmbEatMeal.DataSource = MealFoodData.GetMeals();
             cmbEatMeal.SelectedIndex = 0;
             foreach (var foodType in (FoodType[])Enum.GetValues(typeof(FoodType)))
             {
@@ -66,7 +68,7 @@ namespace AHAFit_UI
             dgvFoods.Rows.Clear();
             dgvFoods.Refresh();
 
-            foodList = Huseyin.FindTheFood(txtFoodSearchBox.Text.ToLower());
+            foodList = MealFoodData.FindTheFood(txtFoodSearchBox.Text.ToLower());
 
             foreach (var food in foodList)
             {
@@ -84,7 +86,7 @@ namespace AHAFit_UI
 
                 int selectedRow = dgvFoods.Rows.GetFirstRow(DataGridViewElementStates.Selected);
 
-                pbFood.ImageLocation = Huseyin.FindFoodImageUrl(FindSelectedFoodId());
+                pbFood.ImageLocation = MealFoodData.FindFoodImageUrl(FindSelectedFoodId());
             }
         }
 
@@ -105,7 +107,7 @@ namespace AHAFit_UI
 
         private void btnSaveEat_Click(object sender, EventArgs e)
         {
-            Huseyin.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, Huseyin.FindMealId(cmbEatMeal.Text));
+            FoodMemberData.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, MealFoodData.FindMealId(cmbEatMeal.Text));
         }
 
         private int FindSelectedFoodId()
@@ -143,8 +145,8 @@ namespace AHAFit_UI
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-   
-            Huseyin.FoodDelete(FindSelectedFoodId());
+
+            MealFoodData.FoodDelete(FindSelectedFoodId());
             txtFoodSearchBox.Text += " ";
             txtFoodSearchBox.Text = txtFoodSearchBox.Text.Remove(0, 1);
         }
