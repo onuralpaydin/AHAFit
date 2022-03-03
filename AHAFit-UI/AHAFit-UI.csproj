@@ -118,6 +118,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MemberCompForm.resx">
+      <DependentUpon>MemberCompForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProfileUpdateForm.resx">
       <DependentUpon>ProfileUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
