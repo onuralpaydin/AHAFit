@@ -285,6 +285,7 @@ namespace AHAFit_UI
             this.dgvFoods.RowTemplate.Height = 33;
             this.dgvFoods.Size = new System.Drawing.Size(1926, 217);
             this.dgvFoods.TabIndex = 7;
+            this.dgvFoods.SelectionChanged += new System.EventHandler(this.dgvFoods_SelectionChanged);
             this.dgvFoods.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvFoods_MouseDown);
             // 
             // FoodId

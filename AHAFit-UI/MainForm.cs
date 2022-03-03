@@ -58,8 +58,19 @@ namespace AHAFit_UI
 
         private void btnMemberComp_Click(object sender, EventArgs e)
         {
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
+            pnlHome.Visible = false;
             MemberCompForm memberCompForm = new MemberCompForm(memberId);
+            memberCompForm.MdiParent = this;
+            memberCompForm.Dock = DockStyle.Fill;
+            memberCompForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(memberCompForm);
             memberCompForm.Show();
+            RefreshHomeData();
         }
 
         private void btnFoodSt_Click(object sender, EventArgs e)
