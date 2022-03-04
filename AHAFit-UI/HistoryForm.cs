@@ -31,11 +31,7 @@ namespace AHAFit_UI
            dgvHistoryFormWeekly.DataSource=onur.WeeklyHistoryLoader(memberId);
         }
 
-        private void cmbHistoryFormMonthSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            lblHistoryFormMonth.Text = "Selected Month: " + dtpHistoryFormMonthly.Value.Month.ToString();
-        }
+       
 
         private void dtpHistoryFormMonthly_ValueChanged(object sender, EventArgs e)
         {
