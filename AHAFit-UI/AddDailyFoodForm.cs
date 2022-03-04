@@ -150,17 +150,6 @@ namespace AHAFit_UI
             txtFoodSearchBox.Text = txtFoodSearchBox.Text.Remove(0, 1);
         }
 
-        private void pbFood_LoadCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            if (e.Error != null)
-            {
-                MessageBox.Show("Image link not working.");
-                txtPhotoUrl.Text = "";
-                pbFood.ImageLocation = null;
-                pbFood.Image = null;
-            }
-        }
-
         private void dgvFoods_SelectionChanged(object sender, EventArgs e)
         {
             pbFood.ImageLocation = MealFoodData.FindFoodImageUrl(FindSelectedFoodId());

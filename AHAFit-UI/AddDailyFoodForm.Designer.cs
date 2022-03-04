@@ -488,7 +488,6 @@ namespace AHAFit_UI
             this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFood.TabIndex = 13;
             this.pbFood.TabStop = false;
-            this.pbFood.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbFood_LoadCompleted);
             // 
             // label7
             // 

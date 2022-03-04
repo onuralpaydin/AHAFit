@@ -15,7 +15,8 @@ namespace AHAFit_BLL
             Context db = new Context();
             List<Member> autoMembers = new List<Member>();
 
-            autoMembers.Add(new Member() {
+            autoMembers.Add(new Member()
+            {
                 Email = "pbrittlebank0@omniture.com",
                 Name = "Philippine",
                 Surname = "Brittlebank",
@@ -24,8 +25,9 @@ namespace AHAFit_BLL
                 Gender = "Female",
                 Height = 159,
                 ActivityLevel = ActivityLevel.LightlyActive.ToString(),
-                BirthDate = new DateTime(1956,9,26),
-                GoalId = 1 });
+                BirthDate = new DateTime(1956, 9, 26),
+                GoalId = 1
+            });
             autoMembers.Add(new Member()
             {
                 Email = "zlongrigg1@drupal.org",
@@ -257,7 +259,7 @@ namespace AHAFit_BLL
                 Gender = "Male",
                 Height = 181,
                 ActivityLevel = ActivityLevel.ModeratelyActive.ToString(),
-                BirthDate = new DateTime(1975,11, 21),
+                BirthDate = new DateTime(1975, 11, 21),
                 GoalId = 2
             });
             autoMembers.Add(new Member()
@@ -441,6 +443,150 @@ namespace AHAFit_BLL
                 PhotoURL = "https://nix-tag-images.s3.amazonaws.com/60_thumb.jpg",
                 FoodType = "Grain",
             });
+            autoFoods.Add(new Food()
+            {
+                Name = "popcorn",
+                Calorie = 44,
+                Carbohydrate = 4.4,
+                Protein = 0.6,
+                Fat = 2.7,
+                PhotoURL = "https://d2eawub7utcl6.cloudfront.net/images/nix-apple-grey.png",
+                FoodType = "Grain",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "pasta",
+                Calorie = 196,
+                Carbohydrate = 38,
+                Protein = 7.2,
+                Fat = 1.2,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/1012_thumb.jpg",
+                FoodType = "Grain",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "muffin",
+                Calorie = 424,
+                Carbohydrate = 60,
+                Protein = 5.1,
+                Fat = 18,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/694_thumb.jpg",
+                FoodType = "Grain",
+            });
+
+
+            autoFoods.Add(new Food()
+            {
+                Name = "salmon",
+                Calorie = 468,
+                Carbohydrate = 0,
+                Protein = 50,
+                Fat = 28,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/375_thumb.jpg",
+                FoodType = "ProteinFood",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "beef",
+                Calorie = 220,
+                Carbohydrate = 0,
+                Protein = 22,
+                Fat = 14,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/192_thumb.jpg",
+                FoodType = "ProteinFood",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "black bean",
+                Calorie = 227,
+                Carbohydrate = 41,
+                Protein = 15,
+                Fat = 0.9,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/245_thumb.jpg",
+                FoodType = "ProteinFood",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "soybeans",
+                Calorie = 296,
+                Carbohydrate = 14,
+                Protein = 31,
+                Fat = 15,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/2769_thumb.jpg",
+                FoodType = "ProteinFood",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "egg",
+                Calorie = 72,
+                Carbohydrate = 0.4,
+                Protein = 6.3,
+                Fat = 4.8,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/542_thumb.jpg",
+                FoodType = "ProteinFood",
+            });
+
+            autoFoods.Add(new Food()
+            {
+                Name = "milk",
+                Calorie = 122,
+                Carbohydrate = 12,
+                Protein = 8.1,
+                Fat = 4.8,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/377_thumb.jpg",
+                FoodType = "Dairy",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "milk",
+                Calorie = 107,
+                Carbohydrate = 12,
+                Protein = 8.9,
+                Fat = 2.6,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/186_thumb.jpg",
+                FoodType = "Dairy",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "kefir",
+                Calorie = 112,
+                Carbohydrate = 12,
+                Protein = 11,
+                Fat = 2.2,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/2472_thumb.jpg",
+                FoodType = "Dairy",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "cheese",
+                Calorie = 113,
+                Carbohydrate = 0.9,
+                Protein = 6.4,
+                Fat = 9.3,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/1034_thumb.jpg",
+                FoodType = "Dairy",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "cottage cheese",
+                Calorie = 107,
+                Carbohydrate = 3.7,
+                Protein = 12,
+                Fat = 4.7,
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/510_thumb.jpg",
+                FoodType = "Dairy",
+            });
+            autoFoods.Add(new Food()
+            {
+                Name = "soymilk",
+                Calorie = 110,
+                Carbohydrate = 9,
+                Protein = 8,
+                Fat = 4.5,
+                PhotoURL = "https://nutritionix-api.s3.amazonaws.com/53600a6067efca3d4b64cfc9.jpeg",
+                FoodType = "Dairy",
+            });
+
 
             foreach (var Food in autoFoods)
             {
@@ -452,5 +598,135 @@ namespace AHAFit_BLL
             }
         }
 
+        public static void AutoFoodAdderToMemberAndMeals()
+        {
+            Context db = new Context();
+
+            if (db.MembersFoods.ToList().Count() > 200)
+                return;
+
+            List<int> foodIds = new List<int>();
+            foreach (var food in db.Foods.ToList())
+            {
+                foodIds.Add(food.FoodId);
+            }
+            Random rnd = new Random();
+
+            foreach (var member in db.Members)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    MemberFood newMemberFood = new MemberFood();
+                    MealFood newMealFood = new MealFood();
+                    int randomFoodId = foodIds[rnd.Next(foodIds.Count)];
+
+                    newMemberFood.CreateDateTime = DateTime.Now.AddDays(rnd.Next(-35,1)).Date;
+                    newMemberFood.MemberId = member.MemberId;
+                    newMemberFood.FoodId = randomFoodId;
+                    newMemberFood.MealId = rnd.Next(1, 3);
+
+                    newMealFood.CreateDateTime = newMemberFood.CreateDateTime;
+                    newMealFood.MealId = newMemberFood.MealId;
+                    newMealFood.FoodId = newMemberFood.FoodId;
+
+                    MemberFood newMemberFood2 = new MemberFood();
+                    MealFood newMealFood2 = new MealFood();
+                    int randomFoodId2 = foodIds[rnd.Next(foodIds.Count)];
+
+                    newMemberFood2.CreateDateTime = DateTime.Now.Date;
+                    newMemberFood2.MemberId = member.MemberId;
+                    newMemberFood2.FoodId = randomFoodId;
+                    newMemberFood2.MealId = rnd.Next(1, 3);
+
+                    newMealFood2.CreateDateTime = newMemberFood.CreateDateTime;
+                    newMealFood2.MealId = newMemberFood.MealId;
+                    newMealFood2.FoodId = newMemberFood.FoodId;
+
+                    db.MembersFoods.Add(newMemberFood);
+                    db.MembersFoods.Add(newMemberFood2);
+                    db.MealsFoods.Add(newMealFood);
+                    db.MealsFoods.Add(newMealFood2);
+                }
+            }
+            db.SaveChanges();
+        }
+
+        public static Dictionary<string, double> CalorieChampUserFinder(int daysBack)
+        {
+            Context db = new Context();
+            Dictionary<int, double> memberAndCalories = memberAndCalorieListBuilder(daysBack);
+
+            var memberId = memberAndCalories.FirstOrDefault(y => y.Value == memberAndCalories.Values.Max()).Key;
+
+            var selectedMember = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+
+            var userName = selectedMember.Name;
+            var userSurname = selectedMember.Surname;
+
+            Dictionary<string, double> caloriChampUser = new Dictionary<string, double>();
+            caloriChampUser.Add($"{userName} {userSurname}", memberAndCalories.Values.Max());
+            return caloriChampUser;
+        }
+
+        public static List<MembersInComparision> MemberCompare(int daysBack)
+        {
+            Context db = new Context();
+
+            Dictionary<int, double> memberAndCalories = memberAndCalorieListBuilder(daysBack);
+
+            List<MembersInComparision> lastMemberList = new List<MembersInComparision>();
+
+            foreach (var memberAndCalorie in memberAndCalories)
+            {
+                MembersInComparision newMember = new MembersInComparision();
+                var member = db.Members.FirstOrDefault(x => x.MemberId == memberAndCalorie.Key);
+                newMember.Name = member.Name;
+                newMember.Surname = member.Surname;
+                newMember.TotalCalorie = String.Format("{0:n}", memberAndCalorie.Value);
+                newMember.Age = DateTime.Now.Year - member.BirthDate.Year;
+                newMember.Gender = member.Gender;
+                lastMemberList.Add(newMember);
+            }
+            return lastMemberList;
+        }
+
+        public static Dictionary<int, double> memberAndCalorieListBuilder(int daysBack)
+        {
+            Context db = new Context();
+
+            Dictionary<int, double> memberAndCalories = new Dictionary<int, double>();
+
+            foreach (var member in db.Members.ToList())
+            {
+                var totalCal = 0.0;
+                var memberAllFoods = new List<int>();
+                if (daysBack == 0)
+                {
+                    memberAllFoods = db.MembersFoods.Where(x => x.MemberId == member.MemberId).Select(y => y.FoodId).ToList();
+                }
+                else
+                {
+                    memberAllFoods = db.MembersFoods.Where(x => x.MemberId == member.MemberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack)).Select(y => y.FoodId).ToList();
+                }
+
+                foreach (var foodId in memberAllFoods)
+                {
+                    totalCal += db.Foods.FirstOrDefault(x => x.FoodId == foodId).Calorie;
+                }
+
+                memberAndCalories.Add(member.MemberId, totalCal);
+            }
+
+            return memberAndCalories;
+        }
+    }
+
+    public class MembersInComparision
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string TotalCalorie { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
     }
 }

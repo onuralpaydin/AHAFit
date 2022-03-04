@@ -23,6 +23,7 @@ namespace AHAFit_UI
             AutomaticData.AddWaterToFoods();
             Huseyin.AutoMembers();
             Huseyin.AutoFoods();
+            Huseyin.AutoFoodAdderToMemberAndMeals();
             InitializeComponent();
         }
 

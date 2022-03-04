@@ -33,6 +33,7 @@ namespace AHAFit_UI
 
             txtPassword.Text = MemberData.GetMemberPassword(memberId);
             txtReEnter.Text = MemberData.GetMemberPassword(memberId);
+            dtpBirthDate.MaxDate = DateTime.Today;
         }
 
         private void ProfileUpdateForm_Load(object sender, EventArgs e)
@@ -74,8 +75,6 @@ namespace AHAFit_UI
                 MessageBox.Show("Please enter a strong password. A strong password consists of at least 6 characters. Must contain at least 1 Uppercase letter, 1 Lowercase letter, 1 Number and 1 Special character.");
                 return;
             }
-
-
 
             MemberData.ChangeMemberInformation(memberId, txtEmail.Text.Trim(), txtName.Text.Trim(), txtSurname.Text.Trim(), txtPassword.Text.Trim(), Convert.ToDouble(numWeight.Value), cmbGender.Text, Convert.ToInt32(numHeight.Value), dtpBirthDate.Value.Date, cmbActivity.Text);
             MessageBox.Show("Your profile has been successfully updated.");
