@@ -94,22 +94,21 @@ namespace AHAFit_UI
 
 
         private void txtSignUpPassword_TextChanged_1(object sender, EventArgs e)
-        {
+       {
             lblSignUpPasswordInfo.Text = " ";
-
-
-            if (onur.SignUpDataControl(txtSignUpPassword.Text) == true)
+           
+            if ( onur.LowerCheck(txtSignUpPassword.Text) == true && onur.NumberCheck(txtSignUpPassword.Text) == true && onur.SymbolCheck(txtSignUpPassword.Text) == true && onur.WhiteSpaceCheck(txtSignUpPassword.Text) == true && onur.LengthCheck(txtSignUpPassword.Text) == true)
             {
+                txtSignUpPassword.BackColor = Color.Green;
                 lblSignUpPasswordInfo.Text = "Strong Password";
-                lblSignUpPasswordInfo.ForeColor = Color.Green;
             }
-
             else
             {
-
+                txtSignUpPassword.BackColor = Color.Red;
                 lblSignUpPasswordInfo.Text = "Weak Password";
-                lblSignUpPasswordInfo.ForeColor = Color.Red;
             }
+           
+
         }
     }
 }
