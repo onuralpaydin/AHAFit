@@ -239,9 +239,9 @@ namespace AHAFit_UI
             // lblSignUpPasswordInfo
             // 
             this.lblSignUpPasswordInfo.ForeColor = System.Drawing.Color.Black;
-            this.lblSignUpPasswordInfo.Location = new System.Drawing.Point(323, 100);
+            this.lblSignUpPasswordInfo.Location = new System.Drawing.Point(320, 42);
             this.lblSignUpPasswordInfo.Name = "lblSignUpPasswordInfo";
-            this.lblSignUpPasswordInfo.Size = new System.Drawing.Size(100, 121);
+            this.lblSignUpPasswordInfo.Size = new System.Drawing.Size(129, 203);
             this.lblSignUpPasswordInfo.TabIndex = 26;
             // 
             // txtSignUpPassword

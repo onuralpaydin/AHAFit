@@ -36,7 +36,7 @@ namespace AHAFit_UI
                 cmbSignUpActivityLevel.Items.Add(activity);
             }
 
-            lblSignUpPasswordInfo.Text = "Your password must be 8-16 characters, and include at least one lowercase letter, one uppercase letter, one special character and a number .";
+            lblSignUpPasswordInfo.Text = "Email should contain @ symbol. Your password must be 8-16 characters, and include at least one lowercase letter, one special character and a number .Also cannot include whitespace.";
         }
 
         private void btnSignUpSignUp_Click(object sender, EventArgs e)
