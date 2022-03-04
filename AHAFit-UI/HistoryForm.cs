@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AHAFit_BLL;
+using AHAFit_Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,34 @@ namespace AHAFit_UI
 {
     public partial class HistoryForm : Form
     {
+        
+        Onur onur = new Onur();
+        
+       
         private readonly int memberId;
 
         public HistoryForm(int memberId)
         {
             InitializeComponent();
             this.memberId = memberId;
+        }
+
+        private void HistoryForm_Load(object sender, EventArgs e)
+        {
+           dgvHistoryFormWeekly.DataSource=onur.WeeklyHistoryLoader(memberId);
+        }
+
+        private void cmbHistoryFormMonthSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            lblHistoryFormMonth.Text = "Selected Month: " + dtpHistoryFormMonthly.Value.Month.ToString();
+        }
+
+        private void dtpHistoryFormMonthly_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = dtpHistoryFormMonthly.Value;
+            int month =date.Month;
+            dgvHistoryFormMonthly.DataSource = onur.MonthlyHistoryLoader(memberId, month);
         }
     }
 }
