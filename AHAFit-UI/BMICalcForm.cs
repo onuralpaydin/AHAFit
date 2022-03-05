@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AHAFit_BLL;
+using AHAFit_Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +15,7 @@ namespace AHAFit_UI
     public partial class BMICalcForm : Form
     {
         private readonly int memberId;
-
+        Alper alper;
         public BMICalcForm(int memberId)
         {
             InitializeComponent();
