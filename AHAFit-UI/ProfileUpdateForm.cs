@@ -157,7 +157,7 @@ namespace AHAFit_UI
             else if (upperCase > 0 && lowerCase > 0 && number > 0)
                 return "*Moderately Strong Password";
             else
-                return "*Week Password";
+                return "*Weak Password";
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
