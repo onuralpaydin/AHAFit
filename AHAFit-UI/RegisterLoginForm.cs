@@ -21,6 +21,9 @@ namespace AHAFit_UI
             AutomaticData.MealAndGoalDataLoad();
             AutomaticData.AutoAdminMember();
             AutomaticData.AddWaterToFoods();
+            Huseyin.AutoMembers();
+            Huseyin.AutoFoods();
+            Huseyin.AutoFoodAdderToMemberAndMeals();
             InitializeComponent();
         }
 
@@ -41,7 +44,7 @@ namespace AHAFit_UI
         private void RegisterLoginForm_Load(object sender, EventArgs e)
         {
             txtEmail.Text = "admin@admin.com";
-            txtPassword.Text = "admin";
+            txtPassword.Text = "asdfghH1.";
         }
     }
 }

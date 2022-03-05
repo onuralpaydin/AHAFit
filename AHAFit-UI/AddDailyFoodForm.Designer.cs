@@ -285,6 +285,7 @@ namespace AHAFit_UI
             this.dgvFoods.RowTemplate.Height = 33;
             this.dgvFoods.Size = new System.Drawing.Size(1926, 217);
             this.dgvFoods.TabIndex = 7;
+            this.dgvFoods.SelectionChanged += new System.EventHandler(this.dgvFoods_SelectionChanged);
             this.dgvFoods.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvFoods_MouseDown);
             // 
             // FoodId
@@ -487,7 +488,6 @@ namespace AHAFit_UI
             this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFood.TabIndex = 13;
             this.pbFood.TabStop = false;
-            this.pbFood.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbFood_LoadCompleted);
             // 
             // label7
             // 
