@@ -26,10 +26,6 @@ namespace AHAFit_BLL
                 memberFoodListWeek = db.MembersFoods.Where(x => x.CreateDateTime >= baselineDate).ToList();
             }
 
-           
-
-           
-
             foreach (var item in memberFoodListWeek)
             {
                 foodList.Add(db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId));
