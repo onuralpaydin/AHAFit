@@ -29,53 +29,27 @@ namespace AHAFit_UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvFoodStatisticsMostEaten = new System.Windows.Forms.DataGridView();
-            this.dgvFoodStatisticsMealMost = new System.Windows.Forms.DataGridView();
-            this.lblFoodStatisticsMostEaten = new System.Windows.Forms.Label();
+            this.lblFood1 = new System.Windows.Forms.Label();
             this.lblFoodStatisticsMealMostEaten = new System.Windows.Forms.Label();
-            this.lblMealMostEaten = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lblBreakFast = new System.Windows.Forms.Label();
-            this.lblLunch = new System.Windows.Forms.Label();
-            this.lblDinner = new System.Windows.Forms.Label();
+            this.lblFood2 = new System.Windows.Forms.Label();
+            this.lblFood3 = new System.Windows.Forms.Label();
+            this.lblFood4 = new System.Windows.Forms.Label();
+            this.lblFood5 = new System.Windows.Forms.Label();
             this.btnFoodStatisticsUpdate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodStatisticsMostEaten)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodStatisticsMealMost)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.lblMostEatenFood = new System.Windows.Forms.Label();
+            this.lblMostEatenBreakfast = new System.Windows.Forms.Label();
+            this.lblMostEatenLunch = new System.Windows.Forms.Label();
+            this.lblMostEatenDinner = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dgvFoodStatisticsMostEaten
+            // lblFood1
             // 
-            this.dgvFoodStatisticsMostEaten.AllowUserToAddRows = false;
-            this.dgvFoodStatisticsMostEaten.AllowUserToDeleteRows = false;
-            this.dgvFoodStatisticsMostEaten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoodStatisticsMostEaten.Location = new System.Drawing.Point(12, 45);
-            this.dgvFoodStatisticsMostEaten.Name = "dgvFoodStatisticsMostEaten";
-            this.dgvFoodStatisticsMostEaten.ReadOnly = true;
-            this.dgvFoodStatisticsMostEaten.Size = new System.Drawing.Size(301, 282);
-            this.dgvFoodStatisticsMostEaten.TabIndex = 0;
-            // 
-            // dgvFoodStatisticsMealMost
-            // 
-            this.dgvFoodStatisticsMealMost.AllowUserToAddRows = false;
-            this.dgvFoodStatisticsMealMost.AllowUserToDeleteRows = false;
-            this.dgvFoodStatisticsMealMost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoodStatisticsMealMost.Location = new System.Drawing.Point(389, 86);
-            this.dgvFoodStatisticsMealMost.Name = "dgvFoodStatisticsMealMost";
-            this.dgvFoodStatisticsMealMost.ReadOnly = true;
-            this.dgvFoodStatisticsMealMost.Size = new System.Drawing.Size(285, 51);
-            this.dgvFoodStatisticsMealMost.TabIndex = 1;
-            // 
-            // lblFoodStatisticsMostEaten
-            // 
-            this.lblFoodStatisticsMostEaten.AutoSize = true;
-            this.lblFoodStatisticsMostEaten.Location = new System.Drawing.Point(26, 18);
-            this.lblFoodStatisticsMostEaten.Name = "lblFoodStatisticsMostEaten";
-            this.lblFoodStatisticsMostEaten.Size = new System.Drawing.Size(133, 13);
-            this.lblFoodStatisticsMostEaten.TabIndex = 2;
-            this.lblFoodStatisticsMostEaten.Text = "Most Eaten Food Statistics";
+            this.lblFood1.AutoSize = true;
+            this.lblFood1.Location = new System.Drawing.Point(12, 20);
+            this.lblFood1.Name = "lblFood1";
+            this.lblFood1.Size = new System.Drawing.Size(94, 13);
+            this.lblFood1.TabIndex = 2;
+            this.lblFood1.Text = "Most Eaten Food :";
             // 
             // lblFoodStatisticsMealMostEaten
             // 
@@ -85,113 +59,119 @@ namespace AHAFit_UI
             this.lblFoodStatisticsMealMostEaten.Size = new System.Drawing.Size(0, 13);
             this.lblFoodStatisticsMealMostEaten.TabIndex = 3;
             // 
-            // lblMealMostEaten
+            // lblFood2
             // 
-            this.lblMealMostEaten.AutoSize = true;
-            this.lblMealMostEaten.Location = new System.Drawing.Point(386, 45);
-            this.lblMealMostEaten.Name = "lblMealMostEaten";
-            this.lblMealMostEaten.Size = new System.Drawing.Size(133, 13);
-            this.lblMealMostEaten.TabIndex = 4;
-            this.lblMealMostEaten.Text = "Most Eaten Food in Meals:";
+            this.lblFood2.AutoSize = true;
+            this.lblFood2.Location = new System.Drawing.Point(12, 59);
+            this.lblFood2.Name = "lblFood2";
+            this.lblFood2.Size = new System.Drawing.Size(133, 13);
+            this.lblFood2.TabIndex = 4;
+            this.lblFood2.Text = "Most Eaten Food in Meals:";
             // 
-            // dataGridView1
+            // lblFood3
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(389, 156);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(285, 56);
-            this.dataGridView1.TabIndex = 5;
+            this.lblFood3.AutoSize = true;
+            this.lblFood3.Location = new System.Drawing.Point(12, 100);
+            this.lblFood3.Name = "lblFood3";
+            this.lblFood3.Size = new System.Drawing.Size(55, 13);
+            this.lblFood3.TabIndex = 7;
+            this.lblFood3.Text = "Breakfast:";
             // 
-            // dataGridView2
+            // lblFood4
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(389, 253);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(285, 62);
-            this.dataGridView2.TabIndex = 6;
+            this.lblFood4.AutoSize = true;
+            this.lblFood4.Location = new System.Drawing.Point(12, 136);
+            this.lblFood4.Name = "lblFood4";
+            this.lblFood4.Size = new System.Drawing.Size(40, 13);
+            this.lblFood4.TabIndex = 8;
+            this.lblFood4.Text = "Lunch:";
             // 
-            // lblBreakFast
+            // lblFood5
             // 
-            this.lblBreakFast.AutoSize = true;
-            this.lblBreakFast.Location = new System.Drawing.Point(385, 70);
-            this.lblBreakFast.Name = "lblBreakFast";
-            this.lblBreakFast.Size = new System.Drawing.Size(52, 13);
-            this.lblBreakFast.TabIndex = 7;
-            this.lblBreakFast.Text = "Breakfast";
-            // 
-            // lblLunch
-            // 
-            this.lblLunch.AutoSize = true;
-            this.lblLunch.Location = new System.Drawing.Point(386, 140);
-            this.lblLunch.Name = "lblLunch";
-            this.lblLunch.Size = new System.Drawing.Size(37, 13);
-            this.lblLunch.TabIndex = 8;
-            this.lblLunch.Text = "Lunch";
-            // 
-            // lblDinner
-            // 
-            this.lblDinner.AutoSize = true;
-            this.lblDinner.Location = new System.Drawing.Point(386, 226);
-            this.lblDinner.Name = "lblDinner";
-            this.lblDinner.Size = new System.Drawing.Size(38, 13);
-            this.lblDinner.TabIndex = 9;
-            this.lblDinner.Text = "Dinner";
+            this.lblFood5.AutoSize = true;
+            this.lblFood5.Location = new System.Drawing.Point(11, 164);
+            this.lblFood5.Name = "lblFood5";
+            this.lblFood5.Size = new System.Drawing.Size(41, 13);
+            this.lblFood5.TabIndex = 9;
+            this.lblFood5.Text = "Dinner:";
             // 
             // btnFoodStatisticsUpdate
             // 
-            this.btnFoodStatisticsUpdate.Location = new System.Drawing.Point(113, 347);
+            this.btnFoodStatisticsUpdate.Location = new System.Drawing.Point(30, 207);
             this.btnFoodStatisticsUpdate.Name = "btnFoodStatisticsUpdate";
             this.btnFoodStatisticsUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnFoodStatisticsUpdate.TabIndex = 10;
             this.btnFoodStatisticsUpdate.Text = "Update";
             this.btnFoodStatisticsUpdate.UseVisualStyleBackColor = true;
+            this.btnFoodStatisticsUpdate.Click += new System.EventHandler(this.btnFoodStatisticsUpdate_Click);
+            // 
+            // lblMostEatenFood
+            // 
+            this.lblMostEatenFood.AutoSize = true;
+            this.lblMostEatenFood.Location = new System.Drawing.Point(128, 20);
+            this.lblMostEatenFood.Name = "lblMostEatenFood";
+            this.lblMostEatenFood.Size = new System.Drawing.Size(0, 13);
+            this.lblMostEatenFood.TabIndex = 11;
+            // 
+            // lblMostEatenBreakfast
+            // 
+            this.lblMostEatenBreakfast.AutoSize = true;
+            this.lblMostEatenBreakfast.Location = new System.Drawing.Point(89, 100);
+            this.lblMostEatenBreakfast.Name = "lblMostEatenBreakfast";
+            this.lblMostEatenBreakfast.Size = new System.Drawing.Size(0, 13);
+            this.lblMostEatenBreakfast.TabIndex = 13;
+            // 
+            // lblMostEatenLunch
+            // 
+            this.lblMostEatenLunch.AutoSize = true;
+            this.lblMostEatenLunch.Location = new System.Drawing.Point(70, 136);
+            this.lblMostEatenLunch.Name = "lblMostEatenLunch";
+            this.lblMostEatenLunch.Size = new System.Drawing.Size(0, 13);
+            this.lblMostEatenLunch.TabIndex = 14;
+            // 
+            // lblMostEatenDinner
+            // 
+            this.lblMostEatenDinner.AutoSize = true;
+            this.lblMostEatenDinner.Location = new System.Drawing.Point(70, 164);
+            this.lblMostEatenDinner.Name = "lblMostEatenDinner";
+            this.lblMostEatenDinner.Size = new System.Drawing.Size(0, 13);
+            this.lblMostEatenDinner.TabIndex = 15;
             // 
             // FoodStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(225, 311);
+            this.Controls.Add(this.lblMostEatenDinner);
+            this.Controls.Add(this.lblMostEatenLunch);
+            this.Controls.Add(this.lblMostEatenBreakfast);
+            this.Controls.Add(this.lblMostEatenFood);
             this.Controls.Add(this.btnFoodStatisticsUpdate);
-            this.Controls.Add(this.lblDinner);
-            this.Controls.Add(this.lblLunch);
-            this.Controls.Add(this.lblBreakFast);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblMealMostEaten);
+            this.Controls.Add(this.lblFood5);
+            this.Controls.Add(this.lblFood4);
+            this.Controls.Add(this.lblFood3);
+            this.Controls.Add(this.lblFood2);
             this.Controls.Add(this.lblFoodStatisticsMealMostEaten);
-            this.Controls.Add(this.lblFoodStatisticsMostEaten);
-            this.Controls.Add(this.dgvFoodStatisticsMealMost);
-            this.Controls.Add(this.dgvFoodStatisticsMostEaten);
+            this.Controls.Add(this.lblFood1);
             this.Name = "FoodStatisticsForm";
             this.Text = "FoodStatisticsForm";
             this.Load += new System.EventHandler(this.FoodStatisticsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodStatisticsMostEaten)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodStatisticsMealMost)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvFoodStatisticsMostEaten;
-        private System.Windows.Forms.DataGridView dgvFoodStatisticsMealMost;
-        private System.Windows.Forms.Label lblFoodStatisticsMostEaten;
+        private System.Windows.Forms.Label lblFood1;
         private System.Windows.Forms.Label lblFoodStatisticsMealMostEaten;
-        private System.Windows.Forms.Label lblMealMostEaten;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label lblBreakFast;
-        private System.Windows.Forms.Label lblLunch;
-        private System.Windows.Forms.Label lblDinner;
+        private System.Windows.Forms.Label lblFood2;
+        private System.Windows.Forms.Label lblFood3;
+        private System.Windows.Forms.Label lblFood4;
+        private System.Windows.Forms.Label lblFood5;
         private System.Windows.Forms.Button btnFoodStatisticsUpdate;
+        private System.Windows.Forms.Label lblMostEatenFood;
+        private System.Windows.Forms.Label lblMostEatenBreakfast;
+        private System.Windows.Forms.Label lblMostEatenLunch;
+        private System.Windows.Forms.Label lblMostEatenDinner;
     }
 }

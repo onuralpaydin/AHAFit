@@ -11,26 +11,7 @@ namespace AHAFit_BLL
     public class Onur
     {
         Context db = new Context();
-        MemberFood memberFood = new MemberFood();
-        Food food = new Food();
-
-
-        //public List<Food> MostEatenFood(int memberId)
-        //{
-        //    List<MemberFood> memberFoodList = new List<MemberFood>();
-        //    List<Food> foodList = new List<Food>();
-
-        //    memberFoodList = db.MembersFoods.Where(x => x.MemberId == memberId).ToList();
-
-        //    foreach (var item in memberFoodList)
-        //    {
-        //        foodList.Add(db.Foods.OrderByDescending(x => x.FoodId).Take(1).Where(x => x.FoodId == item.FoodId).FirstOrDefault());
-        //    }
-
-        //    return foodList;
-
-        //}
-        public Dictionary<string,int> MostEatenFood(int memberId)
+        public Dictionary<string, int> MostEatenFood(int memberId)
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             List<int> foodIds = new List<int>();
@@ -45,18 +26,50 @@ namespace AHAFit_BLL
             return dict;
         }
 
-        public List<MealFood> MealMostEatenFood(int memberId)
+        public Dictionary<string, int> MostEatenFoodBreakfast(int memberId)
         {
-            List<MemberFood> memberFoodList = new List<MemberFood>();
-            List<MealFood> mealFoodList = new List<MealFood>();
-            memberFoodList = db.MembersFoods.Where(x => x.MemberId == memberId).ToList();
-
-            foreach (var item in memberFoodList)
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            List<int> foodIds = new List<int>();
+            foreach (var memberFood in db.MembersFoods.Where(x => x.MemberId == memberId && x.MealId == 1).ToList())
             {
-                mealFoodList.Add(db.MealsFoods.Where(x => x.MealId == item.MealId).FirstOrDefault());
+                foodIds.Add(memberFood.FoodId);
             }
-
-            return mealFoodList;
+            var mostFoodId = foodIds.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
+            var mostFoodCount = db.MembersFoods.Where(x => x.MemberId == memberId && x.FoodId == mostFoodId).Count();
+            var foodName = db.Foods.FirstOrDefault(x => x.FoodId == mostFoodId).Name;
+            dict.Add(foodName, mostFoodCount);
+            return dict;
         }
+        public Dictionary<string, int> MostEatenFoodLunch(int memberId)
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            List<int> foodIds = new List<int>();
+            foreach (var memberFood in db.MembersFoods.Where(x => x.MemberId == memberId && x.MealId == 2).ToList())
+            {
+                foodIds.Add(memberFood.FoodId);
+            }
+            var mostFoodId = foodIds.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
+            var mostFoodCount = db.MembersFoods.Where(x => x.MemberId == memberId && x.FoodId == mostFoodId).Count();
+            var foodName = db.Foods.FirstOrDefault(x => x.FoodId == mostFoodId).Name;
+            dict.Add(foodName, mostFoodCount);
+            return dict;
+        }
+
+        public Dictionary<string, int> MostEatenFoodDinner(int memberId)
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            List<int> foodIds = new List<int>();
+            foreach (var memberFood in db.MembersFoods.Where(x => x.MemberId == memberId && x.MealId == 3).ToList())
+            {
+                foodIds.Add(memberFood.FoodId);
+            }
+            var mostFoodId = foodIds.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
+            var mostFoodCount = db.MembersFoods.Where(x => x.MemberId == memberId && x.FoodId == mostFoodId).Count();
+            var foodName = db.Foods.FirstOrDefault(x => x.FoodId == mostFoodId).Name;
+            dict.Add(foodName, mostFoodCount);
+            return dict;
+        }
+
+
     }
 }

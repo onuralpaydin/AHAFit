@@ -25,10 +25,27 @@ namespace AHAFit_UI
 
         private void FoodStatisticsForm_Load(object sender, EventArgs e)
         {
-            dgvFoodStatisticsMostEaten.DataSource = onur.MostEatenFood(memberId);
-            //dgvFoodStatisticsMealMost.DataSource = onur.MealMostEatenFood(memberId);
-            MessageBox.Show(onur.MostEatenFood(memberId).First().Key+" "+ onur.MostEatenFood(memberId).First().Value);
+            lblMostEatenFood.Text = onur.MostEatenFood(memberId).First().Key + " " + onur.MostEatenFood(memberId).First().Value;
+            lblMostEatenBreakfast.Text=onur.MostEatenFoodBreakfast(memberId).First().Key + " " + onur.MostEatenFoodBreakfast(memberId).First().Value;
+            lblMostEatenLunch.Text = onur.MostEatenFoodLunch(memberId).First().Key + " " + onur.MostEatenFoodLunch(memberId).First().Value;
+            lblMostEatenDinner.Text = onur.MostEatenFoodDinner(memberId).First().Key + " " + onur.MostEatenFoodDinner(memberId).First().Value;
 
+
+
+        }
+
+        private void btnFoodStatisticsUpdate_Click(object sender, EventArgs e)
+        {
+            //mdi formdan dolayı otomatik güncelleme yapıyor.Eğer ki yemek yedim dedikten sonra foodstatistics sayfasını kapatmazsan update butonu ile güncelleme çalışıyor.
+            lblMostEatenFood.Text = "";
+            lblMostEatenBreakfast.Text = "";
+            lblMostEatenLunch.Text = "";
+            lblMostEatenDinner.Text = "";
+
+            lblMostEatenFood.Text = onur.MostEatenFood(memberId).First().Key + " " + onur.MostEatenFood(memberId).First().Value;
+            lblMostEatenBreakfast.Text = onur.MostEatenFoodBreakfast(memberId).First().Key + " " + onur.MostEatenFoodBreakfast(memberId).First().Value;
+            lblMostEatenLunch.Text = onur.MostEatenFoodLunch(memberId).First().Key + " " + onur.MostEatenFoodLunch(memberId).First().Value;
+            lblMostEatenDinner.Text = onur.MostEatenFoodDinner(memberId).First().Key + " " + onur.MostEatenFoodDinner(memberId).First().Value;
         }
     }
 }
