@@ -18,10 +18,11 @@ namespace AHAFit_Model
             Property(x => x.Name).IsRequired().HasMaxLength(100);
             Property(x => x.Surname).IsRequired().HasMaxLength(100);
             Property(x => x.Password).IsRequired().HasMaxLength(100);
-            Property(x => x.Weight).IsRequired().HasPrecision(18, 2);
+            Property(x => x.Weight).IsRequired();
             Property(x => x.Gender).IsRequired();
             Property(x => x.Height).IsRequired();
             Property(x => x.BirthDate).IsRequired();
+            Property(x => x.ActivityLevel).IsRequired();
             HasRequired<Goal>(x => x.Goal).WithMany(x => x.Members);
         }
     }

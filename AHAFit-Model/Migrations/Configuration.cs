@@ -10,7 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "AHAFit_Model.Context";
+
         }
 
         protected override void Seed(AHAFit_Model.Context context)

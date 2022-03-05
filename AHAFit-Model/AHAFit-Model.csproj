@@ -58,9 +58,9 @@
     <Compile Include="MealMapping.cs" />
     <Compile Include="MemberFoodMapping.cs" />
     <Compile Include="MemberMapping.cs" />
-    <Compile Include="Migrations\202202210903451_InitialCreate.cs" />
-    <Compile Include="Migrations\202202210903451_InitialCreate.designer.cs">
-      <DependentUpon>202202210903451_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202202281632312_init.cs" />
+    <Compile Include="Migrations\202202281632312_init.designer.cs">
+      <DependentUpon>202202281632312_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202210903451_InitialCreate.resx">
-      <DependentUpon>202202210903451_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202281632312_init.resx">
+      <DependentUpon>202202281632312_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
