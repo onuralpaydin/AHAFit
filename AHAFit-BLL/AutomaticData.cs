@@ -41,7 +41,7 @@ namespace AHAFit_BLL
             newMember.Email = "admin@admin.com";
             newMember.Name = "admin";
             newMember.Surname = "admin";
-            newMember.Password = "admin";
+            newMember.Password = "asdfghH1.";
             newMember.Weight = 91.50;
             newMember.Gender = "Male";
             newMember.Height = 185;

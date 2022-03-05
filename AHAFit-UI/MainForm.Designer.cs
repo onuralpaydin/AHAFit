@@ -859,6 +859,7 @@ namespace AHAFit_UI
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).EndInit();
