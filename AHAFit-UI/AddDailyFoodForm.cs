@@ -84,8 +84,6 @@ namespace AHAFit_UI
 
                 dgvFoods.Rows.Add(row);
 
-                int selectedRow = dgvFoods.Rows.GetFirstRow(DataGridViewElementStates.Selected);
-
                 pbFood.ImageLocation = MealFoodData.FindFoodImageUrl(FindSelectedFoodId());
             }
         }
@@ -108,6 +106,7 @@ namespace AHAFit_UI
         private void btnSaveEat_Click(object sender, EventArgs e)
         {
             FoodMemberData.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, MealFoodData.FindMealId(cmbEatMeal.Text));
+
         }
 
         private int FindSelectedFoodId()
@@ -151,15 +150,9 @@ namespace AHAFit_UI
             txtFoodSearchBox.Text = txtFoodSearchBox.Text.Remove(0, 1);
         }
 
-        private void pbFood_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        private void dgvFoods_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.Error != null)
-            {
-                MessageBox.Show("Image link not working.");
-                txtPhotoUrl.Text = "";
-                pbFood.ImageLocation = null;
-                pbFood.Image = null;
-            }
+            pbFood.ImageLocation = MealFoodData.FindFoodImageUrl(FindSelectedFoodId());
         }
     }
 }

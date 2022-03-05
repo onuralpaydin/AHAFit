@@ -43,6 +43,11 @@ namespace AHAFit_BLL
         }
         public string FindFoodImageUrl(int foodId)
         {
+            if(db.Foods.FirstOrDefault(x => x.FoodId == foodId) == null)
+            {
+                return "";
+            }
+
             return db.Foods.FirstOrDefault(x => x.FoodId == foodId).PhotoURL;
         }
         public List<string> GetMeals()

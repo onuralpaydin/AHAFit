@@ -14,40 +14,35 @@ using System.Windows.Forms;
 
 namespace AHAFit_UI
 {
-    public partial class ProfileUpdateForm : Form
+    public partial class RegisterForm : Form
     {
         MemberData MemberData = new MemberData();
-        private readonly int memberId;
+        GoalData GoalData = new GoalData();
+        private readonly Panel pnlLogin;
 
-        public ProfileUpdateForm(int memberId)
+        public RegisterForm(Panel pnlLogin)
         {
             InitializeComponent();
-            this.memberId = memberId;
             cmbGender.Items.Add("Female");
             cmbGender.Items.Add("Male");
+            var goalList = GoalData.GoalNamesToList();
+            foreach (var gaolName in goalList)
+            {
+                cmbGoal.Items.Add(gaolName);
+            }
             foreach (var activity in (ActivityLevel[])Enum.GetValues(typeof(ActivityLevel)))
             {
                 cmbActivity.Items.Add(activity);
             }
-            cmbActivity.SelectedItem = MemberData.GetMemberActivityLevel(memberId);
-
-            txtPassword.Text = MemberData.GetMemberPassword(memberId);
-            txtReEnter.Text = MemberData.GetMemberPassword(memberId);
             dtpBirthDate.MaxDate = DateTime.Today;
+            this.pnlLogin = pnlLogin;
         }
 
-        private void ProfileUpdateForm_Load(object sender, EventArgs e)
+        private void RegisterForm_Load(object sender, EventArgs e)
         {
-            var member = MemberData.getMemberInformations(memberId);
-            txtEmail.Text = member.Email;
-            txtName.Text = member.Name;
-            txtSurname.Text = member.Surname;
-            txtPassword.Text = member.Password;
-            numWeight.Text = member.Weight.ToString();
-            cmbGender.SelectedItem = member.Gender;
-            numHeight.Text = member.Height.ToString();
-            dtpBirthDate.Value = member.BirthDate;
-            cmbActivity.SelectedText = member.ActivityLevel;
+            cmbGender.SelectedIndex = 0;
+            cmbActivity.SelectedIndex = 0;
+            cmbGoal.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -58,7 +53,7 @@ namespace AHAFit_UI
                 return;
             }
 
-            if (MemberData.IsEmailAddressExist(txtEmail.Text.Trim(), memberId))
+            if (MemberData.RecurringMailControl(txtEmail.Text.Trim()))
             {
                 MessageBox.Show("This email address is already used.");
                 return;
@@ -70,14 +65,17 @@ namespace AHAFit_UI
                 return;
             }
 
-            if(lblPasswordLevel.Text != "*Strong Password")
+            if (lblPasswordLevel.Text != "*Strong Password")
             {
                 MessageBox.Show("Please enter a strong password. A strong password consists of at least 6 characters. Must contain at least 1 Uppercase letter, 1 Lowercase letter, 1 Number and 1 Special character.");
                 return;
             }
 
-            MemberData.ChangeMemberInformation(memberId, txtEmail.Text.Trim(), txtName.Text.Trim(), txtSurname.Text.Trim(), txtPassword.Text.Trim(), Convert.ToDouble(numWeight.Value), cmbGender.Text, Convert.ToInt32(numHeight.Value), dtpBirthDate.Value.Date, cmbActivity.Text);
-            MessageBox.Show("Your profile has been successfully updated.");
+            MemberData.NewMember(txtEmail.Text.Trim(), txtName.Text.Trim(), txtSurname.Text.Trim(), txtPassword.Text.Trim(), Convert.ToDouble(numWeight.Value), cmbGender.Text, Convert.ToInt32(numHeight.Value), dtpBirthDate.Value.Date, cmbActivity.Text, GoalData.GoalIdFounder(cmbGoal.Text));
+            MessageBox.Show("Your membership has been created. You will be redirected to the home page.");
+            pnlLogin.Visible = true;
+            this.Close();
+
         }
 
         public static bool IsValidEmail(string email)
@@ -101,7 +99,7 @@ namespace AHAFit_UI
                 }
             }
             catch (RegexMatchTimeoutException)
-            {   
+            {
                 return false;
             }
             catch (ArgumentException)
@@ -133,7 +131,7 @@ namespace AHAFit_UI
             foreach (var letter in password)
             {
                 int ascii = Convert.ToInt32(letter);
-               
+
                 if (ascii >= 65 && ascii <= 90)
                 {
                     upperCase++;
