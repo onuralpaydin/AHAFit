@@ -81,8 +81,19 @@ namespace AHAFit_UI
 
         private void btnBMI_Click(object sender, EventArgs e)
         {
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
+            pnlHome.Visible = false;
             BMICalcForm bMICalcForm = new BMICalcForm(memberId);
+            bMICalcForm.MdiParent = this;
+            bMICalcForm.Dock = DockStyle.Fill;
+            bMICalcForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(bMICalcForm);
             bMICalcForm.Show();
+            RefreshHomeData();
         }
 
         private void dtpHomeDate_ValueChanged(object sender, EventArgs e)

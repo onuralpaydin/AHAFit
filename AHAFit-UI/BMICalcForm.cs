@@ -9,19 +9,17 @@ namespace AHAFit_UI
 {
     public partial class BMICalcForm : Form
     {
+        MemberData MemberData = new MemberData();
         private readonly int memberId;
-        Context db = new Context();
-        Alper alper;
+
         public BMICalcForm(int memberId)
         {
             InitializeComponent();
-            this.memberId = memberId;     
-            alper = new Alper(memberId);      
-            
+            this.memberId = memberId;        
         }
         private void BMICalcForm_Load(object sender, EventArgs e)
         {
-            var x = alper.BMIUser();
+            var x = MemberData.BMIUser(memberId);
             for (int i = 0; i < x.Count; i++)
             {
                 txtUserName.Text = x[0].ToString();
@@ -45,11 +43,11 @@ namespace AHAFit_UI
          private void BMICalculate()
         {
             
-            if (alper.BMIEntryCheck(txtWeight.Text,txtHeight.Text))
+            if (MemberData.BMIEntryCheck(txtWeight.Text,txtHeight.Text))
             {
                 double weight = Convert.ToDouble(txtWeight.Text);
                 double height = Convert.ToDouble(txtHeight.Text);
-                double bmi = alper.BMIValue(weight, height);
+                double bmi = MemberData.BMIValue(weight, height);
                 txtBMI.Text = bmi.ToString();
                 try
                 {

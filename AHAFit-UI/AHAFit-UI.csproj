@@ -121,6 +121,9 @@
     <EmbeddedResource Include="AddDailyFoodForm.resx">
       <DependentUpon>AddDailyFoodForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BMICalcForm.resx">
+      <DependentUpon>BMICalcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +174,10 @@
     <ProjectReference Include="..\AHAFit-Data\AHAFit-Data.csproj">
       <Project>{0B43514B-4C08-490F-B5D9-224895864ACC}</Project>
       <Name>AHAFit-Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AHAFit-Model\AHAFit-Model.csproj">
+      <Project>{920978F2-132C-4906-91A4-F24B8B22FD5B}</Project>
+      <Name>AHAFit-Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
