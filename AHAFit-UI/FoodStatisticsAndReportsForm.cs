@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AHAFit_UI
 {
-    public partial class ReportsForm : Form
+    public partial class FoodStatisticsAndReportsForm : Form
     {
         private readonly int memberId;
 
-        public ReportsForm(int memberId)
+        public FoodStatisticsAndReportsForm(int memberId)
         {
             InitializeComponent();
             this.memberId = memberId;
@@ -25,10 +25,8 @@ namespace AHAFit_UI
         {
             #region Combobox Loads
             Alper alper = new Alper(memberId);
-            foreach (var item in alper.Categories())
-            {
-                cmbCategories.Items.Add(item);
-            }
+
+          
             cmbCategories.SelectedIndex = 0;
             foreach (var item in alper.Meals())
             {

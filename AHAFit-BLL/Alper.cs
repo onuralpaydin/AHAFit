@@ -20,11 +20,7 @@ namespace AHAFit_BLL
         public List<string> Meals()
         {
             return db.Meals.Select(x=>x.Name).ToList();
-        }
-        public string[] Categories()
-        {
-            return Enum.GetNames(typeof(FoodType));
-        }        
+        }    
         public double ReportsFormCalorieMember(int mealId,int datetimevalue)        {
             
             DateTime Date = DateTime.Now.AddDays(datetimevalue);

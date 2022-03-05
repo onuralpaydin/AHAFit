@@ -112,11 +112,11 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportsForm.cs">
+    <Compile Include="FoodStatisticsAndReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportsForm.Designer.cs">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
+    <Compile Include="FoodStatisticsAndReportsForm.Designer.cs">
+      <DependentUpon>FoodStatisticsAndReportsForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddDailyFoodForm.resx">
       <DependentUpon>AddDailyFoodForm.cs</DependentUpon>
@@ -148,12 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportsForm.resx">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportsForm.resx">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

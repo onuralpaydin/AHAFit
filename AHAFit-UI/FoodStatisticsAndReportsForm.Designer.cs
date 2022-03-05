@@ -1,7 +1,7 @@
 ﻿
 namespace AHAFit_UI
 {
-    partial class ReportsForm
+    partial class FoodStatisticsAndReportsForm
     {
         /// <summary>
         /// Required designer variable.
