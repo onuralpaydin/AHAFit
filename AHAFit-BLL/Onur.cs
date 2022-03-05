@@ -10,7 +10,6 @@ namespace AHAFit_BLL
 {
     public class Onur
     {
-  
-        
+
     }
 }

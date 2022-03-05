@@ -16,7 +16,7 @@ namespace AHAFit_UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegisterLoginForm());
+            Application.Run(new LoginForm());
         }
     }
 }
