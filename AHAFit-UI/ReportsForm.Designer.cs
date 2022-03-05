@@ -29,10 +29,17 @@ namespace AHAFit_UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ReportsForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "ReportsForm";
             this.Text = "ReportsForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -34,6 +34,9 @@ namespace AHAFit_UI
             AutomaticData.MealAndGoalDataLoad();
             AutomaticData.AutoAdminMember();
             AutomaticData.AddWaterToFoods();
+            AutomaticData.AutoMembers();
+            AutomaticData.AutoFoods();
+            AutomaticData.AutoFoodAdderToMemberAndMeals();
             InitializeComponent();
         }
 
@@ -64,6 +67,9 @@ namespace AHAFit_UI
             flwPnlLeftSide.BackColor = Color.FromArgb(46, 65, 89);
             btnLogin2.BackColor = Color.FromArgb(168, 181, 191);
             btnRegister.BackColor = Color.FromArgb(168, 181, 191);
+            pnlLogin.BackColor = Color.FromArgb(168, 181, 191);
+            pnlResizeBottom.BackColor = Color.FromArgb(168, 181, 191);
+            pnlResizeRight.BackColor = Color.FromArgb(168, 181, 191);
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
@@ -101,6 +107,25 @@ namespace AHAFit_UI
         private void btnExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            pnlLogin.Visible = false;
+            RegisterForm registerForm = new RegisterForm(pnlLogin);
+            registerForm.MdiParent = this;
+            registerForm.Dock = DockStyle.Fill;
+            registerForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(registerForm);
+            registerForm.Show();
+        }
+
+        private void btnLogin2_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+
+            pnlLogin.Visible = true;
         }
     }
 }

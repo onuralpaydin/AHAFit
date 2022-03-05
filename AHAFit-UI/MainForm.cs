@@ -325,9 +325,5 @@ namespace AHAFit_UI
             RefreshHomeData();
         }
 
-        private void LoginRegister()
-        {
-            
-        }
     }
 }

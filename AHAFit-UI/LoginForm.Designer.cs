@@ -58,11 +58,17 @@ namespace AHAFit_UI
             this.pnlResizeBottom = new System.Windows.Forms.Panel();
             this.pnlResizeRight = new System.Windows.Forms.Panel();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.flwPnlLeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlLogin.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,6 +139,10 @@ namespace AHAFit_UI
             this.flwPnlLeftSide.Controls.Add(this.pictureBox1);
             this.flwPnlLeftSide.Controls.Add(this.btnLogin2);
             this.flwPnlLeftSide.Controls.Add(this.btnRegister);
+            this.flwPnlLeftSide.Controls.Add(this.label20);
+            this.flwPnlLeftSide.Controls.Add(this.label17);
+            this.flwPnlLeftSide.Controls.Add(this.label18);
+            this.flwPnlLeftSide.Controls.Add(this.label19);
             this.flwPnlLeftSide.Controls.Add(this.label4);
             this.flwPnlLeftSide.Controls.Add(this.label9);
             this.flwPnlLeftSide.Controls.Add(this.label11);
@@ -150,7 +160,7 @@ namespace AHAFit_UI
             this.flwPnlLeftSide.Location = new System.Drawing.Point(0, 0);
             this.flwPnlLeftSide.Margin = new System.Windows.Forms.Padding(7);
             this.flwPnlLeftSide.Name = "flwPnlLeftSide";
-            this.flwPnlLeftSide.Size = new System.Drawing.Size(467, 1156);
+            this.flwPnlLeftSide.Size = new System.Drawing.Size(467, 1300);
             this.flwPnlLeftSide.TabIndex = 14;
             // 
             // pictureBox1
@@ -178,6 +188,7 @@ namespace AHAFit_UI
             this.btnLogin2.Text = "Login";
             this.btnLogin2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogin2.UseVisualStyleBackColor = true;
+            this.btnLogin2.Click += new System.EventHandler(this.btnLogin2_Click);
             // 
             // btnRegister
             // 
@@ -195,12 +206,13 @@ namespace AHAFit_UI
             this.btnRegister.Text = "Register";
             this.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(2, 487);
+            this.label4.Location = new System.Drawing.Point(2, 667);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(465, 45);
@@ -211,7 +223,7 @@ namespace AHAFit_UI
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(2, 532);
+            this.label9.Location = new System.Drawing.Point(2, 712);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(465, 45);
@@ -222,7 +234,7 @@ namespace AHAFit_UI
             // 
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(2, 577);
+            this.label11.Location = new System.Drawing.Point(2, 757);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(465, 45);
@@ -233,7 +245,7 @@ namespace AHAFit_UI
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(2, 622);
+            this.label10.Location = new System.Drawing.Point(2, 802);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(465, 45);
@@ -244,7 +256,7 @@ namespace AHAFit_UI
             // 
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(2, 667);
+            this.label12.Location = new System.Drawing.Point(2, 847);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(465, 45);
@@ -255,7 +267,7 @@ namespace AHAFit_UI
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(2, 712);
+            this.label3.Location = new System.Drawing.Point(2, 892);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(465, 45);
@@ -266,7 +278,7 @@ namespace AHAFit_UI
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(2, 757);
+            this.label5.Location = new System.Drawing.Point(2, 937);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(465, 45);
@@ -277,7 +289,7 @@ namespace AHAFit_UI
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(2, 802);
+            this.label6.Location = new System.Drawing.Point(2, 982);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(465, 45);
@@ -288,7 +300,7 @@ namespace AHAFit_UI
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(2, 847);
+            this.label7.Location = new System.Drawing.Point(2, 1027);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(465, 45);
@@ -299,7 +311,7 @@ namespace AHAFit_UI
             // 
             this.label15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(2, 892);
+            this.label15.Location = new System.Drawing.Point(2, 1072);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(465, 45);
@@ -310,7 +322,7 @@ namespace AHAFit_UI
             // 
             this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(2, 937);
+            this.label16.Location = new System.Drawing.Point(2, 1117);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(465, 45);
@@ -321,7 +333,7 @@ namespace AHAFit_UI
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(2, 982);
+            this.label13.Location = new System.Drawing.Point(2, 1162);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(465, 45);
@@ -333,7 +345,7 @@ namespace AHAFit_UI
             // 
             this.label14.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(2, 1027);
+            this.label14.Location = new System.Drawing.Point(2, 1207);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(465, 45);
@@ -383,10 +395,10 @@ namespace AHAFit_UI
             this.pnlResizeBottom.BackColor = System.Drawing.Color.Transparent;
             this.pnlResizeBottom.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.pnlResizeBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlResizeBottom.Location = new System.Drawing.Point(0, 1134);
+            this.pnlResizeBottom.Location = new System.Drawing.Point(0, 1222);
             this.pnlResizeBottom.Margin = new System.Windows.Forms.Padding(7);
             this.pnlResizeBottom.Name = "pnlResizeBottom";
-            this.pnlResizeBottom.Size = new System.Drawing.Size(1757, 22);
+            this.pnlResizeBottom.Size = new System.Drawing.Size(1734, 22);
             this.pnlResizeBottom.TabIndex = 17;
             this.pnlResizeBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
             this.pnlResizeBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
@@ -400,7 +412,7 @@ namespace AHAFit_UI
             this.pnlResizeRight.Location = new System.Drawing.Point(1734, 0);
             this.pnlResizeRight.Margin = new System.Windows.Forms.Padding(7);
             this.pnlResizeRight.Name = "pnlResizeRight";
-            this.pnlResizeRight.Size = new System.Drawing.Size(23, 1134);
+            this.pnlResizeRight.Size = new System.Drawing.Size(23, 1244);
             this.pnlResizeRight.TabIndex = 16;
             this.pnlResizeRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseDown);
             this.pnlResizeRight.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlResizeRight_MouseMove);
@@ -409,21 +421,74 @@ namespace AHAFit_UI
             // pnlLogin
             // 
             this.pnlLogin.Controls.Add(this.groupBox1);
-            this.pnlLogin.Controls.Add(this.pnlResizeRight);
-            this.pnlLogin.Controls.Add(this.pnlResizeBottom);
             this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLogin.Location = new System.Drawing.Point(467, 0);
+            this.pnlLogin.Location = new System.Drawing.Point(0, 0);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(1757, 1156);
+            this.pnlLogin.Size = new System.Drawing.Size(1734, 1222);
             this.pnlLogin.TabIndex = 18;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.pnlLogin);
+            this.pnlMain.Controls.Add(this.pnlResizeBottom);
+            this.pnlMain.Controls.Add(this.pnlResizeRight);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(467, 56);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1757, 1244);
+            this.pnlMain.TabIndex = 20;
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(2, 532);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(465, 45);
+            this.label17.TabIndex = 29;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(2, 577);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(465, 45);
+            this.label18.TabIndex = 30;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(2, 622);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(465, 45);
+            this.label19.TabIndex = 31;
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(2, 487);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(465, 45);
+            this.label20.TabIndex = 32;
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2224, 1156);
+            this.ClientSize = new System.Drawing.Size(2224, 1300);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlTop);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.flwPnlLeftSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -439,6 +504,7 @@ namespace AHAFit_UI
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -474,5 +540,10 @@ namespace AHAFit_UI
         private System.Windows.Forms.Panel pnlResizeBottom;
         private System.Windows.Forms.Panel pnlResizeRight;
         private System.Windows.Forms.Panel pnlLogin;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }

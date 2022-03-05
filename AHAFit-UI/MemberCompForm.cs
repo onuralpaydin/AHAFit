@@ -13,6 +13,7 @@ namespace AHAFit_UI
 {
     public partial class MemberCompForm : Form
     {
+        MemberData MemberData = new MemberData();
         private readonly int memberId;
 
         public MemberCompForm(int memberId)
@@ -23,23 +24,23 @@ namespace AHAFit_UI
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            var champUser = Huseyin.CalorieChampUserFinder(0);
+            var champUser = MemberData.CalorieChampUserFinder(0);
             lblUserName.Text = champUser.First().Key + " " + String.Format("{0:n}", champUser.First().Value) + " Cal"; 
-            dgvCompare.DataSource = Huseyin.MemberCompare(0);
+            dgvCompare.DataSource = MemberData.MemberCompare(0);
         }
 
         private void btnMonthly_Click(object sender, EventArgs e)
         {
-            var champUser = Huseyin.CalorieChampUserFinder(30);
+            var champUser = MemberData.CalorieChampUserFinder(30);
             lblUserName.Text = champUser.First().Key + " " + String.Format("{0:n}", champUser.First().Value) + " Cal";
-            dgvCompare.DataSource = Huseyin.MemberCompare(30);
+            dgvCompare.DataSource = MemberData.MemberCompare(30);
         }
 
         private void btnWeekly_Click(object sender, EventArgs e)
         {
-            var champUser = Huseyin.CalorieChampUserFinder(7);
+            var champUser = MemberData.CalorieChampUserFinder(7);
             lblUserName.Text = champUser.First().Key + " " + String.Format("{0:n}", champUser.First().Value) + " Cal";
-            dgvCompare.DataSource = Huseyin.MemberCompare(7);
+            dgvCompare.DataSource = MemberData.MemberCompare(7);
         }
     }
 }
