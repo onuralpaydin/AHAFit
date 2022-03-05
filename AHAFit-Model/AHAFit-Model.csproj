@@ -58,6 +58,10 @@
     <Compile Include="MealMapping.cs" />
     <Compile Include="MemberFoodMapping.cs" />
     <Compile Include="MemberMapping.cs" />
+    <Compile Include="Migrations\202202281632312_init.cs" />
+    <Compile Include="Migrations\202202281632312_init.designer.cs">
+      <DependentUpon>202202281632312_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +74,11 @@
       <Project>{0b43514b-4c08-490f-b5d9-224895864acc}</Project>
       <Name>AHAFit-Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202281632312_init.resx">
+      <DependentUpon>202202281632312_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
