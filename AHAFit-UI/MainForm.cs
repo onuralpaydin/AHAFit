@@ -46,7 +46,7 @@ namespace AHAFit_UI
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            ReportsForm reportsForm = new ReportsForm(memberId);
+            FoodStatisticsAndReportsForm reportsForm = new FoodStatisticsAndReportsForm(memberId);
             reportsForm.Show();
         }
 
@@ -75,8 +75,7 @@ namespace AHAFit_UI
 
         private void btnFoodSt_Click(object sender, EventArgs e)
         {
-            FoodStatisticsForm foodStatisticsForm = new FoodStatisticsForm(memberId);
-            foodStatisticsForm.Show();
+            
         }
 
         private void btnBMI_Click(object sender, EventArgs e)
