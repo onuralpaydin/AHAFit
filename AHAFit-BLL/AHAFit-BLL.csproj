@@ -52,7 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alper.cs" />
+    <Compile Include="AutomaticData.cs" />
+    <Compile Include="FoodMemberData.cs" />
+    <Compile Include="GoalData.cs" />
     <Compile Include="Huseyin.cs" />
+    <Compile Include="MealFoodData.cs" />
+    <Compile Include="MemberData.cs" />
     <Compile Include="Onur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

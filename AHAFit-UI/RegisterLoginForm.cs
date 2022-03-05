@@ -13,19 +13,26 @@ namespace AHAFit_UI
 {
     public partial class RegisterLoginForm : Form
     {
+        AutomaticData AutomaticData = new AutomaticData();
+        MemberData MemberData = new MemberData();
+
         public RegisterLoginForm()
         {
-            Huseyin.MealAndGoalDataLoad();
-            Huseyin.AutoAdminMember();
+            AutomaticData.MealAndGoalDataLoad();
+            AutomaticData.AutoAdminMember();
+            AutomaticData.AddWaterToFoods();
+            Huseyin.AutoMembers();
+            Huseyin.AutoFoods();
+            Huseyin.AutoFoodAdderToMemberAndMeals();
             InitializeComponent();
         }
 
         private void btn_Click(object sender, EventArgs e)
         {
-            if(Huseyin.MemberLoginControl(txtEmail.Text,txtPassword.Text))
+            if(MemberData.MemberLoginControl(txtEmail.Text,txtPassword.Text))
             {
                 MessageBox.Show("Giriş Başarılı");
-                HomeForm newHomeForm = new HomeForm(Huseyin.MemberIdFounder(txtEmail.Text));
+                MainForm newHomeForm = new MainForm(MemberData.MemberIdFounder(txtEmail.Text));
                 newHomeForm.Show();
                 this.Hide();
             }
@@ -37,7 +44,7 @@ namespace AHAFit_UI
         private void RegisterLoginForm_Load(object sender, EventArgs e)
         {
             txtEmail.Text = "admin@admin.com";
-            txtPassword.Text = "admin";
+            txtPassword.Text = "asdfghH1.";
         }
     }
 }

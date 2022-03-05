@@ -1,6 +1,5 @@
-﻿using System;
-using AHAFit_Data;
-using AHAFit_Model;
+﻿using AHAFit_Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -109,4 +108,5 @@ namespace AHAFit_BLL
             return Math.Round(avg, 2);
         }     
     }
+    
 }
