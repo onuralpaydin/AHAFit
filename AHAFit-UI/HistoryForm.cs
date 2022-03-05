@@ -14,8 +14,8 @@ namespace AHAFit_UI
 {
     public partial class HistoryForm : Form
     {
-        
-        Onur onur = new Onur();
+
+        FoodMemberData FoodMemberData = new FoodMemberData();
         
        
         private readonly int memberId;
@@ -28,7 +28,7 @@ namespace AHAFit_UI
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-           dgvHistoryFormWeekly.DataSource=onur.WeeklyHistoryLoader(memberId);
+           dgvHistoryFormWeekly.DataSource= FoodMemberData.WeeklyHistoryLoader(memberId);
         }
 
        
@@ -37,7 +37,7 @@ namespace AHAFit_UI
         {
             DateTime date = dtpHistoryFormMonthly.Value;
             int month =date.Month;
-            dgvHistoryFormMonthly.DataSource = onur.MonthlyHistoryLoader(memberId, month);
+            dgvHistoryFormMonthly.DataSource = FoodMemberData.MonthlyHistoryLoader(memberId, month);
         }
     }
 }
