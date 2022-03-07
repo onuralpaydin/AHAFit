@@ -40,19 +40,6 @@ namespace AHAFit_UI
             InitializeComponent();
         }
 
-        private void btn_Click(object sender, EventArgs e)
-        {
-            if(MemberData.MemberLoginControl(txtEmail.Text,txtPassword.Text))
-            {
-                MessageBox.Show("Giriş Başarılı");
-                MainForm newHomeForm = new MainForm(MemberData.MemberIdFounder(txtEmail.Text));
-                newHomeForm.Show();
-                this.Hide();
-            }
-                
-            else
-                MessageBox.Show("Giriş Başarısız");
-        }
 
         private void RegisterLoginForm_Load(object sender, EventArgs e)
         {
@@ -70,6 +57,7 @@ namespace AHAFit_UI
             pnlLogin.BackColor = Color.FromArgb(168, 181, 191);
             pnlResizeBottom.BackColor = Color.FromArgb(168, 181, 191);
             pnlResizeRight.BackColor = Color.FromArgb(168, 181, 191);
+            btnLogin.BackColor = Color.FromArgb(166, 83, 105);
         }
 
         private void pnlTop_MouseDown(object sender, MouseEventArgs e)
@@ -118,6 +106,21 @@ namespace AHAFit_UI
             registerForm.BackColor = Color.FromArgb(168, 181, 191);
             pnlMain.Controls.Add(registerForm);
             registerForm.Show();
+        }
+
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (MemberData.MemberLoginControl(txtEmail.Text, txtPassword.Text))
+            {
+                MessageBox.Show("Login Successful.");
+                MainForm newHomeForm = new MainForm(MemberData.MemberIdFounder(txtEmail.Text));
+                newHomeForm.Show();
+                this.Hide();
+            }
+
+            else
+                MessageBox.Show("Login Failed.");
         }
 
         private void btnLogin2_Click(object sender, EventArgs e)

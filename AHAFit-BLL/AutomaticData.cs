@@ -26,7 +26,7 @@ namespace AHAFit_BLL
 
             if (!db.Goals.Any())
             {
-                db.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Goals', RESEED, 0)");
+                db.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Goals', RESEED, 1)");
                 db.Goals.AddRange(new List<Goal> {
                     new Goal() { Name = "Lose Weight"},
                     new Goal() { Name = "Gain Weight"},
@@ -67,7 +67,7 @@ namespace AHAFit_BLL
                 water.Protein = 0;
                 water.Fat = 0;
                 water.PhotoURL = "asda";
-                water.FoodType = "Grain";
+                water.FoodType = "Water";
                 db.Foods.Add(water);
                 db.SaveChanges();
             }
@@ -349,7 +349,6 @@ namespace AHAFit_BLL
         public void AutoFoods()
         {
             List<Food> autoFoods = new List<Food>();
-
             autoFoods.Add(new Food()
             {
                 Name = "apple",
@@ -357,7 +356,8 @@ namespace AHAFit_BLL
                 Carbohydrate = 25,
                 Protein = 0.5,
                 Fat = 0.3,
-                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/384_thumb.jpg",
+                
+                PhotoURL = "https://nix-tag-images.s3.amazonaws.com/399_thumb.jpg",
                 FoodType = "Fruit",
             });
             autoFoods.Add(new Food()
@@ -658,7 +658,7 @@ namespace AHAFit_BLL
         }
         public void AutoFoodAdderToMemberAndMeals()
         {
-            if (db.MembersFoods.ToList().Count() > 200)
+            if (db.MembersFoods.ToList().Count() > 250)
                 return;
 
             List<int> foodIds = new List<int>();
@@ -679,7 +679,7 @@ namespace AHAFit_BLL
                     newMemberFood.CreateDateTime = DateTime.Now.AddDays(rnd.Next(-35, 1)).Date;
                     newMemberFood.MemberId = member.MemberId;
                     newMemberFood.FoodId = randomFoodId;
-                    newMemberFood.MealId = rnd.Next(1, 3);
+                    newMemberFood.MealId = rnd.Next(1, 4);
 
                     newMealFood.CreateDateTime = newMemberFood.CreateDateTime;
                     newMealFood.MealId = newMemberFood.MealId;
@@ -692,11 +692,11 @@ namespace AHAFit_BLL
                     newMemberFood2.CreateDateTime = DateTime.Now.Date;
                     newMemberFood2.MemberId = member.MemberId;
                     newMemberFood2.FoodId = randomFoodId;
-                    newMemberFood2.MealId = rnd.Next(1, 3);
+                    newMemberFood2.MealId = rnd.Next(1, 4);
 
-                    newMealFood2.CreateDateTime = newMemberFood.CreateDateTime;
-                    newMealFood2.MealId = newMemberFood.MealId;
-                    newMealFood2.FoodId = newMemberFood.FoodId;
+                    newMealFood2.CreateDateTime = newMemberFood2.CreateDateTime;
+                    newMealFood2.MealId = newMemberFood2.MealId;
+                    newMealFood2.FoodId = newMemberFood2.FoodId;
 
                     db.MembersFoods.Add(newMemberFood);
                     db.MembersFoods.Add(newMemberFood2);

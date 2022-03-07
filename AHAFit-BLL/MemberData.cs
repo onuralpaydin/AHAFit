@@ -161,46 +161,44 @@ namespace AHAFit_BLL
 
             return memberAndCalories;
         }
-
-        //BAKILACAK
-        public List<string> BMIUser(int memberId)
+        public double BmiCalculator(int memberId)
         {
-
-            var user = db.Members.Where(u => u.MemberId == memberId).ToList();
-            List<string> result = new List<string>();
-            string userName = "", height = "", weight = "";
-
-            foreach (var prop in user)
-            {
-                userName = $"{prop.Name}  {prop.Surname}";
-                height = prop.Height.ToString();
-                weight = prop.Weight.ToString();
-            }
-            result.Add(userName);
-            result.Add(height);
-            result.Add(weight);
-
-            return result;
+            var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+            return member.Weight / (Math.Pow(((double)member.Height / 100),2));
         }
-        public bool BMIEntryCheck(string weightInput, string heightInput)
+        public string HealtyGap(int memberId)
         {
-            double weight, height;
-            bool isWeight = double.TryParse(weightInput, out weight);
-            bool isHeight = double.TryParse(heightInput, out height);
-            if (isHeight && isWeight)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public double BMIValue(double weight, double height)
-        {
-            double bmi = Math.Round((weight / Math.Pow(height, 2) * 10000), 2);
+            var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+            var firstInt = Math.Pow(((double)member.Height / 100), 2) * 18.5;
+            var secondInt = Math.Pow(((double)member.Height / 100), 2) * 24.9;
 
-            return bmi;
+            return String.Format("{0:n}", firstInt) + " kg - " + String.Format("{0:n}", secondInt) + " kg";
+        }
+        public string MemberCurrentWeigh(int memberId)
+        {
+            return String.Format("{0:n}", db.Members.FirstOrDefault(x=>x.MemberId == memberId).Weight) + " kg";
+        }
+        public string BMILineValues(int memberId, int caseNo)
+        {
+            var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
+            var result = 0.0;
+            switch (caseNo)
+            {
+                case 1:
+                    result = Math.Pow(((double)member.Height / 100), 2) * 18.4;
+                    break;
+                case 2:
+                    result = Math.Pow(((double)member.Height / 100), 2) * 24.9;
+                    break;
+                case 3:
+                    result = Math.Pow(((double)member.Height / 100), 2) * 29.9;
+                    break;
+                case 4:
+                    result = Math.Pow(((double)member.Height / 100), 2) * 39.9;
+                    break;
+            }
+
+            return String.Format("{0:n}", result) + " kg";
         }
     }
 }

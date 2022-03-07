@@ -14,7 +14,6 @@ namespace AHAFit_BLL
         {
             return db.Goals.FirstOrDefault(x => x.Name == goal).GoalId;
         }
-
         public List<string> GoalNamesToList()
         {
             List<string> goalList = new List<string>();

@@ -42,5 +42,13 @@ namespace AHAFit_UI
             lblUserName.Text = champUser.First().Key + " " + String.Format("{0:n}", champUser.First().Value) + " Cal";
             dgvCompare.DataSource = MemberData.MemberCompare(7);
         }
+
+        private void MemberCompForm_Load(object sender, EventArgs e)
+        {
+            dgvCompare.BackgroundColor = Color.FromArgb(168, 181, 191);
+            btnAll.BackColor = Color.FromArgb(166, 83, 105);
+            btnMonthly.BackColor = Color.FromArgb(166, 83, 105);
+            btnWeekly.BackColor = Color.FromArgb(166, 83, 105);
+        }
     }
 }

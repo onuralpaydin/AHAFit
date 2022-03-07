@@ -44,16 +44,21 @@ namespace AHAFit_UI
             this.Width = 1150;
         }
 
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            FoodStatisticsAndReportsForm reportsForm = new FoodStatisticsAndReportsForm(memberId);
-            reportsForm.Show();
-        }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
+            pnlHome.Visible = false;
             HistoryForm historyForm = new HistoryForm(memberId);
+            historyForm.MdiParent = this;
+            historyForm.Dock = DockStyle.Fill;
+            historyForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(historyForm);
             historyForm.Show();
+            RefreshHomeData();
         }
 
         private void btnMemberComp_Click(object sender, EventArgs e)
@@ -75,7 +80,19 @@ namespace AHAFit_UI
 
         private void btnFoodSt_Click(object sender, EventArgs e)
         {
-            
+            foreach (Control item in pnlMain.Controls)
+            {
+                if (item != pnlHome)
+                    pnlMain.Controls.Remove(item);
+            }
+            pnlHome.Visible = false;
+            FoodStatisticsForm foodStatisticsForm = new FoodStatisticsForm(memberId);
+            foodStatisticsForm.MdiParent = this;
+            foodStatisticsForm.Dock = DockStyle.Fill;
+            foodStatisticsForm.BackColor = Color.FromArgb(168, 181, 191);
+            pnlMain.Controls.Add(foodStatisticsForm);
+            foodStatisticsForm.Show();
+            RefreshHomeData();
         }
 
         private void btnBMI_Click(object sender, EventArgs e)
@@ -274,6 +291,7 @@ namespace AHAFit_UI
             btnBMI.BackColor = Color.FromArgb(168, 181, 191);
             btnFoodSt.BackColor = Color.FromArgb(168, 181, 191);
             btnMemberComp.BackColor = Color.FromArgb(168, 181, 191);
+            btnLogout.BackColor = Color.FromArgb(168, 181, 191);
             pnlTop.BackColor = Color.FromArgb(166, 83, 105);
             pnlMain.BackColor = Color.FromArgb(168, 181, 191);
             pnlDailyCalorie.BackColor = Color.FromArgb(92, 98, 115);
@@ -335,5 +353,21 @@ namespace AHAFit_UI
             RefreshHomeData();
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to sign out?", "Logout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+                LoginForm newLoginForm = new LoginForm();
+                newLoginForm.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+
+        }
     }
 }

@@ -266,7 +266,10 @@ namespace AHAFit_UI
             // 
             // btnSave
             // 
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(698, 883);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 82);

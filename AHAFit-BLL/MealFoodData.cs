@@ -43,7 +43,7 @@ namespace AHAFit_BLL
         }
         public string FindFoodImageUrl(int foodId)
         {
-            if(db.Foods.FirstOrDefault(x => x.FoodId == foodId) == null)
+            if (db.Foods.FirstOrDefault(x => x.FoodId == foodId) == null)
             {
                 return "";
             }
@@ -68,6 +68,110 @@ namespace AHAFit_BLL
         {
             db.Foods.Remove(db.Foods.FirstOrDefault(x => x.FoodId == foodId));
             db.SaveChanges();
+        }
+        public Dictionary<string, int> MostEatenFood(int memberId, int daysBack, int mealId, string foodType)
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            Dictionary<string, int> dict2 = new Dictionary<string, int>();
+            List<int> foodIds = new List<int>();
+            List<MemberFood> membersFoods = new List<MemberFood>();
+            List<MemberFood> membersFoods2 = new List<MemberFood>();
+
+            if (daysBack == 0 && mealId == 0 && foodType == "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId).ToList();
+                HelperMethod(1, membersFoods, membersFoods2, foodType);
+
+            }
+            else if (daysBack == 0 && mealId != 0 && foodType != "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.MealId == mealId).ToList();
+                HelperMethod(2, membersFoods, membersFoods2, foodType);
+            }
+            else if (daysBack == 0 && mealId == 0 && foodType != "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId).ToList();
+                HelperMethod(2, membersFoods, membersFoods2, foodType);
+            }
+            else if (daysBack == 0 && mealId != 0 && foodType == "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.MealId == mealId).ToList();
+                HelperMethod(1, membersFoods, membersFoods2, foodType);
+            }
+            else if (daysBack != 0 && mealId == 0 && foodType != "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack)).ToList();
+                HelperMethod(2, membersFoods, membersFoods2, foodType);
+            }
+            else if (daysBack != 0 && mealId == 0 && foodType == "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack)).ToList();
+                HelperMethod(1, membersFoods, membersFoods2, foodType);
+            }
+            else if (daysBack != 0 && mealId != 0 && foodType == "All Types")
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack) && x.MealId == mealId).ToList();
+                HelperMethod(1, membersFoods, membersFoods2, foodType);
+            }
+            else
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack) && x.MealId == mealId).ToList();
+                HelperMethod(2, membersFoods, membersFoods2, foodType);
+            }
+
+            foreach (var memberFood in membersFoods2)
+            {
+                foodIds.Add(memberFood.FoodId);
+            }
+
+            if (membersFoods2.Count != 0)
+            {
+                var mostFoodId = foodIds.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
+                var mostFoodCount = db.MembersFoods.Where(x => x.MemberId == memberId && x.FoodId == mostFoodId).Count();
+                var foodName = db.Foods.FirstOrDefault(x => x.FoodId == mostFoodId).Name;
+                var totalCal = 0.0;
+                foreach (var foodId in foodIds)
+                {
+                    totalCal += db.Foods.FirstOrDefault(x => x.FoodId == foodId).Calorie;
+                }
+
+                dict.Add(foodName, mostFoodCount);
+                dict.Add("Total Cal", (int)totalCal);
+                return dict;
+            }
+            else
+            {
+                dict2.Add("0", 0);
+                return dict2;
+            }
+
+        }
+        public void HelperMethod(int selection, List<MemberFood> membersFoods, List<MemberFood> membersFoods2, string foodType)
+        {
+            if (selection == 1)
+            {
+                foreach (var food in membersFoods)
+                {
+                    membersFoods2.Add(food);
+                }
+            }
+            else if (selection == 2)
+            {
+                foreach (var food in membersFoods)
+                {
+                    if (db.Foods.Any(x => x.FoodId == food.FoodId && x.FoodType == foodType))
+                        membersFoods2.Add(food);
+                }
+            }
+        }
+        public string FindFoodImageUrlviaName(string foodName)
+        {
+            if (db.Foods.FirstOrDefault(x => x.Name == foodName) == null)
+            {
+                return "";
+            }
+
+            return db.Foods.FirstOrDefault(x => x.Name == foodName).PhotoURL;
         }
     }
 }

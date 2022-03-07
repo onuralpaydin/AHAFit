@@ -43,6 +43,7 @@ namespace AHAFit_UI
             cmbGender.SelectedIndex = 0;
             cmbActivity.SelectedIndex = 0;
             cmbGoal.SelectedIndex = 0;
+            btnSave.BackColor = Color.FromArgb(166, 83, 105);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -75,7 +76,6 @@ namespace AHAFit_UI
             MessageBox.Show("Your membership has been created. You will be redirected to the home page.");
             pnlLogin.Visible = true;
             this.Close();
-
         }
 
         public static bool IsValidEmail(string email)

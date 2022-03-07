@@ -66,6 +66,8 @@ namespace AHAFit_UI
             this.cmbFoodType = new System.Windows.Forms.ComboBox();
             this.pbFood = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.nudPiece = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCalorie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarbohydrate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).BeginInit();
@@ -74,6 +76,7 @@ namespace AHAFit_UI
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPiece)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNewFoodName
@@ -367,7 +370,7 @@ namespace AHAFit_UI
             this.cmbEatMeal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEatMeal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEatMeal.FormattingEnabled = true;
-            this.cmbEatMeal.Location = new System.Drawing.Point(848, 448);
+            this.cmbEatMeal.Location = new System.Drawing.Point(843, 448);
             this.cmbEatMeal.Margin = new System.Windows.Forms.Padding(5);
             this.cmbEatMeal.Name = "cmbEatMeal";
             this.cmbEatMeal.Size = new System.Drawing.Size(234, 49);
@@ -403,7 +406,7 @@ namespace AHAFit_UI
             this.btnSaveEat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveEat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveEat.ForeColor = System.Drawing.Color.White;
-            this.btnSaveEat.Location = new System.Drawing.Point(1115, 442);
+            this.btnSaveEat.Location = new System.Drawing.Point(1702, 431);
             this.btnSaveEat.Margin = new System.Windows.Forms.Padding(5);
             this.btnSaveEat.Name = "btnSaveEat";
             this.btnSaveEat.Size = new System.Drawing.Size(230, 63);
@@ -481,10 +484,10 @@ namespace AHAFit_UI
             // pbFood
             // 
             this.pbFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbFood.Location = new System.Drawing.Point(1355, 480);
+            this.pbFood.Location = new System.Drawing.Point(1355, 638);
             this.pbFood.Margin = new System.Windows.Forms.Padding(5);
             this.pbFood.Name = "pbFood";
-            this.pbFood.Size = new System.Drawing.Size(610, 521);
+            this.pbFood.Size = new System.Drawing.Size(610, 363);
             this.pbFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFood.TabIndex = 13;
             this.pbFood.TabStop = false;
@@ -494,23 +497,60 @@ namespace AHAFit_UI
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1568, 425);
+            this.label7.Location = new System.Drawing.Point(1573, 569);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(185, 41);
             this.label7.TabIndex = 14;
             this.label7.Text = "Food Image";
             // 
+            // nudPiece
+            // 
+            this.nudPiece.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPiece.Location = new System.Drawing.Point(1405, 442);
+            this.nudPiece.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudPiece.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPiece.Name = "nudPiece";
+            this.nudPiece.Size = new System.Drawing.Size(226, 47);
+            this.nudPiece.TabIndex = 15;
+            this.nudPiece.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(1173, 446);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(209, 41);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Piece/Portion";
+            // 
             // AddDailyFoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1989, 1028);
+            this.Controls.Add(this.nudPiece);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pbFood);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSaveEat);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbEatMeal);
             this.Controls.Add(this.dtpEatDate);
@@ -531,6 +571,7 @@ namespace AHAFit_UI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,5 +615,7 @@ namespace AHAFit_UI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown nudPiece;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -72,17 +72,20 @@ namespace AHAFit_UI
             // lblPasswordLevel
             // 
             this.lblPasswordLevel.AutoSize = true;
-            this.lblPasswordLevel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordLevel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordLevel.ForeColor = System.Drawing.Color.White;
             this.lblPasswordLevel.Location = new System.Drawing.Point(872, 315);
             this.lblPasswordLevel.Name = "lblPasswordLevel";
-            this.lblPasswordLevel.Size = new System.Drawing.Size(196, 37);
+            this.lblPasswordLevel.Size = new System.Drawing.Size(213, 37);
             this.lblPasswordLevel.TabIndex = 29;
             this.lblPasswordLevel.Text = "Password Level";
             // 
             // btnSave
             // 
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(697, 942);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(148, 82);
@@ -127,7 +130,7 @@ namespace AHAFit_UI
             this.numHeight.Size = new System.Drawing.Size(387, 47);
             this.numHeight.TabIndex = 24;
             this.numHeight.Value = new decimal(new int[] {
-            30,
+            176,
             0,
             0,
             0});
@@ -151,7 +154,7 @@ namespace AHAFit_UI
             this.numWeight.Size = new System.Drawing.Size(387, 47);
             this.numWeight.TabIndex = 23;
             this.numWeight.Value = new decimal(new int[] {
-            30,
+            70,
             0,
             0,
             0});

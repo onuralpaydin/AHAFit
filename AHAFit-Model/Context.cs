@@ -14,7 +14,6 @@ namespace AHAFit_Model
         public Context()
         {
            Database.Connection.ConnectionString = "server=.; database=AHAFit; uid=sa; pwd=1234";
-
         }
 
         public DbSet<Food> Foods { get; set; }

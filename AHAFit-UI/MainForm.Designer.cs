@@ -66,15 +66,9 @@ namespace AHAFit_UI
             this.gainWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintainYourWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flwPnlLeftSide = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnHistory = new System.Windows.Forms.Button();
-            this.btnBMI = new System.Windows.Forms.Button();
-            this.btnFoodSt = new System.Windows.Forms.Button();
-            this.btnMemberComp = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -90,19 +84,24 @@ namespace AHAFit_UI
             this.pnlDailyCalorie = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnBMI = new System.Windows.Forms.Button();
+            this.btnFoodSt = new System.Windows.Forms.Button();
+            this.btnMemberComp = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDailyFoodList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.flwPnlLeftSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlBasedOnMeals.SuspendLayout();
             this.pnlEatenToday.SuspendLayout();
             this.pnlDailyCalorie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReports
@@ -111,9 +110,8 @@ namespace AHAFit_UI
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(158, 69);
             this.btnReports.TabIndex = 0;
-            this.btnReports.Text = "Reports";
+            this.btnReports.Text = "sdfasdfasdfasdfasdasdfasdfasdf";
             this.btnReports.UseVisualStyleBackColor = true;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // dtpHomeDate
             // 
@@ -503,17 +501,16 @@ namespace AHAFit_UI
             // 
             // flwPnlLeftSide
             // 
+            this.flwPnlLeftSide.Controls.Add(this.label16);
             this.flwPnlLeftSide.Controls.Add(this.pictureBox1);
             this.flwPnlLeftSide.Controls.Add(this.btnHome);
             this.flwPnlLeftSide.Controls.Add(this.btnHistory);
             this.flwPnlLeftSide.Controls.Add(this.btnBMI);
             this.flwPnlLeftSide.Controls.Add(this.btnFoodSt);
             this.flwPnlLeftSide.Controls.Add(this.btnMemberComp);
-            this.flwPnlLeftSide.Controls.Add(this.label16);
+            this.flwPnlLeftSide.Controls.Add(this.btnLogout);
             this.flwPnlLeftSide.Controls.Add(this.label15);
             this.flwPnlLeftSide.Controls.Add(this.label9);
-            this.flwPnlLeftSide.Controls.Add(this.label11);
-            this.flwPnlLeftSide.Controls.Add(this.label10);
             this.flwPnlLeftSide.Controls.Add(this.label12);
             this.flwPnlLeftSide.Controls.Add(this.label13);
             this.flwPnlLeftSide.Controls.Add(this.label14);
@@ -524,144 +521,44 @@ namespace AHAFit_UI
             this.flwPnlLeftSide.Size = new System.Drawing.Size(467, 1244);
             this.flwPnlLeftSide.TabIndex = 1;
             // 
-            // pictureBox1
+            // label16
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 241);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(2, 0);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(465, 45);
+            this.label16.TabIndex = 17;
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnHome
+            // label15
             // 
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = global::AHAFit_UI.Properties.Resources.history;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(2, 257);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(467, 112);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.FlatAppearance.BorderSize = 0;
-            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistory.ForeColor = System.Drawing.Color.White;
-            this.btnHistory.Image = global::AHAFit_UI.Properties.Resources.history;
-            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistory.Location = new System.Drawing.Point(2, 373);
-            this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(467, 112);
-            this.btnHistory.TabIndex = 0;
-            this.btnHistory.Text = "History";
-            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHistory.UseVisualStyleBackColor = true;
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
-            // 
-            // btnBMI
-            // 
-            this.btnBMI.FlatAppearance.BorderSize = 0;
-            this.btnBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBMI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBMI.ForeColor = System.Drawing.Color.White;
-            this.btnBMI.Image = global::AHAFit_UI.Properties.Resources.history;
-            this.btnBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBMI.Location = new System.Drawing.Point(2, 489);
-            this.btnBMI.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBMI.Name = "btnBMI";
-            this.btnBMI.Size = new System.Drawing.Size(467, 112);
-            this.btnBMI.TabIndex = 0;
-            this.btnBMI.Text = "BMI Calculator";
-            this.btnBMI.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBMI.UseVisualStyleBackColor = true;
-            this.btnBMI.Click += new System.EventHandler(this.btnBMI_Click);
-            // 
-            // btnFoodSt
-            // 
-            this.btnFoodSt.FlatAppearance.BorderSize = 0;
-            this.btnFoodSt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoodSt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoodSt.ForeColor = System.Drawing.Color.White;
-            this.btnFoodSt.Image = global::AHAFit_UI.Properties.Resources.history;
-            this.btnFoodSt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFoodSt.Location = new System.Drawing.Point(2, 605);
-            this.btnFoodSt.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFoodSt.Name = "btnFoodSt";
-            this.btnFoodSt.Size = new System.Drawing.Size(467, 112);
-            this.btnFoodSt.TabIndex = 0;
-            this.btnFoodSt.Text = "Food Statistics";
-            this.btnFoodSt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFoodSt.UseVisualStyleBackColor = true;
-            this.btnFoodSt.Click += new System.EventHandler(this.btnFoodSt_Click);
-            // 
-            // btnMemberComp
-            // 
-            this.btnMemberComp.FlatAppearance.BorderSize = 0;
-            this.btnMemberComp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMemberComp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMemberComp.ForeColor = System.Drawing.Color.White;
-            this.btnMemberComp.Image = global::AHAFit_UI.Properties.Resources.history;
-            this.btnMemberComp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMemberComp.Location = new System.Drawing.Point(2, 721);
-            this.btnMemberComp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMemberComp.Name = "btnMemberComp";
-            this.btnMemberComp.Size = new System.Drawing.Size(467, 112);
-            this.btnMemberComp.TabIndex = 0;
-            this.btnMemberComp.Text = "Member Comparisons";
-            this.btnMemberComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMemberComp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMemberComp.UseVisualStyleBackColor = true;
-            this.btnMemberComp.Click += new System.EventHandler(this.btnMemberComp_Click);
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(2, 996);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(465, 45);
+            this.label15.TabIndex = 16;
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(2, 925);
+            this.label9.Location = new System.Drawing.Point(2, 1041);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(465, 45);
             this.label9.TabIndex = 9;
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(2, 970);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(465, 45);
-            this.label11.TabIndex = 11;
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(2, 1015);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(465, 45);
-            this.label10.TabIndex = 12;
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(2, 1060);
+            this.label12.Location = new System.Drawing.Point(2, 1086);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(465, 45);
@@ -672,7 +569,7 @@ namespace AHAFit_UI
             // 
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(2, 1105);
+            this.label13.Location = new System.Drawing.Point(2, 1131);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(465, 45);
@@ -684,7 +581,7 @@ namespace AHAFit_UI
             // 
             this.label14.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(2, 1150);
+            this.label14.Location = new System.Drawing.Point(2, 1176);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(465, 45);
@@ -851,27 +748,126 @@ namespace AHAFit_UI
             this.label3.Text = "Eaten";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // pictureBox1
             // 
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(2, 880);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(465, 45);
-            this.label15.TabIndex = 16;
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox1.Image = global::AHAFit_UI.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 52);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(460, 241);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // label16
+            // btnHome
             // 
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(2, 835);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(465, 45);
-            this.label16.TabIndex = 17;
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = global::AHAFit_UI.Properties.Resources.house__1_;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(2, 302);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(467, 112);
+            this.btnHome.TabIndex = 2;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.FlatAppearance.BorderSize = 0;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Image = global::AHAFit_UI.Properties.Resources.history1;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(2, 418);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(467, 112);
+            this.btnHistory.TabIndex = 0;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnBMI
+            // 
+            this.btnBMI.FlatAppearance.BorderSize = 0;
+            this.btnBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBMI.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBMI.ForeColor = System.Drawing.Color.White;
+            this.btnBMI.Image = global::AHAFit_UI.Properties.Resources.calculator1;
+            this.btnBMI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBMI.Location = new System.Drawing.Point(2, 534);
+            this.btnBMI.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBMI.Name = "btnBMI";
+            this.btnBMI.Size = new System.Drawing.Size(467, 112);
+            this.btnBMI.TabIndex = 0;
+            this.btnBMI.Text = "BMI Calculator";
+            this.btnBMI.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBMI.UseVisualStyleBackColor = true;
+            this.btnBMI.Click += new System.EventHandler(this.btnBMI_Click);
+            // 
+            // btnFoodSt
+            // 
+            this.btnFoodSt.FlatAppearance.BorderSize = 0;
+            this.btnFoodSt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoodSt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoodSt.ForeColor = System.Drawing.Color.White;
+            this.btnFoodSt.Image = global::AHAFit_UI.Properties.Resources.bar_chart;
+            this.btnFoodSt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFoodSt.Location = new System.Drawing.Point(2, 650);
+            this.btnFoodSt.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFoodSt.Name = "btnFoodSt";
+            this.btnFoodSt.Size = new System.Drawing.Size(467, 112);
+            this.btnFoodSt.TabIndex = 0;
+            this.btnFoodSt.Text = "Food Statistics";
+            this.btnFoodSt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFoodSt.UseVisualStyleBackColor = true;
+            this.btnFoodSt.Click += new System.EventHandler(this.btnFoodSt_Click);
+            // 
+            // btnMemberComp
+            // 
+            this.btnMemberComp.FlatAppearance.BorderSize = 0;
+            this.btnMemberComp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMemberComp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemberComp.ForeColor = System.Drawing.Color.White;
+            this.btnMemberComp.Image = global::AHAFit_UI.Properties.Resources.compare;
+            this.btnMemberComp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMemberComp.Location = new System.Drawing.Point(2, 766);
+            this.btnMemberComp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMemberComp.Name = "btnMemberComp";
+            this.btnMemberComp.Size = new System.Drawing.Size(467, 112);
+            this.btnMemberComp.TabIndex = 0;
+            this.btnMemberComp.Text = "Member Comparisons";
+            this.btnMemberComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMemberComp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMemberComp.UseVisualStyleBackColor = true;
+            this.btnMemberComp.Click += new System.EventHandler(this.btnMemberComp_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = global::AHAFit_UI.Properties.Resources.logout__1_;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(2, 882);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(467, 112);
+            this.btnLogout.TabIndex = 18;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // MainForm
             // 
@@ -892,7 +888,6 @@ namespace AHAFit_UI
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.flwPnlLeftSide.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlMain.ResumeLayout(false);
@@ -903,6 +898,7 @@ namespace AHAFit_UI
             this.pnlEatenToday.ResumeLayout(false);
             this.pnlEatenToday.PerformLayout();
             this.pnlDailyCalorie.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -964,12 +960,11 @@ namespace AHAFit_UI
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

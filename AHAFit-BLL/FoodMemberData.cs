@@ -2,6 +2,7 @@
 using AHAFit_Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +109,7 @@ namespace AHAFit_BLL
         }
         public double CalculateDailyCalorieNeed(int memberId)
         {
+            Context db = new Context();
             var member = db.Members.FirstOrDefault(x => x.MemberId == memberId);
             double genderCalorie = 0;
             double activityCalorie = 0;
@@ -166,57 +168,53 @@ namespace AHAFit_BLL
             db.MealsFoods.Remove(mealFoodGonnaDeleted);
             db.SaveChanges();
         }
-        public void AddNewFoodToMember(int foodId, DateTime selectedDay, int memberId, int mealId)
+        public void AddNewFoodToMember(int foodId, DateTime selectedDay, int memberId, int mealId, int quantity)
         {
-            MemberFood newMemberFood = new MemberFood(selectedDay);
-            MealFood newMealFood = new MealFood(selectedDay);
-
-            newMemberFood.MemberId = memberId;
-            newMemberFood.FoodId = foodId;
-            newMemberFood.MealId = mealId;
-
-            newMealFood.MealId = mealId;
-            newMealFood.FoodId = foodId;
-
-            db.MembersFoods.Add(newMemberFood);
-            db.MealsFoods.Add(newMealFood);
-
-            db.SaveChanges();
-        }
-
-        //KONTROL
-        public List<Food> WeeklyHistoryLoader(int memberId)
-        {
-
-            List<MemberFood> memberFoodListWeek = new List<MemberFood>();
-            List<Food> foodList = new List<Food>();
-
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < quantity; i++)
             {
-                var baselineDate = DateTime.Now.AddHours(-24 * i);
-                memberFoodListWeek = db.MembersFoods.Where(x => x.CreateDateTime >= baselineDate).ToList();
+                MemberFood newMemberFood = new MemberFood(selectedDay);
+                MealFood newMealFood = new MealFood(selectedDay);
+
+                newMemberFood.MemberId = memberId;
+                newMemberFood.FoodId = foodId;
+                newMemberFood.MealId = mealId;
+
+                newMealFood.MealId = mealId;
+                newMealFood.FoodId = foodId;
+
+                db.MembersFoods.Add(newMemberFood);
+                db.MealsFoods.Add(newMealFood);
+
+                db.SaveChanges();
+            }
+            
+        }
+        public Dictionary<List<Food>, List<DateTime>> MemberFoodsAccordingToDate(int memberId, int daysBack)
+        {
+            List<Food> memberFoods = new List<Food>();
+            List<DateTime> foodEatDates = new List<DateTime>();
+            List<MemberFood> membersFoods = new List<MemberFood>();
+
+            if (daysBack == 0)
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId).ToList();
+            }
+            else
+            {
+                membersFoods = db.MembersFoods.Where(x => x.MemberId == memberId && x.CreateDateTime >= System.Data.Entity.DbFunctions.AddDays(DateTime.Now, -daysBack)).ToList();
             }
 
-            foreach (var item in memberFoodListWeek)
+            foreach (var food in membersFoods)
             {
-                foodList.Add(db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId));
+                memberFoods.Add(db.Foods.FirstOrDefault(x => x.FoodId == food.FoodId));
+                foodEatDates.Add(food.CreateDateTime);
             }
 
-            return foodList;
+            Dictionary<List<Food>, List<DateTime>> foodAndDates = new Dictionary<List<Food>, List<DateTime>>();
+            foodAndDates.Add(memberFoods, foodEatDates);
+
+            return foodAndDates;
         }
-        public List<Food> MonthlyHistoryLoader(int memberId, int month)
-        {
-            List<MemberFood> memberFoodListMonth = new List<MemberFood>();
-            List<Food> foodList = new List<Food>();
 
-            memberFoodListMonth = db.MembersFoods.Where(x => x.CreateDateTime.Month == month).ToList();
-            foreach (var item in memberFoodListMonth)
-            {
-                foodList.Add(db.Foods.FirstOrDefault(x => x.FoodId == item.FoodId));
-            }
-            return foodList;
-
-
-        }
     }
 }

@@ -34,6 +34,7 @@ namespace AHAFit_UI
             txtPassword.Text = MemberData.GetMemberPassword(memberId);
             txtReEnter.Text = MemberData.GetMemberPassword(memberId);
             dtpBirthDate.MaxDate = DateTime.Today;
+            btnSave.BackColor = Color.FromArgb(166, 83, 105);
         }
 
         private void ProfileUpdateForm_Load(object sender, EventArgs e)

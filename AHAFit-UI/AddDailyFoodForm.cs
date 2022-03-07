@@ -105,7 +105,8 @@ namespace AHAFit_UI
 
         private void btnSaveEat_Click(object sender, EventArgs e)
         {
-            FoodMemberData.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, MealFoodData.FindMealId(cmbEatMeal.Text));
+            FoodMemberData.AddNewFoodToMember(FindSelectedFoodId(), dtpEatDate.Value.Date, memberId, MealFoodData.FindMealId(cmbEatMeal.Text), (int)nudPiece.Value);
+            MessageBox.Show("Successfully saved.");
 
         }
 

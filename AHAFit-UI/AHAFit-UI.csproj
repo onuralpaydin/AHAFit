@@ -112,17 +112,17 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodStatisticsAndReportsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FoodStatisticsAndReportsForm.Designer.cs">
-      <DependentUpon>FoodStatisticsAndReportsForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddDailyFoodForm.resx">
       <DependentUpon>AddDailyFoodForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BMICalcForm.resx">
+      <DependentUpon>BMICalcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FoodStatisticsForm.resx">
       <DependentUpon>FoodStatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -179,6 +179,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\clock.png" />
+    <Content Include="Resources\1.jpg" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\123.png" />
+    <None Include="Resources\64671.jpg" />
+    <None Include="Resources\bathroom-scale.png" />
+    <None Include="Resources\analytics1.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\registered.png" />
+    <None Include="Resources\user-interface %281%29.png" />
+    <None Include="Resources\user-interface.png" />
+    <None Include="Resources\water-bottle.png" />
+    <None Include="Resources\medal.png" />
+    <None Include="Resources\diet.png" />
+    <None Include="Resources\flag.png" />
+    <None Include="Resources\compare.png" />
+    <None Include="Resources\bar-chart1.png" />
+    <None Include="Resources\bar-chart.png" />
+    <None Include="Resources\calculator1.png" />
+    <None Include="Resources\history1.png" />
+    <None Include="Resources\house %281%29.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\home.png" />
     <None Include="Resources\waterGif.gif" />
     <None Include="Resources\44425-glass-water.gif" />
     <None Include="Resources\calculator %281%29.png" />
